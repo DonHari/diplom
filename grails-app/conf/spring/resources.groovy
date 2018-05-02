@@ -2,10 +2,8 @@ package spring
 
 import diplom.*
 import diplom.i18n.CustomLocaleResolver
-import org.grails.web.i18n.ParamsAwareLocaleChangeInterceptor
 import org.springframework.security.authentication.encoding.PlaintextPasswordEncoder
 
-// Place your Spring DSL code here
 beans = {
     faqService(FaqServiceImplService) {
         ref('faqService')

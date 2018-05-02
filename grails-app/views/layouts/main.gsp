@@ -9,7 +9,7 @@
         <asset:javascript src="application.js"/>
         <g:layoutHead/>
     </head>
-    <body onload="loadPage()">
+    <body onload="layoutLoaded()">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
@@ -18,17 +18,14 @@
 
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#"><g:message code="header.news" default="News"/><span class="sr-only">(current)</span></a>
+                    <li class="nav-item" id="newsHeader" onclick="setNewsHeaderActive()">
+                        <a class="nav-link" onclick="setNewsHeaderActive()" href="/" ><g:message code="header.news" default="News"/></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><g:message code="header.enrollee" default="For enrollee"/></a>
+                    <li class="nav-item" id="enrolleeHeader">
+                        <a class="nav-link" onclick="setEnrolleeHeaderActive()" href="#"><g:message code="header.enrollee" default="For enrollee"/></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><g:message code="header.student" default="For students"/></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                    <li class="nav-item" id="studentsHeader">
+                        <a class="nav-link" onclick="setStudentsHeaderActive()" href="/students"><g:message code="header.student" default="For students"/></a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -44,7 +41,7 @@
                 </ul>
             </div>
         </nav>
-        <div class="container content">
+        <div class="container-fluid container-bg">
             <g:layoutBody/>
         </div>
         <div class="footer" role="contentinfo"></div>

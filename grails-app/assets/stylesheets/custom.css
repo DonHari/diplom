@@ -2,6 +2,10 @@
     background-color: white;
 }
 
+.container-bg {
+    background-color: #c7c7c7;
+}
+
 .main-page-news-offset-top {
     margin-top: 1em;
 }
