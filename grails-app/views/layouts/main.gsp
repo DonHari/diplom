@@ -38,9 +38,16 @@
                     <li class="nav-item" id="langUA">
                         <a class="nav-link" href="?lang=ua" onclick="langUaClicked()"><g:message code="language.ua" default="UA"/></a>
                     </li>
-                    <li class="nav-item" id="authorize">
-                        <a class="nav-link divider-left" href="/login"><g:message code="header.autorization.signin" default="Sign-in"/></a>
-                    </li>
+                    <sec:ifNotLoggedIn>
+                        <li class="nav-item" id="authorize">
+                            <a class="nav-link divider-left" href="/login"><g:message code="header.autorization.signin" default="Sign-in"/></a>
+                        </li>
+                    </sec:ifNotLoggedIn>
+                    <sec:ifLoggedIn>
+                        <li class="nav-item" id="userFullName">
+                            <a class="nav-link divider-left" href="#"><g:message code="header.authorization.account" default="Account"/></a>
+                        </li>
+                    </sec:ifLoggedIn>
                 </ul>
             </div>
         </nav>
