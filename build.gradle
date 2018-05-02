@@ -98,5 +98,5 @@ task wrapper(type: Wrapper) {
     gradleVersion = gradleWrapperVersion
 }
 
-task stage(dependsOn: ['build', 'clean'])
+task stage(dependsOn: ['build -x test', 'clean'])
 build.mustRunAfter(clean)
