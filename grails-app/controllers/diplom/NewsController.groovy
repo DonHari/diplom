@@ -21,7 +21,7 @@ class NewsController {
 
     private void fillDb() {
         if (Environment.current.name == 'development' && News.count == 0) {
-            File file = new File('images\\news\\img1.png')
+            File file = new File('grails-app\\assets\\images\\news\\img1.png')
             Photo photo = new Photo(file: file.getBytes()).save(flush: true)
             User user = new User(name: "test", secondName: "test", surname: "test", username: "test", password: "test", email: "test@test.com").save(flush: true)
             for (int i = 0; i < 100; i++) {
