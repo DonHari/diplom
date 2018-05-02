@@ -1,9 +1,10 @@
 package diplom
 
 import grails.plugin.springsecurity.annotation.Secured
+import grails.transaction.Transactional
+import grails.util.Environment
 
 import static org.springframework.http.HttpStatus.*
-import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 class NewsController {
@@ -12,9 +13,26 @@ class NewsController {
 
     @Secured('permitAll')
     def index(Integer offset, Integer max) {
+        fillDb()
         List<News> newsList = newsService.list(offset, max)
         Long newsCount = newsService.count()
         respond(newsList, model: [newsCount: newsCount, maxPerPage: PageUtil.getMaxValue(max)])
+    }
+
+    private void fillDb() {
+        if (Environment.current.name == 'development' && News.count == 0) {
+            File file = new File('images\\news\\img1.png')
+            Photo photo = new Photo(file: file.getBytes()).save(flush: true)
+            User user = new User(name: "test", secondName: "test", surname: "test", username: "test", password: "test", email: "test@test.com").save(flush: true)
+            for (int i = 0; i < 100; i++) {
+                String desc = ''
+                Random random = new Random(System.nanoTime());
+                for (int o = 0; o < random.nextInt(150) + 50; o++) {
+                    desc += 't'
+                }
+                new News(photo: photo, author: user, name: "Test name ${i}", description: desc, content: "Test content ${i}").save(flush: true)
+            }
+        }
     }
 
     @Secured('permitAll')
