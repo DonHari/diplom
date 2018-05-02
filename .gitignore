@@ -10,7 +10,6 @@ build/
 .settings
 .classpath
 out/
-gradle/
 gradlew
 gradlew.bat
 .asscache
