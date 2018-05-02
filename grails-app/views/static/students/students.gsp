@@ -5,13 +5,14 @@
         <meta name="layout" content="main">
         <g:if env="development"><asset:stylesheet src="errors.css"/></g:if>
     </head>
-    <body onload="loadStudcityPage()">
+    <body>
         <div class="row">
             <div class="col-2 pt-3">
                 <div class="list-group">
-                    <a href="#studcity" onclick="loadStudcityPage()" class="list-group-item list-group-item-action active"><g:message code="students.studcity" default="Student's city"/></a>
-                    <a href="#" class="list-group-item list-group-item-action">Дерьмище какое-то</a>
-                    <a href="#" class="list-group-item list-group-item-action disabled">И еще гавнеца, но неактивного</a>
+                    <a href="#schedule" onclick="loadSchedulePage()" class="list-group-item list-group-item-action" id="studentsSchedule"><g:message code="students.schedule" default="Schedule"/></a>
+                    <a href="#faculty" onclick="" class="list-group-item list-group-item-action" id="studentsFaculty"><g:message code="students.faculty" default="About faculty"/></a>
+                    <a href="#department" onclick="" class="list-group-item list-group-item-action" id="studentsDepartment"><g:message code="students.department" default="About department"/></a>
+                    <a href="#studcity" onclick="loadStudcityPage()" class="list-group-item list-group-item-action" id="studentsStudcity"><g:message code="students.studcity" default="Student's city"/></a>
                 </div>
             </div>
             <div class="col-8 content">
@@ -24,7 +25,8 @@
         </div>
         <script>
             window.onload = function (ev) {
-                loadStudcityPage();
+                viewActiveLang();
+                loadSchedulePage();
             }
         </script>
     </body>

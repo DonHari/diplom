@@ -179,4 +179,5 @@
     <changeSet author="sdoro (generated)" id="1524837965177-15">
         <addForeignKeyConstraint baseColumnNames="role_id" baseTableName="user_role" constraintName="FK_it77eq964jhfqtu54081ebtio" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="role"/>
     </changeSet>
+    <include file="schedule-insert-1.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

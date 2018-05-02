@@ -1,4 +1,4 @@
-function layoutLoaded(){
+function layoutLoaded() {
     viewActiveLang();
 }
 
@@ -34,29 +34,48 @@ function getCookie(cname) {
 }
 
 function loadStudcityPage() {
+    $("#studentsSchedule").removeClass('active');
+    $("#studentsStudcity").addClass('active');
     $("#content").load(
         "/students/studcity"
     );
 }
 
+function loadSchedulePage() {
+    $("#studentsStudcity").removeClass('active');
+    $("#studentsSchedule").addClass('active');
+    $("#content").load(
+        "/schedule/schedule"
+    )
+}
+
 //todo doesn't work
-function setNewsHeaderActive(){
+function setNewsHeaderActive() {
     console.log('1');
     document.getElementById('newsHeader').classList.add('active');
     document.getElementById('enrolleeHeader').classList.remove('active');
     document.getElementById('studentsHeader').classList.remove('active');
 }
 
-function setStudentsHeaderActive(){
+function setStudentsHeaderActive() {
     console.log('2');
     document.getElementById('studentsHeader').classList.add('active');
     document.getElementById('enrolleeHeader').classList.remove('active');
     document.getElementById('newsHeader').classList.remove('active');
 }
 
-function setEnrolleeHeaderActive(){
+function setEnrolleeHeaderActive() {
     console.log('3');
     document.getElementById('enrolleeHeader').classList.add('active');
     document.getElementById('newsHeader').classList.remove('active');
     document.getElementById('studentsHeader').classList.remove('active');
+}
+
+function loadSchedule() {
+    var year = document.getElementById("yearSelect").value;
+    var tetrameter = document.getElementById("tetrameterSelect").value;
+    $('#scheduleFileLink').load(
+        '/schedule/get?year=' + year + '&tetrameter=' + tetrameter
+    );
+
 }

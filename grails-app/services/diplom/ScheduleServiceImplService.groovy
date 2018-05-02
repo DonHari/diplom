@@ -1,6 +1,7 @@
 package diplom
 
 import grails.transaction.Transactional
+import org.grails.datastore.mapping.query.api.BuildableCriteria
 
 @Transactional
 class ScheduleServiceImplService implements ScheduleService {
@@ -54,5 +55,21 @@ class ScheduleServiceImplService implements ScheduleService {
         schedule.fileName = fileName
         schedule.save(flush: true)
         schedule
+    }
+
+    @Override
+    List<Integer> listAvailableYears() {
+        BuildableCriteria criteria = Schedule.createCriteria()
+        List<Integer> result = criteria.list {
+            projections {
+                groupProperty("year")
+            }
+        } as List<Integer>
+        result
+    }
+
+    @Override
+    Schedule get(Integer tetrameter, Integer year){
+        Schedule.findByTetrameterAndYear(tetrameter, year)
     }
 }

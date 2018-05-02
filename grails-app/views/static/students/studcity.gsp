@@ -39,6 +39,7 @@
             </p>
         </div>
     </div>
+    %{--Общежития--}%
     <div class="row pt-4">
         <div class="col-12">
             <div class="accordion" id="accordion">

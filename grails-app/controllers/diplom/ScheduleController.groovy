@@ -64,4 +64,16 @@ class ScheduleController {
         redirect(controller: "schedule", action: "index", method: "GET", status: NO_CONTENT)
     }
 
+    @Secured('permitAll')
+    def schedule() {
+        List<Integer> availableYears = scheduleService.listAvailableYears()
+
+        respond([availableYears: availableYears], view: "/schedule/schedule")
+    }
+
+    def get(Integer tetrameter, Integer year){
+        Schedule result = scheduleService.get(tetrameter, year)
+
+        respond([schedule: result], view: "/schedule/scheduleFileLink")
+    }
 }

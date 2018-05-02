@@ -11,7 +11,7 @@
     </head>
     <body onload="layoutLoaded()">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="/">Navbar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -37,6 +37,9 @@
                     </li>
                     <li class="nav-item" id="langUA">
                         <a class="nav-link" href="?lang=ua" onclick="langUaClicked()"><g:message code="language.ua" default="UA"/></a>
+                    </li>
+                    <li class="nav-item" id="authorize">
+                        <a class="nav-link divider-left" href="/login"><g:message code="header.autorization.signin" default="Sign-in"/></a>
                     </li>
                 </ul>
             </div>

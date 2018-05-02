@@ -1,0 +1,69 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet id="1" author="Stanislav Dorozhko">
+        <insert tableName="schedule">
+            <column name="version">0</column>
+            <column name="date_created" valueComputed="NOW()"/>
+            <column name="last_updated" valueComputed="NOW()"/>
+            <column name="file_name">test.xml</column>
+            <column name="tetrameter">1</column>
+            <column name="year">2018</column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="version">0</column>
+            <column name="date_created" valueComputed="NOW()"/>
+            <column name="last_updated" valueComputed="NOW()"/>
+            <column name="file_name">test.xml</column>
+            <column name="tetrameter">2</column>
+            <column name="year">2018</column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="version">0</column>
+            <column name="date_created" valueComputed="NOW()"/>
+            <column name="last_updated" valueComputed="NOW()"/>
+            <column name="file_name">test.xml</column>
+            <column name="tetrameter">3</column>
+            <column name="year">2018</column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="version">0</column>
+            <column name="date_created" valueComputed="NOW()"/>
+            <column name="last_updated" valueComputed="NOW()"/>
+            <column name="file_name">test.xml</column>
+            <column name="tetrameter">4</column>
+            <column name="year">2018</column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="version">0</column>
+            <column name="date_created" valueComputed="NOW()"/>
+            <column name="last_updated" valueComputed="NOW()"/>
+            <column name="file_name">test.xml</column>
+            <column name="tetrameter">1</column>
+            <column name="year">2019</column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="version">0</column>
+            <column name="date_created" valueComputed="NOW()"/>
+            <column name="last_updated" valueComputed="NOW()"/>
+            <column name="file_name">test.xml</column>
+            <column name="tetrameter">2</column>
+            <column name="year">2021</column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="version">0</column>
+            <column name="date_created" valueComputed="NOW()"/>
+            <column name="last_updated" valueComputed="NOW()"/>
+            <column name="file_name">test.xml</column>
+            <column name="tetrameter">3</column>
+            <column name="year">2019</column>
+        </insert>
+        <insert tableName="schedule">
+            <column name="version">0</column>
+            <column name="date_created" valueComputed="NOW()"/>
+            <column name="last_updated" valueComputed="NOW()"/>
+            <column name="file_name">test.xml</column>
+            <column name="tetrameter">4</column>
+            <column name="year">2020</column>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
