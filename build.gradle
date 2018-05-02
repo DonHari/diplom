@@ -100,3 +100,12 @@ task wrapper(type: Wrapper) {
 
 task stage(dependsOn: ['build', 'clean'])
 build.mustRunAfter(clean)
+
+task copyToLib(type: Copy) {
+    into "$buildDir/server"
+    from(configurations.compile) {
+        include "webapp-runner*"
+    }
+}
+
+stage.dependsOn(copyToLib)
