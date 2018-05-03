@@ -13,7 +13,7 @@ class NewsController {
 
     @Secured('permitAll')
     def index(Integer offset, Integer max) {
-        fillDb()
+//        fillDb()
         List<News> newsList = newsService.list(offset, max)
         Long newsCount = newsService.count()
         respond(newsList, model: [newsCount: newsCount, maxPerPage: PageUtil.getMaxValue(max)])

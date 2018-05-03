@@ -131,29 +131,58 @@ endpoints:
 dataSource:
     pooled: true
     jmxExport: true
-    driverClassName: org.h2.Driver
-    username: sa
-    password:
+    driverClassName: org.postgresql.Driver
+    dialect: org.hibernate.dialect.PostgreSQL9Dialect
 
 environments:
     development:
         dataSource:
+            username: postgres
+            password: postgres
             dbCreate: none
-            url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            url: jdbc:postgresql://localhost:5432/diplom
     test:
         dataSource:
+            username: postgres
+            password: postgres
             dbCreate: none
-            url: jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            url: jdbc:postgresql://localhost:5432/diplom
     production:
         dataSource:
+            username: postgres
+            password: postgres
             dbCreate: none
-            url: jdbc:h2:./prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            url: jdbc:postgresql://localhost:5432/diplom
             properties:
                 jmxEnabled: true
                 initialSize: 5
                 maxActive: 50
                 minIdle: 5
                 maxIdle: 25
+                maxWait: 10000
+                maxAge: 600000
+                timeBetweenEvictionRunsMillis: 5000
+                minEvictableIdleTimeMillis: 60000
+                validationQuery: SELECT 1
+                validationQueryTimeout: 3
+                validationInterval: 15000
+                testOnBorrow: true
+                testWhileIdle: true
+                testOnReturn: false
+                jdbcInterceptors: ConnectionState
+                defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+    heroku:
+        dataSource:
+            username: jckxxsulowapow
+            password: 045007afbda23a3e27f90730b0819316a7095ceb180e32f0487a13526820432d
+            dbCreate: none
+            url: jdbc:postgres://jckxxsulowapow:045007afbda23a3e27f90730b0819316a7095ceb180e32f0487a13526820432d@ec2-54-246-96-76.eu-west-1.compute.amazonaws.com:5432/d6utn6dpgpqqmj
+            properties:
+                jmxEnabled: true
+                initialSize: 5
+                maxActive: 20
+                minIdle: 5
+                maxIdle: 20
                 maxWait: 10000
                 maxAge: 600000
                 timeBetweenEvictionRunsMillis: 5000

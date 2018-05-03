@@ -19,5 +19,7 @@ class Role implements Serializable {
 
     static mapping = {
         cache true
+        id generator: 'native',
+                params: [sequence: 'role_id_seq']
     }
 }

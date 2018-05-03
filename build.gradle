@@ -93,8 +93,11 @@ dependencies {
     //cookie
     compile 'org.grails.plugins:grails-cookie:2.0.3'
 
+    compile files('libs/postgresql-42.2.2.jar')
+
     //for heroku
     compile 'com.github.jsimone:webapp-runner:8.5.11.3'
+
 }
 
 task wrapper(type: Wrapper) {

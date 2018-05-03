@@ -16,5 +16,7 @@ class Faq {
 
     static mapping = {
         autoTimestamp true
+        id generator: 'native',
+                params: [sequence: 'faq_id_seq']
     }
 }

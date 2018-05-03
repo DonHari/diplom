@@ -16,5 +16,7 @@ class Schedule {
 
     static mapping = {
         autoTimestamp true
+        id generator: 'native',
+                params: [sequence: 'schedule_id_seq']
     }
 }

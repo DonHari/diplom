@@ -9,4 +9,9 @@ class Photo {
     static constraints = {
         file nullable: false
     }
+
+    static mapping = {
+        id generator: 'native',
+                params: [sequence: 'photo_id_seq']
+    }
 }

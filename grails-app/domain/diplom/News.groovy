@@ -22,5 +22,7 @@ class News {
 
     static mapping = {
         autoTimestamp true
+        id generator: 'native',
+                params: [sequence: 'news_id_seq']
     }
 }

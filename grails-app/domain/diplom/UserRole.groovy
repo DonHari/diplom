@@ -25,10 +25,10 @@ class UserRole implements Serializable {
     int hashCode() {
         int hashCode = HashCodeHelper.initHash()
         if (user) {
-            hashCode = HashCodeHelper.updateHash(hashCode, user.id)
+            hashCode = HashCodeHelper.updateHash(hashCode, user.id as long)
         }
         if (role) {
-            hashCode = HashCodeHelper.updateHash(hashCode, role.id)
+            hashCode = HashCodeHelper.updateHash(hashCode, role.id as long)
         }
         hashCode
     }

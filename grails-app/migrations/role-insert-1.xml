@@ -2,10 +2,12 @@
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
     <changeSet id="1" author="Stanislav Dorozhko">
         <insert tableName="role">
+            <column name="id" valueComputed="nextval('role_id_seq')"/>
             <column name="version">0</column>
             <column name="authority">ROLE_USER</column>
         </insert>
         <insert tableName="role">
+            <column name="id" valueComputed="nextval('role_id_seq')"/>
             <column name="version">0</column>
             <column name="authority">ROLE_ADMIN</column>
         </insert>
