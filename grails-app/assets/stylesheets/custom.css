@@ -1,3 +1,7 @@
+body {
+    min-height: 100vh;
+}
+
 .content {
     background-color: white;
 }
@@ -33,7 +37,13 @@ nav div ul:last-child {
     border-left: 1px solid black;
 }
 
-.custom-dropdown-right{
+.custom-dropdown-right {
     right: 0 !important;
     left: auto !important;
+}
+
+.custom-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
