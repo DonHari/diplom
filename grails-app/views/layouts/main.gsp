@@ -39,14 +39,23 @@
                         <a class="nav-link" href="?lang=ua" onclick="langUaClicked()"><g:message code="language.ua" default="UA"/></a>
                     </li>
                     <sec:ifNotLoggedIn>
-                        <li class="nav-item" id="authorize">
-                            <a class="nav-link divider-left" href="/login"><g:message code="header.autorization.signin" default="Sign-in"/></a>
+                        <li class="nav-item ml-5" id="authorize">
+                            <a class="nav-link" href="${createLink(controller: 'login', action: 'auth')}"><g:message code="header.autorization.signin" default="Sign-in"/></a>
                         </li>
                     </sec:ifNotLoggedIn>
                     <sec:ifLoggedIn>
-                        <li class="nav-item" id="userFullName">
-                            <a class="nav-link divider-left" href="#"><g:message code="header.authorization.account" default="Account"/></a>
-                        </li>
+                        <div class="btn-group ml-5">
+                            <button type="button" class="btn btn-primary">Учетная запись</button>
+                            <div class="btn-group" role="group">
+                                <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                <div class="dropdown-menu custom-dropdown-right" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 36px, 0px);">
+                                    <a class="dropdown-item" href="#">Dropdown link</a>
+                                    <a class="dropdown-item" href="#">Dropdown link</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/logout"><g:message code="auth.logout" default="Log out"/></a>
+                                </div>
+                            </div>
+                        </div>
                     </sec:ifLoggedIn>
                 </ul>
             </div>

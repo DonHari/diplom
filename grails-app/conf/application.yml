@@ -73,7 +73,7 @@ grails:
             updateOnStart: true
             updateOnStartFileName: changelog.xml
         springsecurity:
-            active: false
+#            active: false
             userLookup:
               userDomainClassName: diplom.User
               authorityJoinClassName: diplom.UserRole
@@ -105,9 +105,13 @@ grails:
                       access: ['permitAll']
                     - pattern: '/customError/'
                       access: ['permitAll']
+                    - pattern: '/**/students/**'
+                      access: ['permitAll']
+                    - pattern: '/**/logout/**'
+                      access: ['permitAll']
 
-        logout:
-            postOnly: false
+            logout:
+                postOnly: false
     languages:
         - en
         - ru

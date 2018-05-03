@@ -32,3 +32,8 @@ nav div ul:last-child {
 .divider-left {
     border-left: 1px solid black;
 }
+
+.custom-dropdown-right{
+    right: 0 !important;
+    left: auto !important;
+}

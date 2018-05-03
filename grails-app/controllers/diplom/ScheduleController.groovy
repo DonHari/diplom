@@ -71,6 +71,7 @@ class ScheduleController {
         respond([availableYears: availableYears], view: "/schedule/schedule")
     }
 
+    @Secured('permitAll')
     def get(Integer tetrameter, Integer year){
         Schedule result = scheduleService.get(tetrameter, year)
 
