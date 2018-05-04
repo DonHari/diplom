@@ -56,9 +56,22 @@ nav div ul:last-child {
 
 .custom-footer-link {
     color: #fff !important;
+    text-decoration-line:none;
+    transition: all .3s ease;
+}
+
+.custom-footer-link:hover {
+    text-decoration-line: none;
+    border: 1px solid #efff00;
+    padding: 8px 20px;
+    border-radius: 28px;
 }
 
 .custom-logo {
     width: 50px;
     height: 50px;
+}
+
+.custom-dropdown-links {
+
 }

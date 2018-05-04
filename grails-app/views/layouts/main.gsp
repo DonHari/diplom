@@ -99,7 +99,7 @@
                     <div class="row">
                         <div class="offset-6"></div>
                         <div class="col-6">
-                            <a class="custom-footer-link" href="http://udhtu.edu.ua/">Сайт УДХТУ</a>
+                            <a class="custom-footer-link" href="http://udhtu.edu.ua/">Перейти на сайт УДХТУ</a>
                         </div>
                     </div>
                     <div class="row pt-3">
