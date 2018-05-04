@@ -5,7 +5,7 @@ body {
 .content {
     background-color: white;
     min-height: 95vh;
-    padding-bottom: 40px;
+    /*padding-bottom: 40px;*/
 }
 
 .container-bg {
@@ -46,7 +46,19 @@ nav div ul:last-child {
 
 .custom-footer {
     position: absolute;
-    bottom: 0;
+    /*bottom: 0;*/
     width: 100%;
+    color: #fff;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.5;
 }
 
+.custom-footer-link {
+    color: #fff !important;
+}
+
+.custom-logo {
+    width: 50px;
+    height: 50px;
+}

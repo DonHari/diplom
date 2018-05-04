@@ -11,7 +11,10 @@
     </head>
     <body onload="layoutLoaded()">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="/">Navbar</a>
+            <a class="navbar-brand" href="/">
+                %{--Navbar--}%
+                <img class="custom-logo" src="${assetPath(src:'/site_logo.png')}">
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -63,7 +66,51 @@
         <div class="container-fluid container-bg">
             <g:layoutBody/>
         </div>
-        <div class="footer custom-footer" role="contentinfo"></div>
+        <div class="footer custom-footer bg-primary" role="contentinfo">
+            <div class="row">
+                %{--phone numbers--}%
+                <div class="col-4">
+                    <div class="row">
+                        <div class="col-4">
+                            <a class="custom-footer-link" href="http://udhtu.edu.ua/ftk/knti">Факультет КНтаІ</a>
+                        </div>
+                        <div class="col-4">
+                            +38 (0562) 47-35-05
+                        </div>
+                        <div class="col-4">
+                            kni@udhtu.edu.ua
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col-4">
+                            <a class="custom-footer-link" href="http://udhtu.edu.ua/ftk/knti/kafsks">Кафедра СКС</a>
+                        </div>
+                        <div class="col-4">
+                            +38 (056) 753-57-26
+                        </div>
+                        <div class="col-4">
+                            comp_sys@udhtu.edu.ua
+                        </div>
+                    </div>
+                </div>
+                <div class="offset-4"></div>
+                %{--link to site--}%
+                <div class="col-4">
+                    <div class="row">
+                        <div class="offset-6"></div>
+                        <div class="col-6">
+                            <a class="custom-footer-link" href="http://udhtu.edu.ua/">Сайт УДХТУ</a>
+                        </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="offset-6"></div>
+                        <div class="col-6">
+                            ©2008-2018 Кафедра СКС
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
     </body>
 </html>
