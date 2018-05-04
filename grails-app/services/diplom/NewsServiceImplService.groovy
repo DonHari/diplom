@@ -1,9 +1,12 @@
 package diplom
 
+import diplom.commands.NewsCommand
 import grails.transaction.Transactional
 
 @Transactional
 class NewsServiceImplService implements NewsService {
+
+    ImageService imageService
 
     SecurityService securityService
 
@@ -23,11 +26,14 @@ class NewsServiceImplService implements NewsService {
     List<News> list(Integer offset, Integer max) {
         Integer localOffset = offset ?: 0
         Integer localMax = PageUtil.getMaxValue(max)
-        News.list([max: localMax, offset: localOffset])
+        News.list(max: localMax, offset: localOffset, sort: 'dateCreated', order: 'desc')
     }
 
     @Override
-    News save(News news) {
+    News save(NewsCommand command) {
+        Photo photo = imageService.save(command.photo.bytes)
+//        List<Photo> assignedPhotos = imageService.saveAll(command.assignedPhotos.collect { it.bytes } as List<Byte[]>)
+        News news = new News(name: command.name, description: command.description, content: command.content, photo: photo/*, assignedPhotos: assignedPhotos*/)
         news.author = securityService.getAuthorizedUser()
         news.save()
     }

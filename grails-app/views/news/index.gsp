@@ -2,8 +2,7 @@
 <html>
     <head>
         <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'news.label', default: 'News')}" />
-        <title><g:message code="default.list.label" args="[entityName]" /></title>
+        <title><g:message code="header.news" default="News"/></title>
     </head>
     <body>
         <div class="row">
@@ -23,7 +22,7 @@
                                 <div class="col-lg-12 col-md-12">${news.description}</div>
                             </div>
                             <div class="row align-items-end justify-content-between align-self-end">
-                                <div class="col-lg-4">${news.dateCreated}</div>
+                                <div class="col-lg-4"><g:dateFormat format="dd-MM-yyyy HH:mm" date="${news.dateCreated}"/></div>
                                 <div class="col-lg-4">${news.author.getFullName()}</div>
                             </div>
                         </div>

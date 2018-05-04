@@ -1,9 +1,11 @@
 package diplom
 
+import diplom.commands.NewsCommand
+
 interface NewsService {
     List<News> list(Integer offset, Integer max)
 
-    News save(News news)
+    News save(NewsCommand command)
 
     News update(News news)
 

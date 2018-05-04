@@ -1,5 +1,6 @@
 package diplom
 
+import diplom.commands.ScheduleCommand
 import diplom.validator.Validate
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional

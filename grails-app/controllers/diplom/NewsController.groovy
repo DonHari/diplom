@@ -1,5 +1,7 @@
 package diplom
 
+import diplom.commands.NewsCommand
+import diplom.validator.Validate
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 import grails.util.Environment
@@ -42,13 +44,15 @@ class NewsController {
 
     @Secured("ROLE_USER")
     def create() {
-        respond(new News(params))
+        respond(new News(name: 'test'))
     }
 
     @Secured("ROLE_USER")
     @Transactional
-    def save(News news) {
-        News savedNews = newsService.save(news)
+    def save(NewsCommand newsCommand) {
+        Validate.hasNoErrors(newsCommand)
+
+        News savedNews = newsService.save(newsCommand)
 
         respond(savedNews, status: CREATED, view: "/news/show")
     }

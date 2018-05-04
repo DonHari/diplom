@@ -1,4 +1,4 @@
-package diplom
+package diplom.commands
 
 import grails.validation.Validateable
 import org.springframework.web.multipart.MultipartFile

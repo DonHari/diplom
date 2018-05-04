@@ -12,6 +12,7 @@ beans = {
     newsService(NewsServiceImplService) {
         ref('newsService')
         securityService = ref('securityService')
+        imageService = ref('imageService')
     }
     roleService(RoleServiceImplService) {
         ref('roleService')

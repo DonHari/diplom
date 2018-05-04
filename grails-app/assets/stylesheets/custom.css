@@ -78,5 +78,14 @@ nav div ul:last-child {
 }
 
 .custom-dropdown-links:hover {
+    background: #1e2b37;
     color: #18BC9C !important;
+}
+
+.custom-list-manage-btn{
+    color: #7b8a8b;
+    background-color: #ecf0f1;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    line-height: 1.5;
 }

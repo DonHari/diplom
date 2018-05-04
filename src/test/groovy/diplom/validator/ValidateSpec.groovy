@@ -1,6 +1,6 @@
 package diplom.validator
 
-import diplom.ScheduleCommand
+import diplom.commands.ScheduleCommand
 import spock.lang.Specification
 
 import grails.validation.ValidationException

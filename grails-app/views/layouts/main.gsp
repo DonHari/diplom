@@ -43,22 +43,41 @@
                     </li>
                     <sec:ifNotLoggedIn>
                         <li class="nav-item ml-5" id="authorize">
-                            <a class="nav-link" href="${createLink(controller: 'login', action: 'auth')}"><g:message code="header.autorization.signin" default="Sign-in"/></a>
+                            <a class="nav-link" href="${createLink(controller: 'login', action: 'auth')}"><g:message code="header.auth.signin" default="Sign-in"/></a>
                         </li>
                     </sec:ifNotLoggedIn>
                     <sec:ifLoggedIn>
-                        <div class="btn-group ml-5">
-                            <button type="button" class="btn btn-primary">Учетная запись</button>
-                            <div class="btn-group" role="group">
-                                <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                <div class="dropdown-menu custom-dropdown-right bg-primary" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 36px, 0px);">
-                                    <a class="dropdown-item custom-dropdown-links" href="#">Dropdown link</a>
-                                    <a class="dropdown-item custom-dropdown-links" href="#">Dropdown link</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item custom-dropdown-links" href="/logout"><g:message code="auth.logout" default="Log out"/></a>
+                        <sec:ifAllGranted roles="ROLE_ADMIN">
+                            <div class="btn-group ml-5">
+                                <button type="button" class="btn btn-primary"><g:message code="header.auth.account" default="Account"/></button>
+                                <div class="btn-group" role="group">
+                                    <button id="adminDrop" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                    <div class="dropdown-menu custom-dropdown-right bg-primary" aria-labelledby="adminDrop" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0; left: 0; transform: translate3d(0px, 36px, 0px);">
+                                        <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'news', action: 'create')}"><g:message code="header.news.add" default="Add news"/></a>
+                                        <a class="dropdown-item custom-dropdown-links" href="#"><g:message code="header.schedule.add" default="Add schedule"/></a>
+                                        <a class="dropdown-item custom-dropdown-links" href="#"><g:message code="header.faq.add" default="Add FAQ"/></a>
+                                        <a class="dropdown-item custom-dropdown-links" href="#"><g:message code="header.user.managing" default="Managing users"/></a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item custom-dropdown-links" href="/logout"><g:message code="auth.logout" default="Log out"/></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </sec:ifAllGranted>
+                        <sec:ifAllGranted roles="ROLE_USER">
+                            <div class="btn-group ml-5">
+                                <button type="button" class="btn btn-primary"><g:message code="header.auth.account" default="Account"/></button>
+                                <div class="btn-group" role="group">
+                                    <button id="userDrop" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                    <div class="dropdown-menu custom-dropdown-right bg-primary" aria-labelledby="userDrop" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0; left: 0px; transform: translate3d(0px, 36px, 0px);">
+                                        <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'news', action: 'create')}"><g:message code="header.news.add" default="Add news"/></a>
+                                        <a class="dropdown-item custom-dropdown-links" href="#"><g:message code="header.schedule.add" default="Add schedule"/></a>
+                                        <a class="dropdown-item custom-dropdown-links" href="#"><g:message code="header.faq.add" default="Add FAQ"/></a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item custom-dropdown-links" href="/logout"><g:message code="auth.logout" default="Log out"/></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </sec:ifAllGranted>
                     </sec:ifLoggedIn>
                 </ul>
             </div>

@@ -7,6 +7,19 @@ import org.grails.plugins.web.taglib.ApplicationTagLib
 @Transactional
 class ImageServiceImplService implements ImageService {
 
+    List<Photo> saveAll(List<Byte[]> byteList) {
+        List<Photo> result = new LinkedList<>()
+        for (Byte[] bytes : byteList) {
+            result.add(new Photo(file: bytes).save())
+        }
+        result
+    }
+
+    @Override
+    Photo save(byte[] bytes) {
+        new Photo(file: bytes).save()
+    }
+
     @Override
     byte[] getImage(Long id) {
         Photo.get(id).file
@@ -15,8 +28,6 @@ class ImageServiceImplService implements ImageService {
     //todo doesn't work
     @Override
     byte[] getResourceImage(String path, String name) {
-//        def assetMethodTagLib = Holders.getGrailsApplication().mainContext.getBean('asset.pipeline.grails.AssetMethodTagLib')
-//        String pathToImage = assetMethodTagLib.assetPath(src: '/static/students/studcity_director.jpg')
         ApplicationTagLib g = Holders.getGrailsApplication().mainContext.getBean('asset.pipeline.grails.AssetMethodTagLib') as ApplicationTagLib
         String pathToImage = g.resource(contextPath: "", dir: path, file: name, absolute: true)
         new File(pathToImage).bytes

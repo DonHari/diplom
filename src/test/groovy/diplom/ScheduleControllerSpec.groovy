@@ -1,5 +1,6 @@
 package diplom
 
+import diplom.commands.ScheduleCommand
 import grails.test.mixin.Mock
 import grails.test.mixin.TestFor
 import org.springframework.mock.web.MockMultipartFile

@@ -77,5 +77,66 @@ function loadSchedule() {
     $('#scheduleFileLink').load(
         '/schedule/get?year=' + year + '&tetrameter=' + tetrameter
     );
+}
 
+function newsContentInput() {
+    maxInput(5000, '#newsContent', '#newsContentLeft');
+}
+
+function newsNameInput() {
+    maxInput(50, '#newsName', '#newsNameLeft')
+}
+
+function validateNewsNameInput() {
+    if ($('#newsName').val().length === 0) {
+        $('#newsError #newsErrorAlert').remove();
+        $('#newsError').append('<div class="alert alert-dismissible alert-danger" id="newsErrorAlert"><button type="button" class="close" data-dismiss="alert">&times;</button><span id="newsErrorText">name cannot be empty</span></div>');
+    }
+}
+
+function validatePhotoExtension(source) {
+    var fileName = $(source).val();
+    if (fileName.length === 0) {
+        return;
+    }
+    if (!fileName.endsWith('.jpg') && !fileName.endsWith('.png') && !fileName.endsWith('.jpeg')) {
+        $('#newsError #newsErrorAlert').remove();
+        $('#newsError').append('<div class="alert alert-dismissible alert-danger" id="newsErrorAlert"><button type="button" class="close" data-dismiss="alert">&times;</button><span id="newsErrorText">Not valid extension</span></div>');
+    }
+}
+
+function newsDescInput() {
+    maxInput(100, '#descNews', '#descNewsLeft');
+    // var maxLength = 100;
+    // var currentInput = $('#descNews').val();
+    // var left = maxLength - currentInput.length;
+    // var currentText = $('#descNewsLeft').text();
+    // currentText = currentText.substring(0, currentText.indexOf(': ') + 2);
+    // $('#descNewsLeft').text(currentText + left);
+}
+
+function maxInput(maxLength, source, target) {
+    var localMaxLength = maxLength;
+    var currentInput = $(source).val();
+    var left = localMaxLength - currentInput.length;
+    var currentText = $(target).text();
+    var newText = currentText.substring(0, currentText.indexOf(': ') + 2) + left;
+    $(target).text(newText);
+}
+
+function photoInput(source) {
+    $('#' + source + 'Name').text(document.getElementById(source).files[0].name);
+}
+
+function addAssignedPhoto() {
+    var currentCount = $('#assignedPhotosCount').val();
+    if (currentCount === 12) {
+        return;
+    }
+    currentCount++;
+    $('#assignedPhotosCount').val(currentCount);
+    $('#assignedPhotos').append('<div class="form-group mb-3"><div class="input-group"><div class="custom-file"><input type="file" class="custom-file-input" id="assignedPhoto' + currentCount + '" oninput="photoInput(\'assignedPhoto' + currentCount + '\')" accept=".jpg,.jpeg,.png" value="${photo}" name="photo" onblur="validatePhotoExtension(\'#assignedPhoto' + currentCount + '\')"><label class="custom-file-label" for="assignedPhoto' + currentCount + '" id="assignedPhoto' + currentCount + 'Name">Выберите файл</label></div></div></div>');
+    if (currentCount === 12) {
+        $('#addAssignedPhotoBtn').addClass('disabled').prop('onclick',null).off('click');;
+    }
 }
