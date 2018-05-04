@@ -176,7 +176,7 @@ environments:
             username: jckxxsulowapow
             password: 045007afbda23a3e27f90730b0819316a7095ceb180e32f0487a13526820432d
             dbCreate: none
-            url: jdbc:postgres://ec2-54-246-96-76.eu-west-1.compute.amazonaws.com:5432/d6utn6dpgpqqmj
+            url: jdbc:postgresql://ec2-54-246-96-76.eu-west-1.compute.amazonaws.com:5432/d6utn6dpgpqqmj
             properties:
                 jmxEnabled: true
                 initialSize: 5
