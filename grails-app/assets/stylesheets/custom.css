@@ -1,17 +1,15 @@
 body {
-    /*min-height: 100vh;*/
+    position: relative;
 }
 
 .content {
     background-color: white;
     min-height: 95vh;
+    padding-bottom: 40px;
 }
 
 .container-bg {
     background-color: #c7c7c7;
-    /*position: fixed;*/
-    /*top: 50%;*/
-    /*transform: translateY(-50%);*/
 }
 
 .main-page-news-offset-top {
