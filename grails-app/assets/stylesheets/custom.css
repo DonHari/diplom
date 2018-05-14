@@ -46,7 +46,6 @@ nav div ul:last-child {
 
 .custom-footer {
     position: absolute;
-    /*bottom: 0;*/
     width: 100%;
     color: #fff;
     font-size: 0.9375rem;
@@ -56,16 +55,11 @@ nav div ul:last-child {
 
 .custom-footer-link {
     color: #fff !important;
-    text-decoration-line: none;
-    transition: all .3s ease;
 }
 
 .custom-footer-link:hover {
-    text-decoration-line: none;
-    border: 1px solid #ffffff;
-    padding: 8px 20px;
-    border-radius: 28px;
-    background: #0e2339;
+    color: #18BC9C !important;
+    text-decoration: none;
 }
 
 .custom-logo {
@@ -82,10 +76,28 @@ nav div ul:last-child {
     color: #18BC9C !important;
 }
 
-.custom-list-manage-btn{
+.custom-list-manage-btn {
     color: #7b8a8b;
     background-color: #ecf0f1;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
     line-height: 1.5;
+}
+
+.align-items-bottom {
+    display: flex;
+    align-items: flex-end; /*Aligns vertically center */
+    justify-content: flex-end; /*Aligns horizontally center */
+}
+
+.h-10 {
+    height: 10% !important;
+}
+
+.h-20 {
+    height: 20% !important;
+}
+
+.h-70 {
+    height: 70% !important;
 }

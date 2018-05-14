@@ -10,23 +10,22 @@
             <div class="col-8 content">
                 <g:each in="${newsList}" var="news" status="i">
                     <div class="row news-item">
-                        <div class="col-lg-4 col-md-4">
+                        <div class="col-4">
                             <img  class="card-img" src="${createLink(controller: "image", action: "get", params: [id: news.photo.id])}" alt="${message(code:'image.cant.upload',default:"Can't upload an image.")}"/>
                         </div>
-                        <div class="col-lg-offset-1 col-md-offset-1"></div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="row align-items-start align-self-start">
-                                <h3>${news.name}</h3>
+                        <div class="col-8 pl-4 pr-4 flex-column">
+                            <div class="row h-20">
+                                <h3><a href="${createLink(controller: 'news', action: 'show', params:[id: news.id])}">${news.name}</a></h3>
                             </div>
-                            <div class="row align-items-center">
-                                <div class="col-lg-12 col-md-12">${news.description}</div>
+                            <div class="row h-10">
+                                <div class="col-12 col-md-12">${news.description}</div>
                             </div>
-                            <div class="row align-items-end justify-content-between align-self-end">
-                                <div class="col-lg-4"><g:dateFormat format="dd-MM-yyyy HH:mm" date="${news.dateCreated}"/></div>
-                                <div class="col-lg-4">${news.author.getFullName()}</div>
+                            <div class="row align-items-end h-70" >
+                                <div class="col-4 text-left text-muted"><g:dateFormat format="dd-MM-yyyy HH:mm" date="${news.dateCreated}"/></div>
+                                <div class="offset-4"></div>
+                                <div class="col-4 text-right text-muted">${news.author.getFullName()}</div>
                             </div>
                         </div>
-                        <div class="col-lg-offset-1 col-md-offset-1"></div>
                     </div>
                     <g:if test="${i != newsList.size()-1}">
                         <hr/>

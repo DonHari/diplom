@@ -54,7 +54,7 @@
                                     <button id="adminDrop" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                     <div class="dropdown-menu custom-dropdown-right bg-primary" aria-labelledby="adminDrop" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0; left: 0; transform: translate3d(0px, 36px, 0px);">
                                         <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'news', action: 'create')}"><g:message code="header.news.add" default="Add news"/></a>
-                                        <a class="dropdown-item custom-dropdown-links" href="#"><g:message code="header.schedule.add" default="Add schedule"/></a>
+                                        <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'schedule', action: 'create')}"><g:message code="header.schedule.add" default="Add schedule"/></a>
                                         <a class="dropdown-item custom-dropdown-links" href="#"><g:message code="header.faq.add" default="Add FAQ"/></a>
                                         <a class="dropdown-item custom-dropdown-links" href="#"><g:message code="header.user.managing" default="Managing users"/></a>
                                         <div class="dropdown-divider"></div>
@@ -70,7 +70,7 @@
                                     <button id="userDrop" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                     <div class="dropdown-menu custom-dropdown-right bg-primary" aria-labelledby="userDrop" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0; left: 0px; transform: translate3d(0px, 36px, 0px);">
                                         <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'news', action: 'create')}"><g:message code="header.news.add" default="Add news"/></a>
-                                        <a class="dropdown-item custom-dropdown-links" href="#"><g:message code="header.schedule.add" default="Add schedule"/></a>
+                                        <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'schedule', action: 'create')}"><g:message code="header.schedule.add" default="Add schedule"/></a>
                                         <a class="dropdown-item custom-dropdown-links" href="#"><g:message code="header.faq.add" default="Add FAQ"/></a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item custom-dropdown-links" href="/logout"><g:message code="auth.logout" default="Log out"/></a>
@@ -87,8 +87,8 @@
         </div>
         <div class="footer custom-footer bg-primary" role="contentinfo">
             <div class="row">
-                %{--phone numbers--}%
-                <div class="col-4">
+                %{--contacts--}%
+                <div class="col-5">
                     <div class="row">
                         <div class="col-4">
                             <a class="custom-footer-link" href="http://udhtu.edu.ua/ftk/knti">Факультет КНтаІ</a>
@@ -112,9 +112,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="offset-4"></div>
+                <div class="offset-2"></div>
                 %{--link to site--}%
-                <div class="col-4">
+                <div class="col-5">
                     <div class="row">
                         <div class="offset-6"></div>
                         <div class="col-6">
