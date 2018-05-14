@@ -96,7 +96,7 @@ dependencies {
     compile files('libs/postgresql-42.2.2.jar')
 
     //for heroku
-//    compile 'com.github.jsimone:webapp-runner:8.5.11.3'
+    compile 'com.github.jsimone:webapp-runner:8.5.11.3'
 
 }
 
