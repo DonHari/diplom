@@ -118,7 +118,7 @@ function maxInput(maxLength, source, target) {
     $(target).text(newText);
 }
 
-function photoInput(source) {
+function fileInput(source) {
     $('#' + source + 'Name').text(document.getElementById(source).files[0].name);
 }
 
@@ -129,7 +129,7 @@ function addAssignedPhoto() {
     }
     currentCount++;
     $('#assignedPhotosCount').val(currentCount);
-    $('#assignedPhotos').append('<div class="form-group mb-3"><div class="input-group"><div class="custom-file"><input type="file" class="custom-file-input" id="assignedPhoto' + currentCount + '" oninput="photoInput(\'assignedPhoto' + currentCount + '\')" accept=".jpg,.jpeg,.png" value="${photo}" name="assignedPhoto' + currentCount + '" onblur="validatePhotoExtension(\'#assignedPhoto' + currentCount + '\')"><label class="custom-file-label" for="assignedPhoto' + currentCount + '" id="assignedPhoto' + currentCount + 'Name">Выберите файл</label></div></div></div>');
+    $('#assignedPhotos').append('<div class="form-group mb-3"><div class="input-group"><div class="custom-file"><input type="file" class="custom-file-input" id="assignedPhoto' + currentCount + '" oninput="fileInput(\'assignedPhoto' + currentCount + '\')" accept=".jpg,.jpeg,.png" value="${photo}" name="assignedPhoto' + currentCount + '" onblur="validatePhotoExtension(\'#assignedPhoto' + currentCount + '\')"><label class="custom-file-label" for="assignedPhoto' + currentCount + '" id="assignedPhoto' + currentCount + 'Name">Выберите файл</label></div></div></div>');
     if (currentCount === 12) {
         $('#addAssignedPhotoBtn').addClass('disabled').prop('onclick', null).off('click');
         ;
@@ -138,4 +138,35 @@ function addAssignedPhoto() {
 
 function showImagePopup(source) {
     $('#' + source).modal('toggle');
+}
+
+function validateScheduleExtension(source) {
+    var fileName = $(source).val();
+    if (fileName.length === 0) {
+        return;
+    }
+    if (!fileName.endsWith('.jpg') && !fileName.endsWith('.png') && !fileName.endsWith('.jpeg')) {
+        $('#newsError #newsErrorAlert').remove();
+        $('#newsError').append('<div class="alert alert-dismissible alert-danger" id="newsErrorAlert"><button type="button" class="close" data-dismiss="alert">&times;</button><span id="newsErrorText">Not valid extension</span></div>');
+    }
+}
+
+function checkIfScheduleExists() {
+    var url = window.location.protocol + '//' + window.location.host + '/schedule/check?tetrameter=';
+    var tetrameter = document.getElementById("tetrameterSelect");
+    url += tetrameter.options[tetrameter.selectedIndex].value;
+    url += '$year=';
+    url += $('#year').val();
+    console.log(url);
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, false);
+    xhr.send();
+    if (JSON.parse(xhr.responseText)["result"]["status"] === true && $('#scheduleFileName').text().length !== 0) {
+        return confirm('Расписание на этот тетраместр и учебный год существует. Вы хотите его перезаписать?');
+    } else if ($('#scheduleFileName').text().length === 0) {
+        //todo display error message
+        return false;
+    } else {
+        return true;
+    }
 }

@@ -21,7 +21,13 @@ class ScheduleServiceImplService implements ScheduleService {
 
     @Override
     Schedule save(Integer year, Integer tetrameter, String fileName) {
-        Schedule schedule = new Schedule(year: year, tetrameter: tetrameter, fileName: fileName)
+        Schedule schedule = Schedule.findByYearAndTetrameter(year, tetrameter)
+        if(schedule){
+            schedule.fileName = fileName
+            schedule.save()
+        } else {
+            new Schedule(year: year, tetrameter: tetrameter, fileName: fileName)
+        }
         schedule.save()
     }
 
@@ -43,27 +49,13 @@ class ScheduleServiceImplService implements ScheduleService {
     }
 
     @Override
-    Schedule updateFile(Long scheduleId, Integer version, String fileName) {
-        Schedule schedule = Schedule.get(scheduleId)
-        if (!schedule) {
-            return null
-        }
-        if (schedule.version != version) {
-            log.error("versions doesn't equal")
-            //todo throw exception
-        }
-        schedule.fileName = fileName
-        schedule.save(flush: true)
-        schedule
-    }
-
-    @Override
     List<Integer> listAvailableYears() {
         BuildableCriteria criteria = Schedule.createCriteria()
         List<Integer> result = criteria.list {
             projections {
                 groupProperty("year")
             }
+            order('year', 'asc')
         } as List<Integer>
         result
     }

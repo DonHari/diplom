@@ -15,5 +15,5 @@ interface UploadScheduleFileService {
      * @param schedule
      * @return
      */
-    File loadFile(Schedule schedule)
+    File loadFile(String fileName)
 }

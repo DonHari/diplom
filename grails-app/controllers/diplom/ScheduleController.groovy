@@ -69,13 +69,28 @@ class ScheduleController {
     def schedule() {
         List<Integer> availableYears = scheduleService.listAvailableYears()
 
-        respond([availableYears: availableYears], view: "/schedule/schedule")
+        respond([availableYears: availableYears, currentYear: Calendar.getInstance().get(Calendar.YEAR)], view: "/schedule/schedule")
     }
 
     @Secured('permitAll')
-    def get(Integer tetrameter, Integer year){
+    def get(Integer tetrameter, Integer year) {
         Schedule result = scheduleService.get(tetrameter, year)
 
         respond([schedule: result], view: "/schedule/scheduleFileLink")
+    }
+
+    @Secured(['ROLE_USER', 'ROLE_ADMIN'])
+    def check(Integer tetrameter, Integer year) {
+        render(contentType: 'application/json') {
+            result(status: true)
+        }
+    }
+
+    @Secured('permitAll')
+    def loadFile(String fileName) {
+        File file = uploadScheduleFileService.loadFile(fileName)
+        response.setContentType("application/vnd.ms-excel")
+        response.setHeader("Content-disposition", "attachment;filename=${fileName}")
+        file.withInputStream { response.outputStream << it }
     }
 }

@@ -26,7 +26,12 @@
                             <label for="yearSelect">Учебный год</label>
                             <select class="form-control" id="yearSelect" onchange="loadSchedule()">
                                 <g:each in="${availableYears}" var="year">
-                                    <option>${year}</option>
+                                    <g:if test="${currentYear == year}">
+                                        <option selected>${year}</option>
+                                    </g:if>
+                                    <g:else>
+                                        <option>${year}</option>
+                                    </g:else>
                                 </g:each>
                             </select>
                         </div>

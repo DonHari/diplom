@@ -69,9 +69,9 @@ class UploadScheduleFileServiceImplService implements UploadScheduleFileService 
     }
 
     @Override
-    File loadFile(Schedule schedule) {
+    File loadFile(String fileName) {
         String schedulePath = getSchedulePath()
-        checkIfFileExists(schedulePath, schedule.fileName)
-        loadFile(schedulePath, schedule.fileName)
+        checkIfFileExists(schedulePath, fileName)
+        loadFile(schedulePath, fileName)
     }
 }

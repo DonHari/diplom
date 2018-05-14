@@ -10,10 +10,10 @@
             <div class="col-6 content pt-3 pb-3">
                 <div class="row">
                     <div class="col-12" id="newsError">
-
+                        %{--error here--}%
                     </div>
                 </div>
-                <form action="${createLink(action: 'save')}" method="post" enctype="multipart/form-data" %{--id="save" name="save"--}%>
+                <form action="${createLink(action: 'save')}" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label class="control-label" for="newsName">Заголовок новости</label>
                         <input class="form-control" type="text" id="newsName" maxlength="50" oninput="newsNameInput()" value="${name}" name="name" onblur="validateNewsNameInput()"/>
@@ -23,7 +23,7 @@
                         <label class="control-label" for="newsPhoto">Главная фотография</label>
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input cursor-pointer" id="newsPhoto" oninput="photoInput('newsPhoto')" accept=".jpg,.jpeg,.png" value="${photo}" name="photo" onblur="validatePhotoExtension('#newsPhoto')">
+                                <input type="file" class="custom-file-input cursor-pointer" id="newsPhoto" oninput="fileInput('newsPhoto')" accept=".jpg,.jpeg,.png" value="${photo}" name="photo" onblur="validatePhotoExtension('#newsPhoto')">
                                 <label class="custom-file-label" for="newsPhoto" id="newsPhotoName">Выберите файл</label>
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                                     <div class="form-group mb-3">
                                         <div class="input-group">
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input cursor-pointer" id="assignedPhoto1" oninput="photoInput('assignedPhoto1')" accept=".jpg,.jpeg,.png" value="${photo}" name="assignedPhoto1" onblur="validatePhotoExtension('#assignedPhoto1')">
+                                                <input type="file" class="custom-file-input cursor-pointer" id="assignedPhoto1" oninput="fileInput('assignedPhoto1')" accept=".jpg,.jpeg,.png" value="${photo}" name="assignedPhoto1" onblur="validatePhotoExtension('#assignedPhoto1')">
                                                 <label class="custom-file-label" for="assignedPhoto1" id="assignedPhoto1Name">Выберите файл</label>
                                             </div>
                                         </div>

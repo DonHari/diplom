@@ -11,8 +11,6 @@ interface ScheduleService {
 
     Integer count()
 
-    Schedule updateFile(Long scheduleId, Integer version, String fileName)
-
     List<Integer> listAvailableYears()
 
     Schedule get(Integer tetrameter, Integer year)
