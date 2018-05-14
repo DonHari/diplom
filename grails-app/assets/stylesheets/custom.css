@@ -84,20 +84,32 @@ nav div ul:last-child {
     line-height: 1.5;
 }
 
-.align-items-bottom {
-    display: flex;
-    align-items: flex-end; /*Aligns vertically center */
-    justify-content: flex-end; /*Aligns horizontally center */
-}
-
 .h-10 {
     height: 10% !important;
 }
 
-.h-20 {
-    height: 20% !important;
+.h-30 {
+    height: 30% !important;
 }
 
-.h-70 {
-    height: 70% !important;
+.h-60 {
+    height: 60% !important;
+}
+
+.news-divider {
+    margin-left: -15px;
+    width: auto;
+    margin-right: -15px;
+}
+
+.custom-modal-dialog {
+    max-width: 70% !important;
+}
+
+.custom-img-responsive {
+    width: 100%;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }

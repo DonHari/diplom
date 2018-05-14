@@ -10,7 +10,6 @@ class News {
     Date lastUpdated
 
     static hasMany = [assignedPhotos: Photo]
-//    static hasOne = [photo: Photo]
 
     static belongsTo = [author: User]
 

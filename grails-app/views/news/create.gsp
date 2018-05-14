@@ -23,7 +23,7 @@
                         <label class="control-label" for="newsPhoto">Главная фотография</label>
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="newsPhoto" oninput="photoInput('newsPhoto')" accept=".jpg,.jpeg,.png" value="${photo}" name="photo" onblur="validatePhotoExtension('#newsPhoto')">
+                                <input type="file" class="custom-file-input cursor-pointer" id="newsPhoto" oninput="photoInput('newsPhoto')" accept=".jpg,.jpeg,.png" value="${photo}" name="photo" onblur="validatePhotoExtension('#newsPhoto')">
                                 <label class="custom-file-label" for="newsPhoto" id="newsPhotoName">Выберите файл</label>
                             </div>
                         </div>
@@ -31,8 +31,8 @@
                     </div>
                     <div class="form-group">
                         <label for="descNews">Краткое описание</label>
-                        <textarea class="form-control" id="descNews" rows="3" style="margin-top: 0; margin-bottom: 0; height: 129px;" maxlength="100" oninput="newsDescInput()" name="description">${description}</textarea>
-                        <small id="descNewsLeft" class="form-text text-muted">Осталось символов: 100</small>
+                        <textarea class="form-control" id="descNews" rows="3" style="margin-top: 0; margin-bottom: 0; height: 129px;" maxlength="200" oninput="newsDescInput()" name="description">${description}</textarea>
+                        <small id="descNewsLeft" class="form-text text-muted">Осталось символов: 200</small>
                     </div>
                     <div class="form-group">
                         <label for="newsContent">Содержание новости</label>
@@ -53,7 +53,7 @@
                                     <div class="form-group mb-3">
                                         <div class="input-group">
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="assignedPhoto1" oninput="photoInput('assignedPhoto1')" accept=".jpg,.jpeg,.png" value="${photo}" name="photo" onblur="validatePhotoExtension('#assignedPhoto1')">
+                                                <input type="file" class="custom-file-input cursor-pointer" id="assignedPhoto1" oninput="photoInput('assignedPhoto1')" accept=".jpg,.jpeg,.png" value="${photo}" name="assignedPhoto1" onblur="validatePhotoExtension('#assignedPhoto1')">
                                                 <label class="custom-file-label" for="assignedPhoto1" id="assignedPhoto1Name">Выберите файл</label>
                                             </div>
                                         </div>

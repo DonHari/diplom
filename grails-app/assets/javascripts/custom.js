@@ -106,13 +106,7 @@ function validatePhotoExtension(source) {
 }
 
 function newsDescInput() {
-    maxInput(100, '#descNews', '#descNewsLeft');
-    // var maxLength = 100;
-    // var currentInput = $('#descNews').val();
-    // var left = maxLength - currentInput.length;
-    // var currentText = $('#descNewsLeft').text();
-    // currentText = currentText.substring(0, currentText.indexOf(': ') + 2);
-    // $('#descNewsLeft').text(currentText + left);
+    maxInput(200, '#descNews', '#descNewsLeft');
 }
 
 function maxInput(maxLength, source, target) {
@@ -135,8 +129,13 @@ function addAssignedPhoto() {
     }
     currentCount++;
     $('#assignedPhotosCount').val(currentCount);
-    $('#assignedPhotos').append('<div class="form-group mb-3"><div class="input-group"><div class="custom-file"><input type="file" class="custom-file-input" id="assignedPhoto' + currentCount + '" oninput="photoInput(\'assignedPhoto' + currentCount + '\')" accept=".jpg,.jpeg,.png" value="${photo}" name="photo" onblur="validatePhotoExtension(\'#assignedPhoto' + currentCount + '\')"><label class="custom-file-label" for="assignedPhoto' + currentCount + '" id="assignedPhoto' + currentCount + 'Name">Выберите файл</label></div></div></div>');
+    $('#assignedPhotos').append('<div class="form-group mb-3"><div class="input-group"><div class="custom-file"><input type="file" class="custom-file-input" id="assignedPhoto' + currentCount + '" oninput="photoInput(\'assignedPhoto' + currentCount + '\')" accept=".jpg,.jpeg,.png" value="${photo}" name="assignedPhoto' + currentCount + '" onblur="validatePhotoExtension(\'#assignedPhoto' + currentCount + '\')"><label class="custom-file-label" for="assignedPhoto' + currentCount + '" id="assignedPhoto' + currentCount + 'Name">Выберите файл</label></div></div></div>');
     if (currentCount === 12) {
-        $('#addAssignedPhotoBtn').addClass('disabled').prop('onclick',null).off('click');;
+        $('#addAssignedPhotoBtn').addClass('disabled').prop('onclick', null).off('click');
+        ;
     }
+}
+
+function showImagePopup(source) {
+    $('#' + source).modal('toggle');
 }

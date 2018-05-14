@@ -4,7 +4,7 @@ import diplom.commands.NewsCommand
 import diplom.validator.Validate
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
-import grails.util.Environment
+import org.springframework.web.multipart.MultipartFile
 
 import static org.springframework.http.HttpStatus.*
 
@@ -15,26 +15,9 @@ class NewsController {
 
     @Secured('permitAll')
     def index(Integer offset, Integer max) {
-//        fillDb()
         List<News> newsList = newsService.list(offset, max)
         Long newsCount = newsService.count()
         respond(newsList, model: [newsCount: newsCount, maxPerPage: PageUtil.getMaxValue(max)])
-    }
-
-    private void fillDb() {
-        if (Environment.current.name == 'development' && News.count == 0) {
-            File file = new File('grails-app\\assets\\images\\news\\img1.png')
-            Photo photo = new Photo(file: file.getBytes()).save(flush: true)
-            User user = new User(name: "test", secondName: "test", surname: "test", username: "test", password: "test", email: "test@test.com").save(flush: true)
-            for (int i = 0; i < 100; i++) {
-                String desc = ''
-                Random random = new Random(System.nanoTime());
-                for (int o = 0; o < random.nextInt(150) + 50; o++) {
-                    desc += 't'
-                }
-                new News(photo: photo, author: user, name: "Test name ${i}", description: desc, content: "Test content ${i}").save(flush: true)
-            }
-        }
     }
 
     @Secured('permitAll')
@@ -50,11 +33,49 @@ class NewsController {
     @Secured("ROLE_USER")
     @Transactional
     def save(NewsCommand newsCommand) {
+        List<MultipartFile> assignedPhotos = new LinkedList<>()
+        if(params.assignedPhoto1){
+            assignedPhotos.add(params.assignedPhoto1)
+        }
+        if(params.assignedPhoto2){
+            assignedPhotos.add(params.assignedPhoto2)
+        }
+        if(params.assignedPhoto3){
+            assignedPhotos.add(params.assignedPhoto3)
+        }
+        if(params.assignedPhoto4){
+            assignedPhotos.add(params.assignedPhoto4)
+        }
+        if(params.assignedPhoto5){
+            assignedPhotos.add(params.assignedPhoto5)
+        }
+        if(params.assignedPhoto6){
+            assignedPhotos.add(params.assignedPhoto6)
+        }
+        if(params.assignedPhoto7){
+            assignedPhotos.add(params.assignedPhoto7)
+        }
+        if(params.assignedPhoto8){
+            assignedPhotos.add(params.assignedPhoto8)
+        }
+        if(params.assignedPhoto9){
+            assignedPhotos.add(params.assignedPhoto9)
+        }
+        if(params.assignedPhoto10){
+            assignedPhotos.add(params.assignedPhoto10)
+        }
+        if(params.assignedPhoto11){
+            assignedPhotos.add(params.assignedPhoto11)
+        }
+        if(params.assignedPhoto12){
+            assignedPhotos.add(params.assignedPhoto12)
+        }
+        newsCommand.assignedPhotos = assignedPhotos
         Validate.hasNoErrors(newsCommand)
 
         News savedNews = newsService.save(newsCommand)
 
-        respond(savedNews, status: CREATED, view: "/news/show")
+        redirect(model: savedNews, view: "/news/show")
     }
 
     @Secured("ROLE_USER")

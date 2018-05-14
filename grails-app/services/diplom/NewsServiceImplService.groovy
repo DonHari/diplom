@@ -32,8 +32,8 @@ class NewsServiceImplService implements NewsService {
     @Override
     News save(NewsCommand command) {
         Photo photo = imageService.save(command.photo.bytes)
-//        List<Photo> assignedPhotos = imageService.saveAll(command.assignedPhotos.collect { it.bytes } as List<Byte[]>)
-        News news = new News(name: command.name, description: command.description, content: command.content, photo: photo/*, assignedPhotos: assignedPhotos*/)
+        List<Photo> assignedPhotos = imageService.saveAll(command.assignedPhotos.collect { it.bytes } as List<Byte[]>)
+        News news = new News(name: command.name, description: command.description, content: command.content, photo: photo, assignedPhotos: assignedPhotos)
         news.author = securityService.getAuthorizedUser()
         news.save()
     }
