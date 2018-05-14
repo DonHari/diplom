@@ -119,7 +119,16 @@ function maxInput(maxLength, source, target) {
 }
 
 function fileInput(source) {
-    $('#' + source + 'Name').text(document.getElementById(source).files[0].name);
+    var fullPath = document.getElementById(source).value;
+    if (fullPath) {
+        var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+        var filename = fullPath.substring(startIndex);
+        if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+            filename = filename.substring(1);
+        }
+        console.log(filename);
+        $('#' + source + 'Name').text(filename);
+    }
 }
 
 function addAssignedPhoto() {
