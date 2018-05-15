@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru" class="no-js">
+<html lang="uk" class="no-js">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,58 +22,49 @@
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item" id="newsHeader" onclick="setNewsHeaderActive()">
-                        <a class="nav-link" onclick="setNewsHeaderActive()" href="/" ><g:message code="header.news" default="News"/></a>
+                        <a class="nav-link" onclick="setNewsHeaderActive()" href="/" ><g:message code="header.news"/></a>
                     </li>
                     <li class="nav-item" id="enrolleeHeader">
-                        <a class="nav-link" onclick="setEnrolleeHeaderActive()" href="#"><g:message code="header.enrollee" default="For enrollee"/></a>
+                        <a class="nav-link" onclick="setEnrolleeHeaderActive()" href="#"><g:message code="header.enrollee"/></a>
                     </li>
                     <li class="nav-item" id="studentsHeader">
-                        <a class="nav-link" onclick="setStudentsHeaderActive()" href="/students"><g:message code="header.student" default="For students"/></a>
+                        <a class="nav-link" onclick="setStudentsHeaderActive()" href="/students"><g:message code="header.student"/></a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item" id="langEN">
-                        <a class="nav-link" href="?lang=en" onclick="langEnClicked()"><g:message code="language.en" default="EN"/></a>
-                    </li>
-                    <li class="nav-item" id="langRU">
-                        <a class="nav-link" href="?lang=ru" onclick="langRuClicked()"><g:message code="language.ru" default="RU"/></a>
-                    </li>
-                    <li class="nav-item" id="langUA">
-                        <a class="nav-link" href="?lang=ua" onclick="langUaClicked()"><g:message code="language.ua" default="UA"/></a>
-                    </li>
                     <sec:ifNotLoggedIn>
                         <li class="nav-item ml-5" id="authorize">
-                            <a class="nav-link" href="${createLink(controller: 'login', action: 'auth')}"><g:message code="header.auth.signin" default="Sign-in"/></a>
+                            <a class="nav-link" href="${createLink(controller: 'login', action: 'auth')}"><g:message code="header.auth.signin"/></a>
                         </li>
                     </sec:ifNotLoggedIn>
                     <sec:ifLoggedIn>
                         <sec:ifAllGranted roles="ROLE_ADMIN">
                             <div class="btn-group ml-5">
-                                <button type="button" class="btn btn-primary"><g:message code="header.auth.account" default="Account"/></button>
+                                <button type="button" class="btn btn-primary"><g:message code="header.auth.account"/></button>
                                 <div class="btn-group" role="group">
                                     <button id="adminDrop" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                     <div class="dropdown-menu custom-dropdown-right bg-primary" aria-labelledby="adminDrop" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0; left: 0; transform: translate3d(0px, 36px, 0px);">
-                                        <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'news', action: 'create')}"><g:message code="header.news.add" default="Add news"/></a>
-                                        <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'schedule', action: 'create')}"><g:message code="header.schedule.add" default="Add schedule"/></a>
-                                        <a class="dropdown-item custom-dropdown-links" href="#"><g:message code="header.faq.add" default="Add FAQ"/></a>
-                                        <a class="dropdown-item custom-dropdown-links" href="#"><g:message code="header.user.managing" default="Managing users"/></a>
+                                        <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'news', action: 'create')}"><g:message code="header.user.add.news"/></a>
+                                        <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'schedule', action: 'create')}"><g:message code="header.user.add.schedule"/></a>
+                                        <a class="dropdown-item custom-dropdown-links" href="#"><g:message code="header.user.add.faq"/></a>
+                                        <a class="dropdown-item custom-dropdown-links" href="#"><g:message code="header.user.managing"/></a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item custom-dropdown-links" href="/logout"><g:message code="auth.logout" default="Log out"/></a>
+                                        <a class="dropdown-item custom-dropdown-links" href="/logout"><g:message code="auth.logout"/></a>
                                     </div>
                                 </div>
                             </div>
                         </sec:ifAllGranted>
                         <sec:ifAllGranted roles="ROLE_USER">
                             <div class="btn-group ml-5">
-                                <button type="button" class="btn btn-primary"><g:message code="header.auth.account" default="Account"/></button>
+                                <button type="button" class="btn btn-primary"><g:message code="header.auth.account"/></button>
                                 <div class="btn-group" role="group">
                                     <button id="userDrop" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                     <div class="dropdown-menu custom-dropdown-right bg-primary" aria-labelledby="userDrop" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0; left: 0px; transform: translate3d(0px, 36px, 0px);">
-                                        <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'news', action: 'create')}"><g:message code="header.news.add" default="Add news"/></a>
-                                        <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'schedule', action: 'create')}"><g:message code="header.schedule.add" default="Add schedule"/></a>
-                                        <a class="dropdown-item custom-dropdown-links" href="#"><g:message code="header.faq.add" default="Add FAQ"/></a>
+                                        <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'news', action: 'create')}"><g:message code="header.user.add.news"/></a>
+                                        <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'schedule', action: 'create')}"><g:message code="header.user.add.schedule"/></a>
+                                        <a class="dropdown-item custom-dropdown-links" href="#"><g:message code="header.user.add.faq"/></a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item custom-dropdown-links" href="/logout"><g:message code="auth.logout" default="Log out"/></a>
+                                        <a class="dropdown-item custom-dropdown-links" href="/logout"><g:message code="auth.logout"/></a>
                                     </div>
                                 </div>
                             </div>
@@ -91,7 +82,7 @@
                 <div class="col-5">
                     <div class="row">
                         <div class="col-4">
-                            <a class="custom-footer-link" href="http://udhtu.edu.ua/ftk/knti">Факультет КНтаІ</a>
+                            <a class="custom-footer-link" href="http://udhtu.edu.ua/ftk/knti"><g:message code="footer.goto.faculty"/></a>
                         </div>
                         <div class="col-4">
                             +38 (0562) 47-35-05
@@ -102,7 +93,7 @@
                     </div>
                     <div class="row pt-3">
                         <div class="col-4">
-                            <a class="custom-footer-link" href="http://udhtu.edu.ua/ftk/knti/kafsks">Кафедра СКС</a>
+                            <a class="custom-footer-link" href="http://udhtu.edu.ua/ftk/knti/kafsks"><g:message code="footer.goto.cathedra"/></a>
                         </div>
                         <div class="col-4">
                             +38 (056) 753-57-26
@@ -113,12 +104,11 @@
                     </div>
                 </div>
                 <div class="offset-2"></div>
-                %{--link to site--}%
                 <div class="col-5">
                     <div class="row">
                         <div class="offset-6"></div>
                         <div class="col-6">
-                            <a class="custom-footer-link" href="http://udhtu.edu.ua/">Перейти на сайт УДХТУ</a>
+                            <a class="custom-footer-link" href="http://udhtu.edu.ua/"><g:message code="footer.goto.mainsite"/></a>
                         </div>
                     </div>
                     <div class="row pt-3">
@@ -130,6 +120,6 @@
                 </div>
             </div>
         </div>
-        <div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
+        <div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt"/></div>
     </body>
 </html>

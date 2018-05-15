@@ -1,8 +1,8 @@
 package spring
 
 import diplom.*
-import diplom.i18n.CustomLocaleResolver
 import org.springframework.security.authentication.encoding.PlaintextPasswordEncoder
+import org.springframework.web.servlet.i18n.FixedLocaleResolver
 
 beans = {
     faqService(FaqServiceImplService) {
@@ -34,10 +34,11 @@ beans = {
         ref('uploadScheduleFileService')
         scheduleService = ref('scheduleService')
     }
-    imageService(ImageServiceImplService){
+    imageService(ImageServiceImplService) {
         ref('imageService')
     }
-    localeResolver(CustomLocaleResolver)
+    localeResolver(FixedLocaleResolver, new Locale('uk', 'UA'))
+
     //disables password encoder
     passwordEncoder(PlaintextPasswordEncoder)
 }

@@ -14,6 +14,8 @@ spring:
             check-template-location: false
 
 ---
+server:
+    port: 8090
 grails:
     mime:
         disable:
@@ -114,8 +116,6 @@ grails:
             logout:
                 postOnly: false
     languages:
-        - en
-        - ru
         - uk
 ---
 hibernate:

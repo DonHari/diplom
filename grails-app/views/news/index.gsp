@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta name="layout" content="main" />
-        <title><g:message code="header.news" default="News"/></title>
+        <title><g:message code="header.news"/></title>
     </head>
     <body>
         <div class="row">
@@ -11,7 +11,7 @@
                 <g:each in="${newsList}" var="news" status="i">
                     <div class="row news-item">
                         <div class="col-4">
-                            <img  class="card-img" src="${createLink(controller: "image", action: "get", params: [id: news.photo.id])}" alt="${message(code:'image.cant.upload',default:"Can't upload an image.")}"/>
+                            <img class="card-img news-main-photo" src="${createLink(controller: "image", action: "get", params: [id: news.photo.id])}" alt="${message(code:'image.cant.upload',default:"Can't upload an image.")}"/>
                         </div>
                         <div class="col-8 pl-4 pr-4 flex-column">
                             <div class="row h-30">

@@ -1,36 +1,15 @@
-var scheduleYearCorrect = true;//it's 2018 by default
-var scheduleFileAttached = false;
+var scheduleYearValid = true;//it have correct value by default
+var scheduleFileValid = false;
+
+var newsNameValid = false;
+var newsMainPhotoValid = false;
+var newsDescriptionValid = false;
+var newsContentValid = false;
+var newsAssignedPhotosValid = false;
+
+var newsAssignedPhotoIds = ['assignedPhoto1'];
 
 function layoutLoaded() {
-    viewActiveLang();
-}
-
-function viewActiveLang() {
-    var locale = getCookie("locale");
-    console.log(window.location.href);
-    if (locale.toLowerCase() === "ru") {
-        document.getElementById('langRU').classList.add('active');
-    } else if (locale.toLowerCase() === "ua") {
-        document.getElementById('langUA').classList.add('active');
-    } else {
-        document.getElementById('langEN').classList.add('active');
-    }
-}
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) === ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) === 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
 }
 
 function loadStudcityPage() {
@@ -42,6 +21,7 @@ function loadStudcityPage() {
 }
 
 function loadSchedulePage() {
+    console.log('loadSchedulePage');
     $("#studentsStudcity").removeClass('active');
     $("#studentsSchedule").addClass('active');
     $("#content").load(
@@ -79,30 +59,16 @@ function loadSchedule() {
     );
 }
 
-function newsContentInput() {
-    maxInput(5000, '#newsContent', '#newsContentLeft');
-}
-
-function newsNameInput() {
-    maxInput(50, '#newsName', '#newsNameLeft')
-}
-
-function validateNewsNameInput() {
-    if ($('#newsName').val().length === 0) {
-        $('#newsError #newsErrorAlert').remove();
-        $('#newsError').append('<div class="alert alert-dismissible alert-danger" id="newsErrorAlert"><button type="button" class="close" data-dismiss="alert">&times;</button><span id="newsErrorText">name cannot be empty</span></div>');
-    }
-}
-
-function validatePhotoExtension(source) {
-    var fileName = $(source).val();
+function validatePhotoExtension(fileName) {
     if (fileName.length === 0) {
-        return;
+        return false;
     }
     if (!fileName.endsWith('.jpg') && !fileName.endsWith('.png') && !fileName.endsWith('.jpeg')) {
         $('#newsError #newsErrorAlert').remove();
         $('#newsError').append('<div class="alert alert-dismissible alert-danger" id="newsErrorAlert"><button type="button" class="close" data-dismiss="alert">&times;</button><span id="newsErrorText">Not valid extension</span></div>');
+        return false;
     }
+    return true;
 }
 
 function newsDescInput() {
@@ -119,17 +85,76 @@ function maxInput(maxLength, source, target) {
 }
 
 $(document).ready(function () {
+    $('#newsName').on({
+        input: function () {
+            maxInput(50, '#' + this.id, '#' + this.id + 'Left')
+        },
+        change: function () {
+            if ($(this).val().length === 0) {
+                $(this).removeClass('is-valid').addClass('is-invalid');
+                newsNameValid = false;
+            } else {
+                $(this).removeClass('is-invalid').addClass('is-valid');
+                newsNameValid = true;
+            }
+            enableNewsSendButton();
+        },
+        blur: function () {
+            if ($(this).val().length === 0) {
+                $(this).removeClass('is-valid').addClass('is-invalid');
+                newsNameValid = false;
+            }
+            $(this).removeClass('is-valid');
+        }
+    });
     $('#scheduleFile').on({
         input: function () {
-            fileInput('scheduleFile');
+            var fileName = fileInput(this.id);
+            if (validateScheduleExtension(fileName)) {
+                $('#' + this.id + 'Name').text(fileName);
+                scheduleFileValid = true;
+            } else {
+                $(this).val('');
+                $('#' + this.id + 'Name').text('Оберіть файл');
+                scheduleFileValid = false;
+            }
             enableScheduleSaveButton();
         },
         change: function () {
-            fileInput('scheduleFile');
+            var fileName = fileInput(this.id);
+            if (validateScheduleExtension(fileName)) {
+                $('#' + this.id + 'Name').text(fileName);
+                scheduleFileValid = true;
+            } else {
+                $(this).val('');
+                $('#' + this.id + 'Name').text('Оберіть файл');
+                scheduleFileValid = false;
+            }
             enableScheduleSaveButton();
+        }
+    });
+    $('#newsPhoto').on({
+        input: function () {
+            var fileName = fileInput(this.id);
+            if (validatePhotoExtension(fileName)) {
+                $('#' + this.id + 'Name').text(fileName);
+                newsMainPhotoValid = true;
+            } else {
+                $(this).val('');
+                newsMainPhotoValid = false;
+            }
+            enableNewsSendButton();
         },
-        blur: function () {
-            $(this).removeClass('is-valid').removeClass('is-invalid');
+        change: function () {
+            var fileName = fileInput(this.id);
+            if (validatePhotoExtension(fileName)) {
+                $('#' + this.id + 'Name').text(fileName);
+                newsMainPhotoValid = true;
+            } else {
+                $(this).val('');
+                newsMainPhotoValid = false;
+            }
+            enableNewsSendButton();
         }
     });
     $('#scheduleYear').on({
@@ -137,10 +162,10 @@ $(document).ready(function () {
             var currentValue = this.value;
             if (currentValue < 2018 || currentValue > 2030) {
                 $(this).removeClass('is-valid').addClass('is-invalid');
-                scheduleYearCorrect = false;
+                scheduleYearValid = false;
             } else {
                 $(this).removeClass('is-invalid').addClass('is-valid');
-                scheduleYearCorrect = true;
+                scheduleYearValid = true;
             }
             enableScheduleSaveButton();
         },
@@ -154,30 +179,98 @@ $(document).ready(function () {
             }
         }
     });
+    $('#assignedPhoto1').on({
+        input: function () {
+            var fileName = fileInput(this.id);
+            if (validatePhotoExtension(fileName)) {
+                $('#' + this.id + 'Name').text(fileName);
+            } else {
+                $(this).val('');
+            }
+            validateNewsAssignedPhotos();
+            enableNewsSendButton();
+        },
+        change: function () {
+            var fileName = fileInput(this.id);
+            if (validatePhotoExtension(fileName)) {
+                $('#' + this.id + 'Name').text(fileName);
+            } else {
+                $(this).val('');
+            }
+            validateNewsAssignedPhotos();
+            enableNewsSendButton();
+        }
+    });
+    $('#newsContent').on({
+        input: function () {
+            maxInput(5000, '#' + this.id, '#' + this.id + 'Left')
+        },
+        change: function () {
+            if ($(this).val().length === 0) {
+                $(this).removeClass('is-valid').addClass('is-invalid');
+                newsContentValid = false;
+            } else {
+                $(this).removeClass('is-invalid').addClass('is-valid');
+                newsContentValid = true;
+            }
+            enableNewsSendButton();
+        },
+        blur: function () {
+            if ($(this).val().length === 0) {
+                $(this).removeClass('is-valid').addClass('is-invalid');
+                newsContentValid = false;
+            }
+            $(this).removeClass('is-valid');
+        }
+    });
+    $('#newsDescription').on({
+        input: function () {
+            maxInput(200, '#' + this.id, '#' + this.id + 'Left')
+        },
+        change: function () {
+            if ($(this).val().length === 0) {
+                $(this).removeClass('is-valid').addClass('is-invalid');
+                newsDescriptionValid = false;
+            } else {
+                $(this).removeClass('is-invalid').addClass('is-valid');
+                newsDescriptionValid = true;
+            }
+            enableNewsSendButton();
+        },
+        blur: function () {
+            if ($(this).val().length === 0) {
+                $(this).removeClass('is-valid').addClass('is-invalid');
+                newsDescriptionValid = false;
+            }
+            $(this).removeClass('is-valid');
+        }
+    });
 });
 
 function fileInput(source) {
     var fullPath = document.getElementById(source).value;
+    console.log(fullPath);
     if (fullPath) {
         var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
         var filename = fullPath.substring(startIndex);
         if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
             filename = filename.substring(1);
         }
-        if (!filename.endsWith('.xls') && !filename.endsWith('.xlsx') && !filename.endsWith('.csv')) {
-            scheduleFileAttached = false;
-            $('#' + source).addClass('is-invalid').removeClass('is-valid');
-            $('#' + source + 'Name').text('Выберите файл');
-        } else {
-            scheduleFileAttached = true;
-            $('#' + source).addClass('is-valid').removeClass('is-invalid');
-            $('#' + source + 'Name').text(filename);
-        }
+        return filename;
     }
+    return null;
+}
+
+function validateScheduleExtension(fileName) {
+    if (fileName.length === 0) {
+        return false;
+    }
+    return fileName.endsWith('.xls') || fileName.endsWith('.xlsx') || fileName.endsWith('.csv');
+
 }
 
 function enableScheduleSaveButton() {
-    if (scheduleYearCorrect && scheduleFileAttached) {
+    if (scheduleYearValid && scheduleFileValid) {
         $('#scheduleSaveButton').removeClass('disabled');
     } else if (!$('#scheduleSaveButton').hasClass('disabled')) {
         $('#scheduleSaveButton').addClass('disabled');
@@ -190,11 +283,14 @@ function addAssignedPhoto() {
         return;
     }
     currentCount++;
+    var newId = 'assignedPhoto' + currentCount;
+    newsAssignedPhotoIds.push(newId);
     $('#assignedPhotosCount').val(currentCount);
-    $('#assignedPhotos').append('<div class="form-group mb-3"><div class="input-group"><div class="custom-file"><input type="file" class="custom-file-input" id="assignedPhoto' + currentCount + '" oninput="fileInput(\'assignedPhoto' + currentCount + '\')" accept=".jpg,.jpeg,.png" value="${photo}" name="assignedPhoto' + currentCount + '" onblur="validatePhotoExtension(\'#assignedPhoto' + currentCount + '\')"><label class="custom-file-label" for="assignedPhoto' + currentCount + '" id="assignedPhoto' + currentCount + 'Name">Выберите файл</label></div></div></div>');
+    $('#assignedPhotos').append('<div class="form-group mb-3"><div class="input-group"><div class="custom-file"><input type="file" class="custom-file-input" id="' + newId + '" accept=".jpg,.jpeg,.png" value="${photo}" name="' + newId + '" oninput="validateNewsAssignedPhotos()" onchange="validateNewsAssignedPhotos()"><label class="custom-file-label" for="' + newId + '" id="assignedPhoto' + currentCount + 'Name">Оберіть файл</label></div></div></div>');
+    $('#assignedPhotos').append('<script>$(document).ready(function () {$("#' + newId + '").on({input: function () {var fileName = fileInput(this.id);if (validatePhotoExtension(fileName)) {$("#" + this.id + "Name").text(fileName);} else {$(this).val("");}validateNewsAssignedPhotos();enableNewsSendButton();},change: function () {var fileName = fileInput(this.id);if (validatePhotoExtension(fileName)) {$("#" + this.id + "Name").text(fileName);} else {$(this).val("");}validateNewsAssignedPhotos();enableNewsSendButton();}});});</script>');
+    validateNewsAssignedPhotos();
     if (currentCount === 12) {
         $('#addAssignedPhotoBtn').addClass('disabled').prop('onclick', null).off('click');
-        ;
     }
 }
 
@@ -203,7 +299,7 @@ function showImagePopup(source) {
 }
 
 function checkIfScheduleExists() {
-    if (!(scheduleFileAttached && scheduleYearCorrect)) {
+    if (!(scheduleFileValid && scheduleYearValid)) {
         return false;
     }
     var url = window.location.protocol + '//' + window.location.host + '/schedule/check?tetrameter=';
@@ -211,7 +307,6 @@ function checkIfScheduleExists() {
     url += tetrameter.options[tetrameter.selectedIndex].value;
     url += '$year=';
     url += $('#year').val();
-    console.log(url);
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, false);
     xhr.send();
@@ -219,5 +314,29 @@ function checkIfScheduleExists() {
         return confirm('Расписание на этот тетраместр и учебный год существует. Вы хотите его перезаписать?');
     } else {
         return true;
+    }
+}
+
+function validateNewsAssignedPhotos() {
+    var flag = true;
+    console.clear();
+    newsAssignedPhotoIds.forEach(function (value) {
+        if ($('#' + value).val() === '') {
+            console.log(value + ' false');
+            flag = false;
+        }
+    });
+    newsAssignedPhotosValid = flag;
+}
+
+function checkNewsFields() {
+    return newsNameValid && newsMainPhotoValid && newsDescriptionValid && newsContentValid && newsAssignedPhotosValid;
+}
+
+function enableNewsSendButton() {
+    if (!checkNewsFields() && !$('#newsSendButton').hasClass('disabled')) {
+        $('#newsSendButton').addClass('disabled');
+    } else if (checkNewsFields() && $('#newsSendButton').hasClass('disabled')) {
+        $('#newsSendButton').removeClass('disabled');
     }
 }

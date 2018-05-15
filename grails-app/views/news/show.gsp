@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta name="layout" content="main"/>
-        <title>NEWS</title>
+        <title>${news.name}</title>
     </head>
     <body>
         <div class="row">

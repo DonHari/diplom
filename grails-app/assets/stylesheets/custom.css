@@ -113,3 +113,7 @@ nav div ul:last-child {
 .cursor-pointer {
     cursor: pointer;
 }
+
+.news-main-photo {
+    height: 250px;
+}

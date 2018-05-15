@@ -25,7 +25,6 @@
         </div>
         <script>
             window.onload = function (ev) {
-                viewActiveLang();
                 loadSchedulePage();
             }
         </script>

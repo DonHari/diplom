@@ -1,9 +1,8 @@
 <!doctype html>
 <html>
     <head>
-        <title><g:message code="auth.title" default="Sign in"/></title>
+        <title><g:message code="auth.title"/></title>
         <meta name="layout" content="main">
-        <g:if env="development"><asset:stylesheet src="errors.css"/></g:if>
     </head>
     <body>
         <div class="row">
@@ -17,18 +16,18 @@
                 </g:if>
                 <form action="${postUrl ?: '/login/authenticate'}" method="POST" id="loginForm" >
                     <div class="form-group">
-                        <label class="control-label" for="username"><g:message code="auth.username" default="Username"/></label>
+                        <label class="control-label" for="username"><g:message code="auth.username"/></label>
                         <input class="form-control" id="username" type="text" name="${usernameParameter ?: 'username'}">
                     </div>
                     <div class="form-group">
-                        <label class="control-label" for="password"><g:message code='auth.password' default="Password"/>:</label>
+                        <label class="control-label" for="password"><g:message code='auth.password'/>:</label>
                         <input class="form-control" type="password" name="${passwordParameter ?: 'password'}" id="password"/>
                     </div>
                     <div class="form-check pb-2">
                         <input type="checkbox" class="form-check-input" id="rememberMe" name="${rememberMeParameter ?: 'remember-me'}" <g:if test="${hasCookie}">checked="checked"</g:if>/>
-                        <label for="rememberMe"><g:message code="auth.remember" default="Remember me"/></label>
+                        <label for="rememberMe"><g:message code="auth.remember"/></label>
                     </div>
-                    <input class="btn btn-outline-primary" type="submit" id="submit" value="${message(code:'auth.button.login', default: 'Login')}"/>
+                    <input class="btn btn-outline-primary" type="submit" id="submit" value="${message(code:'auth.button.login')}"/>
                 </form>
             </div>
             <div class="offset-4"></div>
