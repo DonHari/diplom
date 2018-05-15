@@ -41,7 +41,7 @@ class ScheduleController {
 
         Schedule savedSchedule = scheduleService.save(scheduleCommand.getYear(), scheduleCommand.getTetrameter(), fileName)
 
-        respond(savedSchedule, status: CREATED, view: "/schedule/show")
+        respond(savedSchedule, status: CREATED, view: "/schedule/create", model: [justSaved: true])
     }
 
     @Secured(['ROLE_USER', 'ROLE_ADMIN'])

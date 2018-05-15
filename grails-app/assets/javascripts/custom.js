@@ -1,10 +1,10 @@
+var scheduleYearCorrect = true;//it's 2018 by default
+var scheduleFileAttached = false;
+
 function layoutLoaded() {
     viewActiveLang();
 }
 
-/**
- * Подсвечивает тот язык, который сейчас будет использоваться
- */
 function viewActiveLang() {
     var locale = getCookie("locale");
     console.log(window.location.href);
@@ -118,6 +118,44 @@ function maxInput(maxLength, source, target) {
     $(target).text(newText);
 }
 
+$(document).ready(function () {
+    $('#scheduleFile').on({
+        input: function () {
+            fileInput('scheduleFile');
+            enableScheduleSaveButton();
+        },
+        change: function () {
+            fileInput('scheduleFile');
+            enableScheduleSaveButton();
+        },
+        blur: function () {
+            $(this).removeClass('is-valid').removeClass('is-invalid');
+        }
+    });
+    $('#scheduleYear').on({
+        change: function () {
+            var currentValue = this.value;
+            if (currentValue < 2018 || currentValue > 2030) {
+                $(this).removeClass('is-valid').addClass('is-invalid');
+                scheduleYearCorrect = false;
+            } else {
+                $(this).removeClass('is-invalid').addClass('is-valid');
+                scheduleYearCorrect = true;
+            }
+            enableScheduleSaveButton();
+        },
+        blur: function () {
+            $(this).removeClass('is-valid');
+        },
+        focus: function () {
+            var currentValue = this.value;
+            if (currentValue >= 2018 && currentValue <= 2030) {
+                $(this).addClass('is-valid');
+            }
+        }
+    });
+});
+
 function fileInput(source) {
     var fullPath = document.getElementById(source).value;
     if (fullPath) {
@@ -126,8 +164,23 @@ function fileInput(source) {
         if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
             filename = filename.substring(1);
         }
-        console.log(filename);
-        $('#' + source + 'Name').text(filename);
+        if (!filename.endsWith('.xls') && !filename.endsWith('.xlsx') && !filename.endsWith('.csv')) {
+            scheduleFileAttached = false;
+            $('#' + source).addClass('is-invalid').removeClass('is-valid');
+            $('#' + source + 'Name').text('Выберите файл');
+        } else {
+            scheduleFileAttached = true;
+            $('#' + source).addClass('is-valid').removeClass('is-invalid');
+            $('#' + source + 'Name').text(filename);
+        }
+    }
+}
+
+function enableScheduleSaveButton() {
+    if (scheduleYearCorrect && scheduleFileAttached) {
+        $('#scheduleSaveButton').removeClass('disabled');
+    } else if (!$('#scheduleSaveButton').hasClass('disabled')) {
+        $('#scheduleSaveButton').addClass('disabled');
     }
 }
 
@@ -149,18 +202,10 @@ function showImagePopup(source) {
     $('#' + source).modal('toggle');
 }
 
-function validateScheduleExtension(source) {
-    var fileName = $(source).val();
-    if (fileName.length === 0) {
-        return;
-    }
-    if (!fileName.endsWith('.jpg') && !fileName.endsWith('.png') && !fileName.endsWith('.jpeg')) {
-        $('#newsError #newsErrorAlert').remove();
-        $('#newsError').append('<div class="alert alert-dismissible alert-danger" id="newsErrorAlert"><button type="button" class="close" data-dismiss="alert">&times;</button><span id="newsErrorText">Not valid extension</span></div>');
-    }
-}
-
 function checkIfScheduleExists() {
+    if (!(scheduleFileAttached && scheduleYearCorrect)) {
+        return false;
+    }
     var url = window.location.protocol + '//' + window.location.host + '/schedule/check?tetrameter=';
     var tetrameter = document.getElementById("tetrameterSelect");
     url += tetrameter.options[tetrameter.selectedIndex].value;
@@ -172,9 +217,6 @@ function checkIfScheduleExists() {
     xhr.send();
     if (JSON.parse(xhr.responseText)["result"]["status"] === true && $('#scheduleFileName').text().length !== 0) {
         return confirm('Расписание на этот тетраместр и учебный год существует. Вы хотите его перезаписать?');
-    } else if ($('#scheduleFileName').text().length === 0) {
-        //todo display error message
-        return false;
     } else {
         return true;
     }
