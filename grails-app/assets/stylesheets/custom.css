@@ -125,3 +125,10 @@ nav div ul:last-child {
 .news-main-photo-show {
     /*max-height: 500px;*/
 }
+
+.custom-badge {
+    max-width: 70px;
+    max-height: 17px;
+    border-radius: 10rem;
+    font-size: 0.7rem;
+}

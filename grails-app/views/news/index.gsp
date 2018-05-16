@@ -16,15 +16,28 @@
                         <div class="col-7 pl-4 pr-4">
                             <div class="row h-30">
                                 <h3>
-                                    <a href="${createLink(controller: 'news', action: 'show', params:[id: news.id])}">${news.name}</a>
+                                    <a href="${createLink(controller: 'news', action: 'show', params:[id: news.id])}">
+                                        ${news.name}
+                                    </a>
                                 </h3>
                             </div>
                             <div class="row h-10">
                                 <div class="col-12 col-md-12"><g:replaceNextLine source="${news.description}"/></div>
                             </div>
                             <div class="row align-items-end h-60" >
-                                <div class="col-4 text-left text-muted"><g:dateFormat format="dd-MM-yyyy HH:mm" date="${news.dateCreated}"/></div>
-                                <div class="offset-4"></div>
+                                <g:if test="${news.dateCreated < news.lastUpdated}">
+                                    <div class="col-6 text-left text-muted" data-toggle="tooltip" data-placement="bottom" data-html="true" title="${tooltipDates(format:'dd-MM-yyyy HH:mm', updateDate: news.lastUpdated, createDate: news.dateCreated)}">
+                                        <g:dateFormat format="dd-MM-yyyy HH:mm" date="${news.dateCreated}"/>
+                                        <span class="badge badge-info">Оновлено</span>
+                                    </div>
+                                    <div class="offset-2"></div>
+                                </g:if>
+                                <g:else>
+                                    <div class="col-4 text-left text-muted" data-toggle="tooltip" data-placement="bottom" data-html="true" title="${tooltipDates(format:'dd-MM-yyyy HH:mm', updateDate: news.lastUpdated, createDate: news.dateCreated)}">
+                                        <g:dateFormat format="dd-MM-yyyy HH:mm" date="${news.dateCreated}"/>
+                                    </div>
+                                    <div class="offset-4"></div>
+                                </g:else>
                                 <div class="col-4 text-right text-muted">${news.author.getFullName()}</div>
                             </div>
                         </div>

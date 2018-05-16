@@ -9,9 +9,10 @@
             <div class="offset-3"></div>
             <div class="col-6 content pt-3 pb-3">
                 <h2 class="text-center pb-3">${news.name}</h2>
+                <h5 class="text-center text-muted pb-3"><g:replaceNextLine source="${news.description}"/></h5>
                 <div class="row">
                     <div class="col-12">
-                        <img class="img-fluid cursor-pointer news-main-photo-show" src="${createLink(controller: "image", action: "get", params: [id: news.photo.id])}" data-toggle="tooltip" data-placement="bottom" data-html="true" title="${replaceNextLine(source: news.description)}" onclick="showImagePopup('mainPhoto')"/>
+                        <img class="img-fluid cursor-pointer news-main-photo-show" src="${createLink(controller: "image", action: "get", params: [id: news.photo.id])}" onclick="showImagePopup('mainPhoto')"/>
                         <div id="mainPhoto" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog custom-modal-dialog">
                                 <div class="modal-content">

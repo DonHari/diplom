@@ -268,6 +268,7 @@ $(document).ready(function () {
             $(this).height(imgWidth / (clientWidth / clientHeight));
         }
     });
+    $('[data-toggle="tooltip"]').tooltip();
 });
 
 function checkCredentials() {
