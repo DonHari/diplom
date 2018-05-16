@@ -2,6 +2,10 @@ body {
     position: relative;
 }
 
+.content-auth {
+    background-color: white;
+}
+
 .content {
     background-color: white;
     min-height: 95vh;
@@ -116,4 +120,8 @@ nav div ul:last-child {
 
 .news-main-photo {
     height: 250px;
+}
+
+.news-main-photo-show {
+    max-height: 500px;
 }

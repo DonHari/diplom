@@ -10,10 +10,10 @@
             <div class="col-8 content">
                 <g:each in="${newsList}" var="news" status="i">
                     <div class="row news-item">
-                        <div class="col-4">
+                        <div class="col-5">
                             <img class="card-img news-main-photo" src="${createLink(controller: "image", action: "get", params: [id: news.photo.id])}" alt="${message(code:'image.cant.upload',default:"Can't upload an image.")}"/>
                         </div>
-                        <div class="col-8 pl-4 pr-4 flex-column">
+                        <div class="col-7 pl-4 pr-4">
                             <div class="row h-30">
                                 <h3>
                                     <a href="${createLink(controller: 'news', action: 'show', params:[id: news.id])}">${news.name}</a>

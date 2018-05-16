@@ -11,7 +11,7 @@
                 <h2 class="text-center pb-3">${news.name}</h2>
                 <div class="row">
                     <div class="col-12">
-                        <img class="img-fluid cursor-pointer" src="${createLink(controller: "image", action: "get", params: [id: news.photo.id])}" data-toggle="tooltip" data-placement="bottom" title="${news.description}" onclick="showImagePopup('mainPhoto')"/>
+                        <img class="img-fluid cursor-pointer news-main-photo-show" src="${createLink(controller: "image", action: "get", params: [id: news.photo.id])}" data-toggle="tooltip" data-placement="bottom" title="${news.description}" onclick="showImagePopup('mainPhoto')"/>
                         <div id="mainPhoto" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog custom-modal-dialog">
                                 <div class="modal-content">

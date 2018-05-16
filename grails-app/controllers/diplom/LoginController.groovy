@@ -1,5 +1,6 @@
 package diplom
 
+import grails.plugin.springsecurity.annotation.Secured
 import org.springframework.security.authentication.AccountExpiredException
 import org.springframework.security.authentication.CredentialsExpiredException
 import org.springframework.security.authentication.DisabledException
@@ -30,23 +31,30 @@ class LoginController extends grails.plugin.springsecurity.LoginController {
         ])
     }
 
+    @Secured('permitAll')
+    def check(String username, String password) {
+        boolean found = true
+        if(User.findByUsernameAndPassword(username, password) == null){
+            found = false
+        }
+        render(contentType: 'application/json') {
+            result(status: found)
+        }
+    }
+
     def authfail() {
         String msg = ''
         def exception = session[WebAttributes.AUTHENTICATION_EXCEPTION]
         if (exception) {
             if (exception instanceof AccountExpiredException) {
                 msg = messageSource.getMessage('springSecurity.errors.login.expired', null, "Account Expired", request.locale)
-            }
-            else if (exception instanceof CredentialsExpiredException) {
+            } else if (exception instanceof CredentialsExpiredException) {
                 msg = messageSource.getMessage('springSecurity.errors.login.passwordExpired', null, "Password Expired", request.locale)
-            }
-            else if (exception instanceof DisabledException) {
+            } else if (exception instanceof DisabledException) {
                 msg = messageSource.getMessage('springSecurity.errors.login.disabled', null, "Account Disabled", request.locale)
-            }
-            else if (exception instanceof LockedException) {
+            } else if (exception instanceof LockedException) {
                 msg = messageSource.getMessage('springSecurity.errors.login.locked', null, "Account Locked", request.locale)
-            }
-            else {
+            } else {
                 msg = messageSource.getMessage('springSecurity.errors.login.fail', null, "Authentication Failure", request.locale)
             }
         }

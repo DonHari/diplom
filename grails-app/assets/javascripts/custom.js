@@ -245,7 +245,34 @@ $(document).ready(function () {
             $(this).removeClass('is-valid');
         }
     });
+    $('#loginForm').on({
+        submit: function () {
+            return checkCredentials();
+        }
+    });
 });
+
+function checkCredentials() {
+    var url = window.location.protocol + '//' + window.location.host + '/login/check';
+    var exists;
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: {username: $('#username').val(), password: $('#password').val()},
+        async: false
+    }).done(function (result) {
+        if (result["result"]["status"]) {
+            exists = true;
+        } else {
+            exists = false;
+            $('#loginContent').prepend('<div class="alert alert-dismissible alert-danger">\n' +
+                '                        <button type="button" class="close" data-dismiss="alert">&times;</button>\n' +
+                '                        Логін та/або пароль неправильні' +
+                '                    </div>');
+        }
+    });
+    return exists;
+}
 
 function fileInput(source) {
     var fullPath = document.getElementById(source).value;

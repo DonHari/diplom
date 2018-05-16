@@ -34,7 +34,35 @@
                 <ul class="navbar-nav ml-auto">
                     <sec:ifNotLoggedIn>
                         <li class="nav-item ml-5" id="authorize">
-                            <a class="nav-link" href="${createLink(controller: 'login', action: 'auth')}"><g:message code="header.auth.signin"/></a>
+                            <a class="nav-link" href="#login"%{--href="${createLink(controller: 'login', action: 'auth')}"--}% data-toggle="modal" data-target="#loginForm"><g:message code="header.auth.signin"/></a>
+                            <div class="modal" tabindex="-1" role="dialog" id="loginForm">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Авторизація</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body" id="loginFormBody">
+                                            <g:include controller="login" action="auth"/>
+                                            %{--<script>--}%
+                                                %{--$(document).ready(function () {--}%
+                                                    %{--$('#loginForm').on({--}%
+                                                        %{--'show.bs.modal': function () {--}%
+                                                            %{--$(this).load('/login/auth');--}%
+                                                        %{--}--}%
+                                                    %{--});--}%
+                                                %{--});--}%
+                                            %{--</script>--}%
+                                        </div>
+                                        %{--<div class="modal-footer">
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>--}%
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                     </sec:ifNotLoggedIn>
                     <sec:ifLoggedIn>
