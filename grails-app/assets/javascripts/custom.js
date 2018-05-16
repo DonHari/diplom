@@ -9,6 +9,9 @@ var newsAssignedPhotosValid = false;
 
 var newsAssignedPhotoIds = ['assignedPhoto1'];
 
+var clientWidth;
+var clientHeight;
+
 function layoutLoaded() {
 }
 
@@ -85,6 +88,9 @@ function maxInput(maxLength, source, target) {
 }
 
 $(document).ready(function () {
+    clientWidth = window.screen.width;
+    clientHeight = window.screen.height;
+
     $('#newsName').on({
         input: function () {
             maxInput(50, '#' + this.id, '#' + this.id + 'Left')
@@ -250,6 +256,11 @@ $(document).ready(function () {
             return checkCredentials();
         }
     });
+
+    var imgWidth = $('.news-main-photo').width();
+    $('.news-main-photo').height(imgWidth / (clientWidth / clientHeight));
+    imgWidth = $('.news-main-photo-show').width();
+    $('.news-main-photo-show').height(imgWidth / (clientWidth / clientHeight));
 });
 
 function checkCredentials() {
@@ -316,6 +327,7 @@ function addAssignedPhoto() {
     $('#assignedPhotos').append('<div class="form-group mb-3"><div class="input-group"><div class="custom-file"><input type="file" class="custom-file-input" id="' + newId + '" accept=".jpg,.jpeg,.png" value="${photo}" name="' + newId + '" oninput="validateNewsAssignedPhotos()" onchange="validateNewsAssignedPhotos()"><label class="custom-file-label" for="' + newId + '" id="assignedPhoto' + currentCount + 'Name">Оберіть файл</label></div></div></div>');
     $('#assignedPhotos').append('<script>$(document).ready(function () {$("#' + newId + '").on({input: function () {var fileName = fileInput(this.id);if (validatePhotoExtension(fileName)) {$("#" + this.id + "Name").text(fileName);} else {$(this).val("");}validateNewsAssignedPhotos();enableNewsSendButton();},change: function () {var fileName = fileInput(this.id);if (validatePhotoExtension(fileName)) {$("#" + this.id + "Name").text(fileName);} else {$(this).val("");}validateNewsAssignedPhotos();enableNewsSendButton();}});});</script>');
     validateNewsAssignedPhotos();
+    enableNewsSendButton();
     if (currentCount === 12) {
         $('#addAssignedPhotoBtn').addClass('disabled').prop('onclick', null).off('click');
     }

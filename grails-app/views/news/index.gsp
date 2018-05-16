@@ -20,7 +20,7 @@
                                 </h3>
                             </div>
                             <div class="row h-10">
-                                <div class="col-12 col-md-12">${news.description}</div>
+                                <div class="col-12 col-md-12"><g:replaceNextLine source="${news.description}"/></div>
                             </div>
                             <div class="row align-items-end h-60" >
                                 <div class="col-4 text-left text-muted"><g:dateFormat format="dd-MM-yyyy HH:mm" date="${news.dateCreated}"/></div>
