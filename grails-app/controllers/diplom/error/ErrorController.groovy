@@ -15,7 +15,7 @@ class ErrorController {
     }
 
     def index() {
-        Exception exception = request.exception.cause
+        Exception exception = request?.exception?.cause
 
         logException(exception)
 
@@ -25,15 +25,15 @@ class ErrorController {
         render(view: "/customError", model: [errorMessage: message], status: httpStatus)
     }
 
-    private HttpStatus handleException(CantFindException exception) {
+    private HttpStatus handleException(CantFindException e) {
         HttpStatus.BAD_REQUEST
     }
 
-    private HttpStatus handleException(CantUpdateException exception) {
+    private HttpStatus handleException(CantUpdateException e) {
         HttpStatus.FORBIDDEN
     }
 
-    private HttpStatus handleException(Exception exception) {
+    private HttpStatus handleException(Exception e) {
         HttpStatus.INTERNAL_SERVER_ERROR
     }
 

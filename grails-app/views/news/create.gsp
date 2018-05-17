@@ -6,8 +6,8 @@
     </head>
     <body>
         <div class="row">
-            <div class="offset-2"></div>
-            <div class="col-8 content pt-3 pb-3">
+            <div class="offset-3"></div>
+            <div class="col-6 content pt-3 pb-3">
                 <form action="${createLink(action: 'save')}" method="post" enctype="multipart/form-data" onsubmit="return checkNewsFields()">
                     <div class="form-group has-danger has-success">
                         <label class="control-label" for="newsName"><g:message code="news.add.name"/></label>
@@ -64,7 +64,7 @@
                     <button type="button" class="btn btn-primary" onclick="addAssignedPhoto()" id="addAssignedPhotoBtn"><g:message code="news.add.assignedPhoto.add"/></button>
                 </form>
             </div>
-            <div class="offset-2"></div>
+            <div class="offset-3"></div>
         </div>
     </body>
 </html>

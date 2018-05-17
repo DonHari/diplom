@@ -5,7 +5,8 @@ import diplom.validator.Validate
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 
-import static org.springframework.http.HttpStatus.*
+import static org.springframework.http.HttpStatus.NO_CONTENT
+import static org.springframework.http.HttpStatus.OK
 
 @Secured('permitAll')
 @Transactional(readOnly = true)
@@ -27,12 +28,12 @@ class ScheduleController {
         respond(schedule)
     }
 
-    @Secured(['ROLE_USER', 'ROLE_ADMIN'])
+    @Secured(['ROLE_USER', 'ROLE_ADMIN', "IS_AUTHENTICATED_REMEMBERED"])
     def create() {
-        respond(new Schedule(params))
+        respond(new Schedule(params), model: [justSaved: chainModel?.justSaved])
     }
 
-    @Secured(['ROLE_USER', 'ROLE_ADMIN'])
+    @Secured(['ROLE_USER', 'ROLE_ADMIN', "IS_AUTHENTICATED_REMEMBERED"])
     @Transactional
     def save(ScheduleCommand scheduleCommand) {
         Validate.hasNoErrors(scheduleCommand)
@@ -41,15 +42,16 @@ class ScheduleController {
 
         Schedule savedSchedule = scheduleService.save(scheduleCommand.getYear(), scheduleCommand.getTetrameter(), fileName)
 
-        respond(savedSchedule, status: CREATED, view: "/schedule/create", model: [justSaved: true])
+        chain(action: 'create', model: [justSaved: true])
+//        respond(savedSchedule, status: CREATED, view: "/schedule/create", model: [justSaved: true])
     }
 
-    @Secured(['ROLE_USER', 'ROLE_ADMIN'])
+    @Secured(['ROLE_USER', 'ROLE_ADMIN', "IS_AUTHENTICATED_REMEMBERED"])
     def edit(Schedule schedule) {
         respond(schedule)
     }
 
-    @Secured(['ROLE_USER', 'ROLE_ADMIN'])
+    @Secured(['ROLE_USER', 'ROLE_ADMIN', "IS_AUTHENTICATED_REMEMBERED"])
     @Transactional
     def update(Schedule schedule) {
         Schedule updatedSchedule = scheduleService.update(schedule)
@@ -57,7 +59,7 @@ class ScheduleController {
         respond(updatedSchedule, status: OK, view: "/schedule/show")
     }
 
-    @Secured(['ROLE_USER', 'ROLE_ADMIN'])
+    @Secured(['ROLE_USER', 'ROLE_ADMIN', "IS_AUTHENTICATED_REMEMBERED"])
     @Transactional
     def delete(Schedule schedule) {
         scheduleService.delete(schedule)
@@ -79,7 +81,7 @@ class ScheduleController {
         respond([schedule: result], view: "/schedule/scheduleFileLink")
     }
 
-    @Secured(['ROLE_USER', 'ROLE_ADMIN'])
+    @Secured(['ROLE_USER', 'ROLE_ADMIN', "IS_AUTHENTICATED_REMEMBERED"])
     def check(Integer tetrameter, Integer year) {
         render(contentType: 'application/json') {
             result(status: true)

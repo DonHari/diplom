@@ -12,7 +12,6 @@
     <body onload="layoutLoaded()">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <a class="navbar-brand" href="/">
-                %{--Navbar--}%
                 <img class="custom-logo" src="${assetPath(src:'/site_logo.png')}">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
@@ -34,7 +33,7 @@
                 <ul class="navbar-nav ml-auto">
                     <sec:ifNotLoggedIn>
                         <li class="nav-item ml-5" id="authorize">
-                            <a class="nav-link" href="#login"%{--href="${createLink(controller: 'login', action: 'auth')}"--}% data-toggle="modal" data-target="#loginForm"><g:message code="header.auth.signin"/></a>
+                            <a class="nav-link" href="#login" data-toggle="modal" data-target="#loginForm"><g:message code="header.auth.signin"/></a>
                             <div class="modal" tabindex="-1" role="dialog" id="loginForm">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -46,20 +45,7 @@
                                         </div>
                                         <div class="modal-body" id="loginFormBody">
                                             <g:include controller="login" action="auth"/>
-                                            %{--<script>--}%
-                                                %{--$(document).ready(function () {--}%
-                                                    %{--$('#loginForm').on({--}%
-                                                        %{--'show.bs.modal': function () {--}%
-                                                            %{--$(this).load('/login/auth');--}%
-                                                        %{--}--}%
-                                                    %{--});--}%
-                                                %{--});--}%
-                                            %{--</script>--}%
                                         </div>
-                                        %{--<div class="modal-footer">
-                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        </div>--}%
                                     </div>
                                 </div>
                             </div>
@@ -74,8 +60,8 @@
                                     <div class="dropdown-menu custom-dropdown-right bg-primary" aria-labelledby="adminDrop" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0; left: 0; transform: translate3d(0px, 36px, 0px);">
                                         <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'news', action: 'create')}"><g:message code="header.user.add.news"/></a>
                                         <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'schedule', action: 'create')}"><g:message code="header.user.add.schedule"/></a>
-                                        <a class="dropdown-item custom-dropdown-links" href="#"><g:message code="header.user.add.faq"/></a>
-                                        <a class="dropdown-item custom-dropdown-links" href="#"><g:message code="header.user.managing"/></a>
+                                        <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'faq', action: 'create')}"><g:message code="header.user.add.faq"/></a>
+                                        <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'userRole', action: 'index')}"><g:message code="header.user.managing"/></a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item custom-dropdown-links" href="/logout"><g:message code="auth.logout"/></a>
                                     </div>
@@ -90,7 +76,7 @@
                                     <div class="dropdown-menu custom-dropdown-right bg-primary" aria-labelledby="userDrop" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0; left: 0px; transform: translate3d(0px, 36px, 0px);">
                                         <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'news', action: 'create')}"><g:message code="header.user.add.news"/></a>
                                         <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'schedule', action: 'create')}"><g:message code="header.user.add.schedule"/></a>
-                                        <a class="dropdown-item custom-dropdown-links" href="#"><g:message code="header.user.add.faq"/></a>
+                                        <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'faq', action: 'create')}"><g:message code="header.user.add.faq"/></a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item custom-dropdown-links" href="/logout"><g:message code="auth.logout"/></a>
                                     </div>

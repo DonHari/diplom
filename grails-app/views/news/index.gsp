@@ -26,9 +26,9 @@
                             </div>
                             <div class="row align-items-end h-60" >
                                 <g:if test="${news.dateCreated < news.lastUpdated}">
-                                    <div class="col-6 text-left text-muted" data-toggle="tooltip" data-placement="bottom" data-html="true" title="${tooltipDates(format:'dd-MM-yyyy HH:mm', updateDate: news.lastUpdated, createDate: news.dateCreated)}">
+                                    <div class="col-6 text-left text-muted custom-news-date" data-toggle="tooltip" data-placement="bottom" data-html="true" title="${tooltipDates(format:'dd-MM-yyyy HH:mm', updateDate: news.lastUpdated, createDate: news.dateCreated)}">
                                         <g:dateFormat format="dd-MM-yyyy HH:mm" date="${news.dateCreated}"/>
-                                        <span class="badge badge-info">Оновлено</span>
+                                        <span class="badge badge-info custom-badge">Оновлено</span>
                                     </div>
                                     <div class="offset-2"></div>
                                 </g:if>
@@ -38,7 +38,7 @@
                                     </div>
                                     <div class="offset-4"></div>
                                 </g:else>
-                                <div class="col-4 text-right text-muted">${news.author.getFullName()}</div>
+                                <div class="col-4 text-right text-muted" data-toggle="tooltip" data-placement="right" data-html="true" title="${news.author.surname + ' '+ news.author.name + ' '+ news.author.secondName}">${news.author.getFullName()}</div>
                             </div>
                         </div>
                     </div>

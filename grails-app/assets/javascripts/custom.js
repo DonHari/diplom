@@ -12,6 +12,9 @@ var newsAssignedPhotoIds = ['assignedPhoto1'];
 var clientWidth;
 var clientHeight;
 
+var faqQuestionValid = false;
+var faqAnswerValid = false;
+
 function layoutLoaded() {
 }
 
@@ -269,6 +272,54 @@ $(document).ready(function () {
         }
     });
     $('[data-toggle="tooltip"]').tooltip();
+    $('#faqQuestion').on({
+        input: function () {
+            maxInput(100, '#' + this.id, '#' + this.id + 'Left')
+        },
+        change: function () {
+            if ($(this).val().length === 0) {
+                $(this).removeClass('is-valid').addClass('is-invalid');
+                faqQuestionValid = false;
+            } else {
+                $(this).removeClass('is-invalid').addClass('is-valid');
+                faqQuestionValid = true;
+            }
+            enableFaqSendButton();
+        },
+        blur: function () {
+            if ($(this).val().length === 0) {
+                $(this).removeClass('is-valid').addClass('is-invalid');
+                faqQuestionValid = false;
+            }
+            $(this).removeClass('is-valid');
+        }
+    });
+    $('#faqAnswer').on({
+        input: function () {
+            maxInput(100, '#' + this.id, '#' + this.id + 'Left')
+        },
+        change: function () {
+            if ($(this).val().length === 0) {
+                $(this).removeClass('is-valid').addClass('is-invalid');
+                faqAnswerValid = false;
+            } else {
+                $(this).removeClass('is-invalid').addClass('is-valid');
+                faqAnswerValid = true;
+            }
+            enableFaqSendButton();
+        },
+        blur: function () {
+            if ($(this).val().length === 0) {
+                $(this).removeClass('is-valid').addClass('is-invalid');
+                faqAnswerValid = false;
+            }
+            $(this).removeClass('is-valid');
+        }
+    });
+    $(".clickable-row").click(function() {
+        console.log($(this).data("href"));
+        window.location = $(this).data("href");
+    });
 });
 
 function checkCredentials() {
@@ -385,5 +436,17 @@ function enableNewsSendButton() {
         $('#newsSendButton').addClass('disabled');
     } else if (checkNewsFields() && $('#newsSendButton').hasClass('disabled')) {
         $('#newsSendButton').removeClass('disabled');
+    }
+}
+
+function checkFaqFields() {
+    return faqQuestionValid && faqAnswerValid;
+}
+
+function enableFaqSendButton() {
+    if (!checkFaqFields() && !$('#faqSendButton').hasClass('disabled')) {
+        $('#faqSendButton').addClass('disabled');
+    } else if (checkFaqFields() && $('#faqSendButton').hasClass('disabled')) {
+        $('#faqSendButton').removeClass('disabled');
     }
 }

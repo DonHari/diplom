@@ -131,4 +131,10 @@ nav div ul:last-child {
     max-height: 17px;
     border-radius: 10rem;
     font-size: 0.7rem;
+    align-self: center;
+    margin-left: 3px;
+}
+
+.custom-news-date {
+    display: flex;
 }

@@ -7,6 +7,7 @@
 </head>
 <body>
 <ul class="errors">
+    customError.gsp
     <li>${errorMessage}</li>
 </ul>
 </body>

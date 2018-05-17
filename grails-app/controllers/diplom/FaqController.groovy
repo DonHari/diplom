@@ -1,9 +1,10 @@
 package diplom
 
 import grails.plugin.springsecurity.annotation.Secured
-
-import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+
+import static org.springframework.http.HttpStatus.NO_CONTENT
+import static org.springframework.http.HttpStatus.OK
 
 @Transactional(readOnly = true)
 class FaqController {
@@ -22,25 +23,25 @@ class FaqController {
         respond(faq)
     }
 
-    @Secured(["ROLE_USER", "ROLE_ADMIN"])
+    @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])
     def create() {
-        respond(new Faq(params))
+        respond(new Faq(params), model: [justSaved: chainModel?.justSaved ?: false])
     }
 
-    @Secured(["ROLE_USER", "ROLE_ADMIN"])
+    @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])
     @Transactional
     def save(Faq faq) {
-        Faq savedFaq = faqService.save(faq)
+        faqService.save(faq)
 
-        respond(savedFaq, status: CREATED, view: "/faq/show")
+        chain(action: 'create', model: [justSaved: true])
     }
 
-    @Secured(["ROLE_USER", "ROLE_ADMIN"])
+    @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])
     def edit(Faq faq) {
         respond(faq)
     }
 
-    @Secured(["ROLE_USER", "ROLE_ADMIN"])
+    @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])
     @Transactional
     def update(Faq faq) {
         Faq updatedFaq = faqService.update(faq)
@@ -48,7 +49,7 @@ class FaqController {
         respond(updatedFaq, status: OK, view: "/faq/show")
     }
 
-    @Secured(["ROLE_USER", "ROLE_ADMIN"])
+    @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])
     @Transactional
     def delete(Faq faq) {
         faqService.delete(faq)

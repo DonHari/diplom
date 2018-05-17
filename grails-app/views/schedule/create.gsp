@@ -46,7 +46,7 @@
                         </div>
                         <small id="fileHelp" class="form-text text-muted"><g:message code="add.excel.help"/></small>
                     </div>
-                    <button type="submit" class="btn btn-primary disabled" id="scheduleSaveButton">Создать</button>
+                    <button type="submit" class="btn btn-primary disabled" id="scheduleSaveButton"><g:message code="add.confirm"/></button>
                 </form>
             </div>
             <div class="offset-3"></div>

@@ -34,7 +34,7 @@ class LoginController extends grails.plugin.springsecurity.LoginController {
     @Secured('permitAll')
     def check(String username, String password) {
         boolean found = true
-        if(User.findByUsernameAndPassword(username, password) == null){
+        if (User.findByUsernameAndPassword(username, password) == null) {
             found = false
         }
         render(contentType: 'application/json') {
@@ -60,5 +60,9 @@ class LoginController extends grails.plugin.springsecurity.LoginController {
         }
         errorMessage = msg
         redirect(action: 'auth', params: params)
+    }
+
+    def denied() {
+        render(view: 'deneid')
     }
 }

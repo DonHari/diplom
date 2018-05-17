@@ -6,7 +6,8 @@ import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 import org.springframework.web.multipart.MultipartFile
 
-import static org.springframework.http.HttpStatus.*
+import static org.springframework.http.HttpStatus.NO_CONTENT
+import static org.springframework.http.HttpStatus.OK
 
 @Transactional(readOnly = true)
 class NewsController {
@@ -25,49 +26,49 @@ class NewsController {
         respond(news)
     }
 
-    @Secured("ROLE_USER")
+    @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])
     def create() {
         respond(new News(name: 'test'))
     }
 
-    @Secured("ROLE_USER")
+    @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])
     @Transactional
     def save(NewsCommand newsCommand) {
         List<MultipartFile> assignedPhotos = new LinkedList<>()
-        if(params.assignedPhoto1){
+        if (params.assignedPhoto1) {
             assignedPhotos.add(params.assignedPhoto1)
         }
-        if(params.assignedPhoto2){
+        if (params.assignedPhoto2) {
             assignedPhotos.add(params.assignedPhoto2)
         }
-        if(params.assignedPhoto3){
+        if (params.assignedPhoto3) {
             assignedPhotos.add(params.assignedPhoto3)
         }
-        if(params.assignedPhoto4){
+        if (params.assignedPhoto4) {
             assignedPhotos.add(params.assignedPhoto4)
         }
-        if(params.assignedPhoto5){
+        if (params.assignedPhoto5) {
             assignedPhotos.add(params.assignedPhoto5)
         }
-        if(params.assignedPhoto6){
+        if (params.assignedPhoto6) {
             assignedPhotos.add(params.assignedPhoto6)
         }
-        if(params.assignedPhoto7){
+        if (params.assignedPhoto7) {
             assignedPhotos.add(params.assignedPhoto7)
         }
-        if(params.assignedPhoto8){
+        if (params.assignedPhoto8) {
             assignedPhotos.add(params.assignedPhoto8)
         }
-        if(params.assignedPhoto9){
+        if (params.assignedPhoto9) {
             assignedPhotos.add(params.assignedPhoto9)
         }
-        if(params.assignedPhoto10){
+        if (params.assignedPhoto10) {
             assignedPhotos.add(params.assignedPhoto10)
         }
-        if(params.assignedPhoto11){
+        if (params.assignedPhoto11) {
             assignedPhotos.add(params.assignedPhoto11)
         }
-        if(params.assignedPhoto12){
+        if (params.assignedPhoto12) {
             assignedPhotos.add(params.assignedPhoto12)
         }
         newsCommand.assignedPhotos = assignedPhotos
@@ -75,15 +76,15 @@ class NewsController {
 
         News savedNews = newsService.save(newsCommand)
 
-        redirect(model: savedNews, view: "/news/show")
+        chain(action: 'show', params: [id: savedNews.id])
     }
 
-    @Secured("ROLE_USER")
+    @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])
     def edit(News news) {
         respond(news)
     }
 
-    @Secured("ROLE_USER")
+    @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])
     @Transactional
     def update(News news) {
         News updatedNews = newsService.update(news)
@@ -91,7 +92,7 @@ class NewsController {
         respond(updatedNews, status: OK, view: "/news/show")
     }
 
-    @Secured("ROLE_USER")
+    @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])
     @Transactional
     def delete(News news) {
         newsService.delete(news)
