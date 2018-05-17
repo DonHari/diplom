@@ -44,7 +44,11 @@ class User implements Serializable {
         (UserRole.findAllByUser(this) as List<UserRole>)*.role as Set<Role>
     }
 
-    String getFullName() {
+    String getAbbreviatedName() {
         return surname + " " + name.toUpperCase().charAt(0) + ". " + secondName.toUpperCase().charAt(0) + "."
+    }
+
+    String getFullName() {
+        return surname + ' ' + name + ' ' + secondName
     }
 }

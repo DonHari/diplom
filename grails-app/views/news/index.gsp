@@ -38,7 +38,7 @@
                                     </div>
                                     <div class="offset-4"></div>
                                 </g:else>
-                                <div class="col-4 text-right text-muted" data-toggle="tooltip" data-placement="right" data-html="true" title="${news.author.surname + ' '+ news.author.name + ' '+ news.author.secondName}">${news.author.getFullName()}</div>
+                                <div class="col-4 text-right text-muted" data-toggle="tooltip" data-placement="right" data-html="true" title="${news.author.fullName}">${news.author.abbreviatedName}</div>
                             </div>
                         </div>
                     </div>

@@ -10,20 +10,21 @@
             <div class="col-6 content pt-3 pb-3">
                 %{--todo add edit button--}%
                 <form action="${createLink(action: 'save')}">
+
                     <div class="row">
                         <div class="col-4">
-                            <div class="form-group has-danger has-success">
-                                <label class="control-label" for="scheduleYear"><g:message code="schedule.add.year"/></label>
-                                <input class="form-control" type="number" id="scheduleYear" maxlength="50" value="${year ?: 2018}" name="year" onblur="" min="2018" max="2030"/>
-                                <div class="invalid-feedback"><g:message code="error.wrongYear"/></div>
+                            <div class="form-group">
+                                <label for="userSurname" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="userSurname" value="${userRole.user.surname}" name="surname" disabled=""/>
                             </div>
                         </div>
                         <div class="col-4">
-
+                            <div class="form-group">
+                                <label for="userName" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="userName" value="${userRole.user.name}" name="name"/>
+                            </div>
                         </div>
-                        <div class="col-4">
-
-                        </div>
+                        <div class="col-4"></div>
                     </div>
                 </form>
             </div>

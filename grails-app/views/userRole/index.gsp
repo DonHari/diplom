@@ -26,7 +26,7 @@
                         <tr class="table-primary cursor-pointer clickable-row" data-href="${createLink(controller: 'userRole', action: 'show', params:[userId: userRole.user.id, roleId: userRole.role.id])}">
                     </g:if>
                     <g:else>
-                        <tr class="table-secondary cursor-pointer clickable-row" data-href="${createLink(controller: 'userRole', action: 'show', params: [id: userRole.id])}">
+                        <tr class="table-secondary cursor-pointer clickable-row" data-href="${createLink(controller: 'userRole', action: 'show', params:[userId: userRole.user.id, roleId: userRole.role.id])}">
                     </g:else>
                     <td>${userRole.user.surname}</td>
                     <td>${userRole.user.name}</td>

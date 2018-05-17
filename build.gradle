@@ -101,8 +101,12 @@ task wrapper(type: Wrapper) {
 }
 
 task stage {
-    dependencies {
-        compile 'com.github.jsimone:webapp-runner:8.5.11.3'
+    println('stage')
+    if(System.properties['environment']){
+        println(System.properties['environment'])
+        dependencies {
+            compile 'com.github.jsimone:webapp-runner:8.5.11.3'
+        }
     }
     dependsOn clean, war
 }
