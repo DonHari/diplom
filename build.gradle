@@ -94,18 +94,6 @@ dependencies {
     compile 'org.grails.plugins:grails-cookie:2.0.3'
 
     compile files('libs/postgresql-42.2.2.jar')
-
-    //for heroku
-    if (System.properties['grails.env'] == 'development') {
-        println()
-        println()
-        println('****************************************************************************************************')
-        println(System.properties['grails.env'])
-        println('****************************************************************************************************')
-        println()
-        println()
-        compile 'com.github.jsimone:webapp-runner:8.5.11.3'
-    }
 }
 
 task wrapper(type: Wrapper) {
@@ -113,6 +101,9 @@ task wrapper(type: Wrapper) {
 }
 
 task stage {
+    dependencies {
+        compile 'com.github.jsimone:webapp-runner:8.5.11.3'
+    }
     dependsOn clean, war
 }
 war.mustRunAfter clean
