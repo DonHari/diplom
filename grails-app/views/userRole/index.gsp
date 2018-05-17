@@ -23,7 +23,7 @@
             <g:each in="${userRoleList}" var="userRole" status="i">
                 <a href="${createLink(controller: 'userRole', action: 'show', params: [userRole: userRole])}">
                     <g:if test="${i % 2 == 0}">
-                        <tr class="table-primary cursor-pointer clickable-row" data-href="${createLink(url: '/userRole/show/' + userRole.id)}">
+                        <tr class="table-primary cursor-pointer clickable-row" data-href="${createLink(controller: 'userRole', action: 'show', params:[userId: userRole.user.id, roleId: userRole.role.id])}">
                     </g:if>
                     <g:else>
                         <tr class="table-secondary cursor-pointer clickable-row" data-href="${createLink(controller: 'userRole', action: 'show', params: [id: userRole.id])}">

@@ -10,7 +10,13 @@ class UserRoleController {
     }
 
     @Secured(['ROLE_USER', 'ROLE_ADMIN', "IS_AUTHENTICATED_REMEMBERED"])
-    def show(UserRole userRole) {
+    def show() {
+        def userRole = UserRole.findByUserAndRole(User.get(params.userId), Role.get(params.roleId))
         respond(userRole)
+    }
+
+    @Secured(['ROLE_USER', 'ROLE_ADMIN', "IS_AUTHENTICATED_REMEMBERED"])
+    def save(User user, Role role) {
+
     }
 }

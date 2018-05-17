@@ -316,7 +316,7 @@ $(document).ready(function () {
             $(this).removeClass('is-valid');
         }
     });
-    $(".clickable-row").click(function() {
+    $(".clickable-row").click(function () {
         console.log($(this).data("href"));
         window.location = $(this).data("href");
     });
