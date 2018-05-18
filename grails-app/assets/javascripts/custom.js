@@ -20,6 +20,8 @@ function layoutLoaded() {
 
 function loadStudcityPage() {
     $("#studentsSchedule").removeClass('active');
+    $("#studentsFaculty").removeClass('active');
+    $("#studentsDepartment").removeClass('active');
     $("#studentsStudcity").addClass('active');
     $("#content").load(
         "/students/studcity"
@@ -27,11 +29,32 @@ function loadStudcityPage() {
 }
 
 function loadSchedulePage() {
-    console.log('loadSchedulePage');
     $("#studentsStudcity").removeClass('active');
+    $("#studentsFaculty").removeClass('active');
+    $("#studentsDepartment").removeClass('active');
     $("#studentsSchedule").addClass('active');
     $("#content").load(
         "/schedule/schedule"
+    )
+}
+
+function loadFacultyPage() {
+    $("#studentsDepartment").removeClass('active');
+    $("#studentsSchedule").removeClass('active');
+    $("#studentsStudcity").removeClass('active');
+    $("#studentsFaculty").addClass('active');
+    $("#content").load(
+        "/students/faculty"
+    )
+}
+
+function loadDepartmentPage() {
+    $("#studentsFaculty").removeClass('active');
+    $("#studentsSchedule").removeClass('active');
+    $("#studentsStudcity").removeClass('active');
+    $("#studentsDepartment").addClass('active');
+    $("#content").load(
+        "/students/department"
     )
 }
 
@@ -322,7 +345,7 @@ $(document).ready(function () {
     });
     $('#userEnableEditButton').on({
         click: function () {
-            if($(this).text() === 'Включити редагування'){
+            if ($(this).text() === 'Включити редагування') {
                 $(this).text('Виключити редагування');
             } else {
                 $(this).text('Включити редагування');
@@ -339,6 +362,9 @@ $(document).ready(function () {
             $('#userConfirmButton').prop('disabled', !$('#userConfirmButton').prop('disabled'));
         }
     });
+
+
+    $('.single-item').slick();
 });
 
 function checkCredentials() {

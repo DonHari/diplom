@@ -178,3 +178,16 @@ textarea:focus {
 .custom-file-input:focus {
     box-shadow: 0 0 0 0.05rem !important;
 }
+
+.img-height-430{
+    height: 430px;
+    width: 100%;
+}
+.custom-padding{
+    margin: 3vh 0;
+}
+
+.custom-iframe{
+    width: 100%;
+    min-height: 80vh;
+}
