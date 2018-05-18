@@ -320,6 +320,18 @@ $(document).ready(function () {
         console.log($(this).data("href"));
         window.location = $(this).data("href");
     });
+    $('#userEnableEditButton').on({
+        click: function () {
+            $('#userSurname').prop('disabled', !$('#userSurname').prop('disabled'));
+            $('#userName').prop('disabled', !$('#userName').prop('disabled'));
+            $('#userSecondName').prop('disabled', !$('#userSecondName').prop('disabled'));
+            $('#userEmail').prop('disabled', !$('#userEmail').prop('disabled'));
+            $('#userEnabledCheckbox').prop('disabled', !$('#userEnabledCheckbox').prop('disabled'));
+            $('#userAccountLockedCheckbox').prop('disabled', !$('#userAccountLockedCheckbox').prop('disabled'));
+            $('#userAccountExpiredCheckbox').prop('disabled', !$('#userAccountExpiredCheckbox').prop('disabled'));
+            $('#userPasswordExpiredCheckbox').prop('disabled', !$('#userPasswordExpiredCheckbox').prop('disabled'));
+        }
+    });
 });
 
 function checkCredentials() {
