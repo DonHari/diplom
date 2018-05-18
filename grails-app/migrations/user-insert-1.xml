@@ -8,10 +8,10 @@
             <column name="account_locked">false</column>
             <column name="enabled">true</column>
             <column name="password_expired">false</column>
-            <column name="name">Name</column>
-            <column name="second_name">SecondName</column>
-            <column name="surname">Surname</column>
-            <column name="email">test@test.com</column>
+            <column name="name">Петро</column>
+            <column name="second_name">По-батькович</column>
+            <column name="surname">Петров</column>
+            <column name="email">petrov@gmail.com</column>
             <column name="username">user</column>
             <column name="password">test123</column>
         </insert>
@@ -28,15 +28,35 @@
             <column name="account_locked">false</column>
             <column name="enabled">true</column>
             <column name="password_expired">false</column>
-            <column name="name">Name</column>
-            <column name="second_name">SecondName</column>
-            <column name="surname">Surname</column>
-            <column name="email">test@test.com</column>
+            <column name="name">Василь</column>
+            <column name="second_name">Васильович</column>
+            <column name="surname">Васильєв</column>
+            <column name="email">vasya@gmail.com</column>
             <column name="username">admin</column>
             <column name="password">test123</column>
         </insert>
         <insert tableName="user_role">
             <column name="user_id">2</column>
+            <column name="role_id">2</column>
+        </insert>
+    </changeSet>
+    <changeSet id="3" author="Stanislav Dorozhko">
+        <insert tableName="diplom_user">
+            <column name="id" valueComputed="nextval('user_id_seq')"/>
+            <column name="version">0</column>
+            <column name="account_expired">false</column>
+            <column name="account_locked">false</column>
+            <column name="enabled">true</column>
+            <column name="password_expired">false</column>
+            <column name="name">Есть</column>
+            <column name="second_name">Грут</column>
+            <column name="surname">Я</column>
+            <column name="email">grooth@tree.com</column>
+            <column name="username">someone</column>
+            <column name="password">test123</column>
+        </insert>
+        <insert tableName="user_role">
+            <column name="user_id">3</column>
             <column name="role_id">2</column>
         </insert>
     </changeSet>

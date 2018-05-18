@@ -322,14 +322,21 @@ $(document).ready(function () {
     });
     $('#userEnableEditButton').on({
         click: function () {
+            if($(this).text() === 'Включити редагування'){
+                $(this).text('Виключити редагування');
+            } else {
+                $(this).text('Включити редагування');
+            }
             $('#userSurname').prop('disabled', !$('#userSurname').prop('disabled'));
             $('#userName').prop('disabled', !$('#userName').prop('disabled'));
             $('#userSecondName').prop('disabled', !$('#userSecondName').prop('disabled'));
             $('#userEmail').prop('disabled', !$('#userEmail').prop('disabled'));
+            $('#userRoleSelect').prop('disabled', !$('#userRoleSelect').prop('disabled'));
             $('#userEnabledCheckbox').prop('disabled', !$('#userEnabledCheckbox').prop('disabled'));
             $('#userAccountLockedCheckbox').prop('disabled', !$('#userAccountLockedCheckbox').prop('disabled'));
             $('#userAccountExpiredCheckbox').prop('disabled', !$('#userAccountExpiredCheckbox').prop('disabled'));
             $('#userPasswordExpiredCheckbox').prop('disabled', !$('#userPasswordExpiredCheckbox').prop('disabled'));
+            $('#userConfirmButton').prop('disabled', !$('#userConfirmButton').prop('disabled'));
         }
     });
 });

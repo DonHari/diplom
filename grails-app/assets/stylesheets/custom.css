@@ -138,3 +138,43 @@ nav div ul:last-child {
 .custom-news-date {
     display: flex;
 }
+
+input:focus {
+    box-shadow: 0 0 0 0.05rem !important;
+}
+
+select:focus {
+    box-shadow: 0 0 0 0.05rem !important;
+}
+
+textarea:focus {
+    box-shadow: 0 0 0 0.05rem !important;
+}
+
+.was-validated {
+    box-shadow: 0 0 0 0.05rem !important;
+}
+
+.form-control:invalid:focus {
+    box-shadow: 0 0 0 0.05rem !important;
+}
+
+.form-control.is-invalid:focus {
+    box-shadow: 0 0 0 0.05rem !important;
+}
+
+.was-validated.custom-select:invalid:focus {
+    box-shadow: 0 0 0 0.05rem !important;
+}
+
+.custom-select.is-invalid:focus {
+    box-shadow: 0 0 0 0.05rem !important;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.05rem !important;
+}
+
+.custom-file-input:focus {
+    box-shadow: 0 0 0 0.05rem !important;
+}

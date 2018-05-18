@@ -11,7 +11,7 @@
                 <g:if test="${justSaved}">
                     <div class="alert alert-dismissible alert-success">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        <g:message code="schedule.saved.message" default="Ви успішно додали нове питання!"/>
+                        Ви успішно додали нове питання!
                         <script>
                             $(document).ready(function () {
                                 $('#faqQuestion').val('');
