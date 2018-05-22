@@ -37,6 +37,11 @@ beans = {
     imageService(ImageServiceImplService) {
         ref('imageService')
     }
+    userRoleService(UserRoleServiceImplService) {
+        ref('userRoleService')
+        roleService = ref('roleService')
+        userService = ref('userService')
+    }
     localeResolver(FixedLocaleResolver, new Locale('uk', 'UA'))
 
     //disables password encoder

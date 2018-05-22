@@ -37,7 +37,7 @@
                         <div class="col-4">
                             <div class="form-group">
                                 <label for="userSecondName" class="form-label">По-батькові</label>
-                                <input type="text" class="form-control" id="userSecondName" value="${userRole.user.secondName}" name="name" disabled=""/>
+                                <input type="text" class="form-control" id="userSecondName" value="${userRole.user.secondName}" name="secondName" disabled=""/>
                             </div>
                         </div>
                     </div>

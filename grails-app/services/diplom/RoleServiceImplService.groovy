@@ -21,6 +21,11 @@ class RoleServiceImplService implements RoleService {
     }
 
     @Override
+    Role get(Long id) {
+        Role.get(id)
+    }
+
+    @Override
     Role save(Role role) {
         role.save()
         //todo save userRoles

@@ -29,7 +29,6 @@ class UserServiceImplService implements UserService {
     @Override
     User update(User user) {
         checkIfExists(user.id)
-        //todo update userRoles
         user.save()
     }
 
