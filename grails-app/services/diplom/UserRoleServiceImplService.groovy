@@ -37,4 +37,14 @@ class UserRoleServiceImplService implements UserRoleService {
         List<UserRole> instances = UserRole.findAllByRole(role)
         instances.each { it.delete() }
     }
+
+    @Override
+    UserRole findByUser(User user) {
+        UserRole.findByUser(user)
+    }
+
+    @Override
+    UserRole get(Long userId, Long roleId) {
+        UserRole.get(userId, roleId)
+    }
 }

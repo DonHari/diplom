@@ -179,15 +179,21 @@ textarea:focus {
     box-shadow: 0 0 0 0.05rem !important;
 }
 
-.img-height-430{
+.img-height-430 {
     height: 430px;
     width: 100%;
+    max-width: 350px;
 }
-.custom-padding{
+
+.custom-padding {
     margin: 3vh 0;
 }
 
-.custom-iframe{
+.custom-iframe {
     width: 100%;
     min-height: 80vh;
+}
+
+.custom-nav-link {
+    padding: 0.5rem 1rem;
 }

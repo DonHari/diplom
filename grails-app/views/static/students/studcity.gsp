@@ -6,7 +6,6 @@
 <body>
     <div class="row">
         <div class="col-5">
-            %{--<img class="img-fluid" src="${createLink(controller: "image", action: "getResourceImage", params: [path: '/static/students', file:'studcity_director.jpg'])}"/>--}%
             <img class="img-fluid img-height-430" src="${assetPath(src: '/static/students/studcity_director.jpg')}">
         </div>
         <div class="col-7">

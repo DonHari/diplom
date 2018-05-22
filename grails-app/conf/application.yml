@@ -76,6 +76,8 @@ grails:
             updateOnStart: true
             updateOnStartFileName: changelog.xml
         springsecurity:
+#            apf:
+#                storeLastUsername: true
 #            active: false
             userLookup:
               userDomainClassName: diplom.User

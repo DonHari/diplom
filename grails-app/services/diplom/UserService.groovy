@@ -12,4 +12,6 @@ interface UserService {
     Integer count()
 
     User get(Long id)
+
+    User updatePassword(String username, String password)
 }

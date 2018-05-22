@@ -21,4 +21,8 @@ interface UserRoleService {
      * @return
      */
     void deleteAll(Role role)
+
+    UserRole findByUser(User user)
+
+    UserRole get(Long userId, Long roleId)
 }

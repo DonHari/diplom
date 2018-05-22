@@ -54,7 +54,7 @@
                     <sec:ifLoggedIn>
                         <sec:ifAllGranted roles="ROLE_ADMIN">
                             <div class="btn-group ml-5">
-                                <button type="button" class="btn btn-primary"><g:message code="header.auth.account"/></button>
+                                <input type="button" class="btn btn-primary" value="${message(code: "header.auth.account")}" onclick="location.href = window.location.protocol + '//' + window.location.host + '/userRole/showMe'"/>
                                 <div class="btn-group" role="group">
                                     <button id="adminDrop" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                     <div class="dropdown-menu custom-dropdown-right bg-primary" aria-labelledby="adminDrop" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0; left: 0; transform: translate3d(0px, 36px, 0px);">
@@ -70,7 +70,7 @@
                         </sec:ifAllGranted>
                         <sec:ifAllGranted roles="ROLE_USER">
                             <div class="btn-group ml-5">
-                                <button type="button" class="btn btn-primary"><g:message code="header.auth.account"/></button>
+                                <input type="button" class="btn btn-primary" value="${message(code: "header.auth.account")}" onclick="location.href = window.location.protocol + '//' + window.location.host + '/userRole/showMe'"/>
                                 <div class="btn-group" role="group">
                                     <button id="userDrop" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                     <div class="dropdown-menu custom-dropdown-right bg-primary" aria-labelledby="userDrop" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0; left: 0px; transform: translate3d(0px, 36px, 0px);">

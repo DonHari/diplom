@@ -23,12 +23,11 @@
                         <label class="control-label" for="password"><g:message code='auth.password'/>:</label>
                         <input class="form-control" type="password" name="${passwordParameter ?: 'password'}" id="password"/>
                     </div>
-                    <div class="form-check pb-2">
-                        <input type="checkbox" class="form-check-input" id="rememberMe" name="${rememberMeParameter ?: 'remember-me'}" <g:if test="${hasCookie}">checked="checked"</g:if>/>
-                        <label for="rememberMe"><g:message code="auth.remember"/></label>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck2" name="${rememberMeParameter ?: 'remember-me'}" <g:if test="${hasCookie}">checked="checked"</g:if>>
+                        <label class="custom-control-label" for="customCheck2"><g:message code="auth.remember"/></label>
                     </div>
-                    <input class="btn btn-outline-primary" type="submit" id="authSubmit" value="${message(code:'auth.button.login')}"/>
-                    %{--<input class="btn btn-outline-primary" type="submit" id="authSubmit1" value="${message(code:'auth.button.login')}"/>--}%
+                    <input class="btn btn-outline-primary mt-2" type="submit" id="authSubmit" value="${message(code:'auth.button.login')}"/>
                 </form>
             </div>
             %{--<div class="offset-4"></div>--}%

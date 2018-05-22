@@ -1,11 +1,13 @@
 package diplom
 
+import grails.plugin.springsecurity.SpringSecurityService
 import grails.transaction.Transactional
 
 @Transactional
 class UserServiceImplService implements UserService {
 
     UserRoleService userRoleService
+    SpringSecurityService springSecurityService
 
     private checkIfExists = { Long id ->
         if (!User.exists(id)) {
@@ -47,5 +49,15 @@ class UserServiceImplService implements UserService {
     @Override
     User get(Long id) {
         User.get(id)
+    }
+
+    User updatePassword(String username, String newPassword) {
+        User user = User.findByUsername(username)
+        if (user) {
+            user.password = newPassword
+            user.passwordExpired = false
+            user.save(flush: true)
+            springSecurityService.reauthenticate(username)
+        }
     }
 }

@@ -26,6 +26,7 @@ beans = {
     securityService(SecurityServiceImplService) {
         ref('securityService')
         springSecurityService = ref('springSecurityService')
+        userRoleService = ref('userRoleService')
     }
     userRoleService(UserRoleServiceImplService) {
         ref('userRoleService')

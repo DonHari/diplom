@@ -362,9 +362,16 @@ $(document).ready(function () {
             $('#userConfirmButton').prop('disabled', !$('#userConfirmButton').prop('disabled'));
         }
     });
-
-
-    $('.single-item').slick();
+    $('#password').on({
+        blur: function () {
+            //todo validate password
+        }
+    });
+    $('#passwordConfirm').on({
+        blur: function () {
+            //todo validate password
+        }
+    });
 });
 
 function checkCredentials() {

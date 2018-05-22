@@ -58,12 +58,6 @@
                             </g:each>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <g:prepareCheckbox message="Обликовий запис активний" checked="${userRole.user.enabled}" disabled="true" id="userEnabledCheckbox" name="enabled"/>
-                        <g:prepareCheckbox message="Обликовий запис заблокований" checked="${userRole.user.accountLocked}" disabled="true" id="userAccountLockedCheckbox" name="accountLocked"/>
-                        <g:prepareCheckbox message="Вийшов строк гідності облікового запису" checked="${userRole.user.accountExpired}" disabled="true" id="userAccountExpiredCheckbox" name="accountExpired"/>
-                        <g:prepareCheckbox message="Вийшов строк гідності паролю" checked="${userRole.user.passwordExpired}" disabled="true" id="userPasswordExpiredCheckbox" name="passwordExpired"/>
-                    </div>
                     <button type="submit" class="btn btn-primary" id="userConfirmButton" disabled=""><g:message code="add.confirm"/></button>
                     <button type="button" class="btn btn-primary" id="userEnableEditButton">Включити редагування</button>
                 </form>

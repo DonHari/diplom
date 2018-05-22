@@ -14,6 +14,11 @@ class RoleServiceImplService implements RoleService {
     }
 
     @Override
+    List<Role> getAll() {
+        Role.getAll()
+    }
+
+    @Override
     List<Role> list(Integer page, Integer max) {
         Integer localPage = page ?: 0
         Integer localMax = PageUtil.getMaxValue(max)

@@ -22,24 +22,11 @@
             <tbody>
             <g:each in="${userRoleList}" var="userRole" status="i">
                     <g:if test="${sec.loggedInUserInfo(field: 'id') as Long == userRole.user.id}">
-                    %{--todo link to view personal info--}%
-                        <tr class="table-secondary cursor-pointer clickable-row" data-href="${createLink(controller: 'userRole', action: 'show', params:[userId: userRole.user.id, roleId: userRole.role.id])}">
+                        <tr class="table-secondary cursor-pointer clickable-row" data-href="${createLink(controller: 'userRole', action: 'showMe')}">
                     </g:if>
                     <g:else>
                         <tr class="table cursor-pointer clickable-row" data-href="${createLink(controller: 'userRole', action: 'show', params:[userId: userRole.user.id, roleId: userRole.role.id])}">
                     </g:else>
-                    %{--<g:if test="${i % 2 == 0}">
-                        <tr class="table-primary cursor-pointer clickable-row" data-href="${createLink(controller: 'userRole', action: 'show', params:[userId: userRole.user.id, roleId: userRole.role.id])}">
-                    </g:if>
-                    <g:else>
-                        <g:if test="${sec.loggedInUserInfo(field: 'id') as Long == userRole.user.id}">
-                            todo link to view personal info
-                            <tr class="table-active cursor-pointer clickable-row" data-href="${createLink(controller: 'userRole', action: 'show', params:[userId: userRole.user.id, roleId: userRole.role.id])}">
-                        </g:if>
-                        <g:else>
-                            <tr class="table-secondary cursor-pointer clickable-row" data-href="${createLink(controller: 'userRole', action: 'show', params:[userId: userRole.user.id, roleId: userRole.role.id])}">
-                        </g:else>
-                    </g:else>--}%
                     <td>${userRole.user.surname}</td>
                     <td>${userRole.user.name}</td>
                     <td>${userRole.user.secondName}</td>

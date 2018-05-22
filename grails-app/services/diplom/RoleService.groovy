@@ -1,6 +1,8 @@
 package diplom
 
 interface RoleService {
+    List<Role> getAll()
+
     List<Role> list(Integer page, Integer max)
 
     Role get(Long id)

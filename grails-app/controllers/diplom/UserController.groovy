@@ -28,7 +28,6 @@ class UserController {
     }
 
     @Secured(["ROLE_ADMIN", 'IS_AUTHENTICATED_REMEMBERED'])
-    @Transactional
     def save(User user) {
         User savedUser = userService.save(user)
 
@@ -41,7 +40,6 @@ class UserController {
     }
 
     @Secured(["ROLE_ADMIN", 'IS_AUTHENTICATED_REMEMBERED'])
-    @Transactional
     def update(User user) {
         User updatedUser = userService.update(user)
 
@@ -49,11 +47,14 @@ class UserController {
     }
 
     @Secured(["ROLE_ADMIN", 'IS_AUTHENTICATED_REMEMBERED'])
-    @Transactional
     def delete(User user) {
         userService.delete(user)
 
         redirect(controller: "user", action: "index", method: "GET", status: NO_CONTENT)
     }
 
+    def updatePassword(String username, String newPassword) {
+        userService.updatePassword(username, newPassword)
+        redirect(controller: 'news', action: 'index')
+    }
 }
