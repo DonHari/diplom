@@ -65,6 +65,30 @@ class UserRoleController {
 
     @Secured(['ROLE_USER', 'ROLE_ADMIN', "IS_AUTHENTICATED_REMEMBERED"])
     def showMe() {
-        respond(securityService.getAuthorizedUserAndRole(), model: [availableRoles: roleService.getAll(), justSaved: chainModel?.justSaved])
+        respond(securityService.getAuthorizedUserAndRole(), model: [availableRoles: roleService.getAll(), justSaved: chainModel?.justSaved, errorOccurred: chainModel?.errorOccurred, activeTab: chainModel?.activeTab, errorMessage: chainModel?.errorMessage])
+    }
+
+    @Secured(['ROLE_USER', 'ROLE_ADMIN', "IS_AUTHENTICATED_REMEMBERED"])
+    def updateLogin() {
+        if (userService.checkPassword(params.userId as Long, params.password as String)) {
+            if (userService.checkIfUsernameAvailable(params.newUsername)) {
+                userService.updateUsername(params.userId as Long, params.newUsername as String)
+                chain(action: 'showMe', model: [justSaved: true])
+            } else {
+                chain(action: 'showMe', model: [errorOccurred: true, activeTab: 'updateLogin', errorMessage: "Введене ім'я користувача вже зайнято!"])
+            }
+        } else {
+            chain(action: 'showMe', model: [errorOccurred: true, activeTab: 'updateLogin', errorMessage: 'Неправильно введенний пароль!'])
+        }
+    }
+
+    @Secured(['ROLE_USER', 'ROLE_ADMIN', "IS_AUTHENTICATED_REMEMBERED"])
+    def updatePassword() {
+        if (userService.checkPassword(params.userId as Long, params.password as String)) {
+            userService.updatePassword(params.userId as Long, params.newPassword as String)
+            chain(action: 'showMe', model: [justSaved: true])
+        } else {
+            chain(action: 'showMe', model: [errorOccurred: true, activeTab: 'updatePassword', errorMessage: 'Неправильно введенний пароль!'])
+        }
     }
 }

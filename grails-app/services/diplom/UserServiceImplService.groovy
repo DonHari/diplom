@@ -51,13 +51,35 @@ class UserServiceImplService implements UserService {
         User.get(id)
     }
 
-    User updatePassword(String username, String newPassword) {
-        User user = User.findByUsername(username)
+    User updatePassword(Long userId, String newPassword) {
+        User user = User.get(userId)
         if (user) {
             user.password = newPassword
-            user.passwordExpired = false
             user.save(flush: true)
-            springSecurityService.reauthenticate(username)
         }
+    }
+
+    @Override
+    User updateUsername(Long userId, String newUsername) {
+        User user = User.get(userId)
+        user.username = newUsername
+        user.save(flush: true)
+        user
+    }
+
+    @Override
+    Boolean checkPassword(Long userId, String password) {
+        Boolean result = false
+        User user = User.get(userId)
+        if (user.password == password) {
+            result = true
+        }
+        result
+    }
+
+    @Override
+    Boolean checkIfUsernameAvailable(String username) {
+        User user = User.findByUsername(username)
+        return user == null
     }
 }

@@ -362,6 +362,66 @@ $(document).ready(function () {
             $('#userConfirmButton').prop('disabled', !$('#userConfirmButton').prop('disabled'));
         }
     });
+    $('#userUsername').on({
+        change: function () {
+            if ($(this).val().length >= 4) {
+                enableUsernameChangeButton();
+                $(this).removeClass('is-invalid');
+            } else {
+                $(this).addClass('is-invalid');
+                $('#usernameEditSubmit').prop('disabled', true);
+            }
+        }
+    });
+    $('#userPasswordForUsernameEdit').on({
+        change: function () {
+            if ($(this).val().length >= 4) {
+                enableUsernameChangeButton();
+                $(this).removeClass('is-invalid');
+            } else {
+                $(this).addClass('is-invalid');
+                $('#usernameEditSubmit').prop('disabled', true);
+            }
+        }
+    });
+    $('#newPasswordEdit').on({
+        change: function () {
+            if ($(this).val().length >= 4) {
+                enablePasswordChangeButton();
+                $(this).removeClass('is-invalid');
+                if($(this).val() !== $('#newPasswordEditConfirm').val() && $('#newPasswordEditConfirm').val().length != 0){
+                    $('#newPasswordEditConfirm').addClass('is-invalid');
+                } else {
+                    $('#newPasswordEditConfirm').removeClass('is-invalid');
+                }
+            } else {
+                $('passwordEditSubmit').prop('disabled', true);
+                $(this).addClass('is-invalid');
+            }
+        }
+    });
+    $('#newPasswordEditConfirm').on({
+        change: function () {
+            if ($(this).val() === $('#newPasswordEdit').val()) {
+                enablePasswordChangeButton();
+                $(this).removeClass('is-invalid');
+            } else {
+                $('passwordEditSubmit').prop('disabled', true);
+                $(this).addClass('is-invalid');
+            }
+        }
+    });
+    $('#userPasswordForPasswordEdit').on({
+        change: function () {
+            if ($(this).val().length >= 4) {
+                enablePasswordChangeButton();
+                $(this).removeClass('is-invalid');
+            } else {
+                $('passwordEditSubmit').prop('disabled', true);
+                $(this).addClass('is-invalid');
+            }
+        }
+    });
     $('#password').on({
         blur: function () {
             //todo validate password
@@ -372,7 +432,31 @@ $(document).ready(function () {
             //todo validate password
         }
     });
+
+    $('#newsDateCreated').text(new Date(+$('#newsDateCreated').text()));
 });
+
+function enablePasswordChangeButton() {
+    var newPasswordValid = $('#newPasswordEdit').val().length >= 4;
+    var newPasswordConfirmValid = $('#newPasswordEditConfirm').val().length >= 4;
+    var userPasswordForPasswordEditValid = $('#userPasswordForPasswordEdit').val().length >= 4;
+    var newPasswordsAreSame = $('#newPasswordEdit').val() === $('#newPasswordEditConfirm').val();
+    if (newPasswordValid && newPasswordConfirmValid && userPasswordForPasswordEditValid && newPasswordsAreSame) {
+        console.log('if');
+        $('#passwordEditSubmit').prop('disabled', false);
+    } else {
+        console.log('else');
+        $('#passwordEditSubmit').prop('disabled', true);
+    }
+}
+
+function enableUsernameChangeButton() {
+    var userUsernameValid = $('#userUsername').val().length >= 4;
+    var userPasswordForUsernameEditValid = $('#userPasswordForUsernameEdit').val().length >= 4;
+    if (userUsernameValid && userPasswordForUsernameEditValid) {
+        $('#usernameEditSubmit').prop('disabled', false);
+    }
+}
 
 function checkCredentials() {
     var url = window.location.protocol + '//' + window.location.host + '/login/check';
