@@ -191,3 +191,20 @@ textarea:focus {
 .custom-nav-link {
     padding: 0.5rem 1rem;
 }
+
+.custom-faculty-image {
+    max-width: 15vw;
+    height: auto;
+}
+
+.custom-font-size-1p3 {
+    font-size: 1.3rem;
+}
+
+.custom-font-weight-500 {
+    font-weight: 500;
+}
+
+.custom-font-weight-800 {
+    font-weight: 800;
+}
