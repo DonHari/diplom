@@ -58,11 +58,11 @@ nav div ul:last-child {
 }
 
 .custom-footer-link {
-    color: #fff !important;
+    color: white !important;
 }
 
 .custom-footer-link:hover {
-    color: #18BC9C !important;
+    color: antiquewhite !important;
     text-decoration: none;
 }
 
@@ -207,4 +207,30 @@ textarea:focus {
 
 .custom-font-weight-800 {
     font-weight: 800;
+}
+
+.custom-sidebar {
+    color: black;
+}
+
+.custom-image-50 {
+    max-width: 50%;
+    min-width: 50%;
+    height: auto;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.custom-image-70{
+    min-width: 70%;
+    max-width: 70%;
+    height: auto;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.custom-image-100{
+    max-width: 100%;
+    min-width: 100%;
+    height: auto;
 }

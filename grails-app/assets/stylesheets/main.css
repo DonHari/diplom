@@ -49,10 +49,10 @@ body {
 
 /* GENERAL */
 
-#grailsLogo a {
-    display: inline-block;
-    margin: 1em;
-}
+/*#grailsLogo a {*/
+    /*display: inline-block;*/
+    /*margin: 1em;*/
+/*}*/
 
 .footer {
     background: #abbf78;
@@ -64,20 +64,20 @@ body {
     min-height: 1em;
 }
 
-.footer a {
-    color: #255b17;
-}
+/*.footer a {*/
+    /*color: #255b17;*/
+/*}*/
 
-.spinner {
-    background: url(../images/spinner.gif) 50% 50% no-repeat transparent;
-    height: 16px;
-    width: 16px;
-    padding: 0.5em;
-    position: absolute;
-    right: 0;
-    top: 0;
-    text-indent: -9999px;
-}
+/*.spinner {*/
+    /*background: url(../images/spinner.gif) 50% 50% no-repeat transparent;*/
+    /*height: 16px;*/
+    /*width: 16px;*/
+    /*padding: 0.5em;*/
+    /*position: absolute;*/
+    /*right: 0;*/
+    /*top: 0;*/
+    /*text-indent: -9999px;*/
+/*}*/
 
 /* NAVIGATION MENU */
 

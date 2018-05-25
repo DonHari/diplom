@@ -58,28 +58,6 @@ function loadDepartmentPage() {
     )
 }
 
-//todo doesn't work
-function setNewsHeaderActive() {
-    console.log('1');
-    document.getElementById('newsHeader').classList.add('active');
-    document.getElementById('enrolleeHeader').classList.remove('active');
-    document.getElementById('studentsHeader').classList.remove('active');
-}
-
-function setStudentsHeaderActive() {
-    console.log('2');
-    document.getElementById('studentsHeader').classList.add('active');
-    document.getElementById('enrolleeHeader').classList.remove('active');
-    document.getElementById('newsHeader').classList.remove('active');
-}
-
-function setEnrolleeHeaderActive() {
-    console.log('3');
-    document.getElementById('enrolleeHeader').classList.add('active');
-    document.getElementById('newsHeader').classList.remove('active');
-    document.getElementById('studentsHeader').classList.remove('active');
-}
-
 function loadSchedule() {
     var year = document.getElementById("yearSelect").value;
     var tetrameter = document.getElementById("tetrameterSelect").value;
