@@ -205,6 +205,10 @@ textarea:focus {
     font-weight: 500;
 }
 
+.custom-font-weight-600 {
+    font-weight: 600;
+}
+
 .custom-font-weight-800 {
     font-weight: 800;
 }
