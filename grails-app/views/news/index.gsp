@@ -46,9 +46,46 @@
                         <hr class="news-divider"/>
                     </g:if>
                 </g:each>
-                <div class="pagination">
-                    <g:paginate total="${newsCount ?: 0}" max="${maxPerPage}"/>
-                </div>
+                <g:customPagination total="${newsCount ?: 0}" max="${maxPerPage}"/>
+                %{--<g:customPagination total="${50}" max="${maxPerPage}"/>
+                <div class="row my-3">
+                    <div class="col-12">
+                        <ul class="pagination mx-auto justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link custom-page-link disabled" href="#" disabled>&laquo;</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link custom-page-link active" href="#">1</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link custom-page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link custom-page-link" href="#">3</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link custom-page-link" href="#">4</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link custom-page-link" href="#">5</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link custom-page-link" href="#">&raquo;</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>--}%
+                %{--<ul class="pagination mb-3 bg-white">
+                    <li class="page-item">
+                        <a href="/news/index?offset=0&max=10" class="page-link custom-page-link">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a href="/news/index?offset=0&max=10" class="page-link custom-page-link">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a href="/news/index?offset=0&max=10" class="page-link custom-page-link">3</a>
+                    </li>
+                </ul>--}%
             </div>
             <div class="offset-2"></div>
         </div>

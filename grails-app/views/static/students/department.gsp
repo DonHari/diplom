@@ -438,18 +438,6 @@
                                     </address>
                                 </div>
                             </div>
-                            <hr class="my-4 custom-divider"/>
-                            <div class="row">
-                                <div class="col-4">
-                                    <img src="${assetPath(src: '/static/students/department/stuff/pivonos.jpg')}" class="custom-image-70"/>
-                                </div>
-                                <div class="col-8">
-                                    <h4 class="pb-2">Пивонос Василь В’ячеславович</h4>
-                                    <address class="text-muted pb-3">
-                                        <p class="pb-1">інженер ІІІ категорії</p>
-                                    </address>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

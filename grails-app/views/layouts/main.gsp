@@ -121,14 +121,14 @@
                 <div class="col-5">
                     <div class="row">
                         <div class="offset-6"></div>
-                        <div class="col-6">
+                        <div class="col-6 pl-5">
                             <a class="custom-footer-link" href="http://udhtu.edu.ua/"><g:message code="footer.goto.mainsite"/></a>
                         </div>
                     </div>
                     <div class="row pt-3">
                         <div class="offset-6"></div>
-                        <div class="col-6">
-                            ©2008-2018 Кафедра СКС
+                        <div class="col-6 pl-5">
+                            ©2008-<g:currentYear/> Кафедра СКС
                         </div>
                     </div>
                 </div>
