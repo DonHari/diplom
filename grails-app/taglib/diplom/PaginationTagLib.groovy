@@ -123,7 +123,7 @@ class PaginationTagLib {
             sb.append('</a></li>')
         } else {
             sb.append('<li class="page-item"><a class="page-link custom-page-link" href="/news/index?offset=')
-            sb.append(total - max)
+            sb.append((total - total % max))
             sb.append('&max=')
             sb.append(max)
             sb.append('">')
