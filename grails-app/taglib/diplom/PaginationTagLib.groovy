@@ -1,8 +1,5 @@
 package diplom
 
-import org.grails.taglib.TagOutput
-import org.grails.taglib.encoder.OutputContextLookupHelper
-
 class PaginationTagLib {
 
     /**
@@ -73,10 +70,6 @@ class PaginationTagLib {
         }
     }
 
-    private callLink(Map attrs, Object body) {
-        TagOutput.captureTagOutput(tagLibraryLookup, 'g', 'link', attrs, body, OutputContextLookupHelper.lookupOutputContext())
-    }
-
     private void addPage(StringBuilder sb, Integer linkOffset, Integer linkMax, String text, Boolean active = false, Boolean disabled = false) {
         if (disabled) {
             sb.append('<li class="page-item"><a class="page-link custom-page-link disabled" href="#" disabled>')
@@ -140,28 +133,10 @@ class PaginationTagLib {
     }
 
     private void addLeftAquo(StringBuilder sb, Integer offset, Integer max, Integer currentPage, Integer firstPage) {
-        sb.append('<li class="page-item"><a class="page-link custom-page-link ')
-        if (currentPage == firstPage) {
-            sb.append('disabled')
-        }
-        sb.append('" href="')
-        sb.append('/news/index?offset=')
-        sb.append((offset - max) >= 0 ? offset - max : 0)
-        sb.append('&max=')
-        sb.append(max)
-        sb.append('" >&laquo;</a></li>')
+        addPage(sb, (offset - max) >= 0 ? offset - max : 0, max, '&laquo;', false, currentPage == firstPage)
     }
 
     private void addRightAquo(StringBuilder sb, Integer offset, Integer max, Integer total, Integer currentPage, Integer lastPage) {
-        sb.append('<li class="page-item"><a class="page-link custom-page-link ')
-        if (currentPage == lastPage) {
-            sb.append('disabled')
-        }
-        sb.append('" href="')
-        sb.append('/news/index?offset=')
-        sb.append((offset + max) <= total - max ? offset + max : total - max)
-        sb.append('&max=')
-        sb.append(max)
-        sb.append('" >&raquo;</a></li>')
+        addPage(sb, (offset + max) <= total - max ? offset + max : total - max, max, '&raquo;', false, currentPage == lastPage)
     }
 }
