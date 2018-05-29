@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>О факультеті</title>
+    <title>Освітня програма</title>
 </head>
 <body>
     <div class="row pt-3">

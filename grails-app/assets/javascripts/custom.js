@@ -18,11 +18,24 @@ var faqAnswerValid = false;
 function layoutLoaded() {
 }
 
+function loadRadioSectionPage() {
+    $("#studentsSchedule").removeClass('active');
+    $("#studentsFaculty").removeClass('active');
+    $("#studentsDepartment").removeClass('active');
+    $("#studentsStudcity").removeClass('active');
+    $("#studentsProgram").removeClass('active');
+    $("#studentsRadioSection").addClass('active');
+    $("#content").load(
+        "/students/radioSection"
+    );
+}
+
 function loadProgramPage() {
     $("#studentsSchedule").removeClass('active');
     $("#studentsFaculty").removeClass('active');
     $("#studentsDepartment").removeClass('active');
     $("#studentsStudcity").removeClass('active');
+    $("#studentsRadioSection").removeClass('active');
     $("#studentsProgram").addClass('active');
     $("#content").load(
         "/students/program"
@@ -34,6 +47,7 @@ function loadStudcityPage() {
     $("#studentsFaculty").removeClass('active');
     $("#studentsDepartment").removeClass('active');
     $("#studentsProgram").removeClass('active');
+    $("#studentsRadioSection").removeClass('active');
     $("#studentsStudcity").addClass('active');
     $("#content").load(
         "/students/studcity"
@@ -45,6 +59,7 @@ function loadSchedulePage() {
     $("#studentsFaculty").removeClass('active');
     $("#studentsDepartment").removeClass('active');
     $("#studentsProgram").removeClass('active');
+    $("#studentsRadioSection").removeClass('active');
     $("#studentsSchedule").addClass('active');
     $("#content").load(
         "/schedule/schedule"
@@ -56,6 +71,7 @@ function loadFacultyPage() {
     $("#studentsSchedule").removeClass('active');
     $("#studentsStudcity").removeClass('active');
     $("#studentsProgram").removeClass('active');
+    $("#studentsRadioSection").removeClass('active');
     $("#studentsFaculty").addClass('active');
     $("#content").load(
         "/students/faculty"
@@ -67,6 +83,7 @@ function loadDepartmentPage() {
     $("#studentsSchedule").removeClass('active');
     $("#studentsStudcity").removeClass('active');
     $("#studentsProgram").removeClass('active');
+    $("#studentsRadioSection").removeClass('active');
     $("#studentsDepartment").addClass('active');
     $("#content").load(
         "/students/department"
