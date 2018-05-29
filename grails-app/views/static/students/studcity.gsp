@@ -44,9 +44,8 @@
     </div>
     <div class="row pt-3">
         <div class="col-12">
-            <hr class = "custom-padding" width="100%">
+            <hr class = "custom-padding custom-divider" width="100%">
             <h3 class="text-center ">Гуртожиток 4</h3>
-            <hr class = "custom-padding" width="100%">
             <div class="row pt-4">
                 <div class="col-5">
                     <img class="img-fluid pl-3" src="${assetPath(src: '/static/students/studcity/dormitory_4_director.jpg')}">

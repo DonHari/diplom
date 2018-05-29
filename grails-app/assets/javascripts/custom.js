@@ -18,74 +18,85 @@ var faqAnswerValid = false;
 function layoutLoaded() {
 }
 
-function loadRadioSectionPage() {
+function loadContactsPage(id) {
+    $("#studentsSchedule").removeClass('active');
+    $("#studentsRadioSection").removeClass('active');
+    $("#studentsContacts").addClass('active');
+    $(id).load(
+        "/students/contacts"
+    );
+}
+
+function loadRadioSectionPage(id) {
     $("#studentsSchedule").removeClass('active');
     $("#studentsFaculty").removeClass('active');
     $("#studentsDepartment").removeClass('active');
     $("#studentsStudcity").removeClass('active');
     $("#studentsProgram").removeClass('active');
+    $("#studentsContacts").removeClass('active');
     $("#studentsRadioSection").addClass('active');
-    $("#content").load(
+    $(id).load(
         "/students/radioSection"
     );
 }
 
-function loadProgramPage() {
+function loadProgramPage(id) {
     $("#studentsSchedule").removeClass('active');
     $("#studentsFaculty").removeClass('active');
     $("#studentsDepartment").removeClass('active');
     $("#studentsStudcity").removeClass('active');
     $("#studentsRadioSection").removeClass('active');
     $("#studentsProgram").addClass('active');
-    $("#content").load(
+    $(id).load(
         "/students/program"
     );
 }
 
-function loadStudcityPage() {
+function loadStudcityPage(id) {
     $("#studentsSchedule").removeClass('active');
     $("#studentsFaculty").removeClass('active');
     $("#studentsDepartment").removeClass('active');
     $("#studentsProgram").removeClass('active');
     $("#studentsRadioSection").removeClass('active');
     $("#studentsStudcity").addClass('active');
-    $("#content").load(
+    $(id).load(
         "/students/studcity"
     );
 }
 
-function loadSchedulePage() {
+function loadSchedulePage(id) {
     $("#studentsStudcity").removeClass('active');
     $("#studentsFaculty").removeClass('active');
     $("#studentsDepartment").removeClass('active');
     $("#studentsProgram").removeClass('active');
     $("#studentsRadioSection").removeClass('active');
+    $("#studentsContacts").removeClass('active');
     $("#studentsSchedule").addClass('active');
-    $("#content").load(
+    $(id).load(
         "/schedule/schedule"
     )
 }
 
-function loadFacultyPage() {
+function loadFacultyPage(id) {
     $("#studentsDepartment").removeClass('active');
     $("#studentsSchedule").removeClass('active');
     $("#studentsStudcity").removeClass('active');
     $("#studentsProgram").removeClass('active');
     $("#studentsRadioSection").removeClass('active');
     $("#studentsFaculty").addClass('active');
-    $("#content").load(
+    $(id).load(
         "/students/faculty"
     )
 }
 
-function loadDepartmentPage() {
+function loadDepartmentPage(id) {
     $("#studentsFaculty").removeClass('active');
     $("#studentsSchedule").removeClass('active');
     $("#studentsStudcity").removeClass('active');
     $("#studentsProgram").removeClass('active');
     $("#studentsRadioSection").removeClass('active');
     $("#studentsDepartment").addClass('active');
-    $("#content").load(
+    $(id).load(
         "/students/department"
     )
 }

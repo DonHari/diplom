@@ -9,7 +9,6 @@ body {
 .content {
     background-color: white;
     min-height: 95vh;
-    /*padding-bottom: 40px;*/
 }
 
 .container-bg {
@@ -257,7 +256,9 @@ textarea:focus {
 }
 
 .custom-divider {
-    border-color: #8a8a8a;
+    background-image: linear-gradient(to right, white, #acacac, white);
+    height: 1px;
+    border: 0;
 }
 
 .custom-page-link {

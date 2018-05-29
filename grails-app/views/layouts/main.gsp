@@ -20,11 +20,11 @@
 
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item" id="newsHeader" onclick="setNewsHeaderActive()">
+                    <li class="nav-item" id="newsHeader">
                         <a class="nav-link" href="/" ><g:message code="header.news"/></a>
                     </li>
                     <li class="nav-item" id="enrolleeHeader">
-                        <a class="nav-link" href="#"><g:message code="header.enrollee"/></a>
+                        <a class="nav-link" href="/enrollee"><g:message code="header.enrollee"/></a>
                     </li>
                     <li class="nav-item" id="studentsHeader">
                         <a class="nav-link" href="/students"><g:message code="header.student"/></a>

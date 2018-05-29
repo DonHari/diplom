@@ -181,7 +181,7 @@
                                     <p class="pb-3">А.І. Косолап є членом Європейського наукового товариства з безперервною оптимізації – «EUROPT» і міжнародного наукового товариства – «Mathematical Optimization Society».</p>
                                 </div>
                             </div>
-                            <hr class="my-4 custom-divider"/>
+                            <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
                                     <img src="${assetPath(src: '/static/students/department/stuff/alpatov.jpg')}" class="custom-image-70"/>
@@ -207,7 +207,7 @@
                                     <p class="pb-3">Підготував 3 докторів та 9 кандидатів наук.</p>
                                 </div>
                             </div>
-                            <hr class="my-4 custom-divider"/>
+                            <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
                                     <img src="${assetPath(src: '/static/students/department/stuff/horoshilov.jpg')}" class="custom-image-70"/>
@@ -233,7 +233,7 @@
                                     <p class="pb-3">С.В. Хорошилов – провідний науковий співробітник відділу системного аналізу та проблем управління Інституту технічної механіки з 20-и річним досвідом роботи в галузі динаміки космічних систем і передових технологій. Результати його робіт відзначені нагородами Президента України, Національної академії наук України та Державного космічного агентства України. Розроблені ним математичні моделі, методи, методики і алгоритми використовувалися ДП «КБ «Південне» при розробці ряду космічних місій. С.В. Хорошилов – постійний експерт ДКАУ в складі Міжагентського координаційного комітету з проблеми космічного сміття.</p>
                                 </div>
                             </div>
-                            <hr class="my-4 custom-divider"/>
+                            <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
                                     <img src="${assetPath(src: '/static/students/department/stuff/kapitonov.jpg')}" class="custom-image-70"/>
@@ -256,11 +256,9 @@
                                     </ul>
                                     <p class="pb-3">Наукові інтереси: математичне моделювання процесів фазоутворення.</p>
                                     <p class="pb-3">Публікації: понад 40 наукових робіт. Профіль <a target="_blank" href="https://scholar.google.com.ua/citations?user=Nb-ePQMAAAAJ&hl=ru">Google Scholar</a></p>
-                                    <p class="pb-3"></p>
-                                    <p class="pb-3"></p>
                                 </div>
                             </div>
-                            <hr class="my-4 custom-divider"/>
+                            <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
                                     <img src="${assetPath(src: '/static/students/department/stuff/bileckiy.jpg')}" class="custom-image-70"/>
@@ -286,7 +284,7 @@
                                     <p class="pb-3">Публікації: більше 50 наукових робіт, 1 винахід. Профіль <a target="_blank" href="https://scholar.google.com.ua/citations?user=mSjDpOMAAAAJ&hl=ru">Google Scholar</a></p>
                                 </div>
                             </div>
-                            <hr class="my-4 custom-divider"/>
+                            <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
                                     <img src="${assetPath(src: '/static/students/department/stuff/sergeeva.jpg')}" class="custom-image-70"/>
@@ -309,11 +307,9 @@
                                     <p class="pb-3">Наукові інтереси: моделювання плазмохімічних процесів обробки рідких середовищ.</p>
                                     <p class="pb-3">Публікації: 71 друкована праця, з яких 35 – це статті у фахових виданнях України та 6 – це статті у міжнародних виданнях.</p>
                                     <p class="pb-3">Профіль <a target="_blank" href="https://scholar.google.com.ua/citations?user=o3kLHeIAAAAJ&hl=ru">Google Scholar</a></p>
-                                    <p class="pb-3"></p>
-                                    <p class="pb-3"></p>
                                 </div>
                             </div>
-                            <hr class="my-4 custom-divider"/>
+                            <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
                                     <img src="${assetPath(src: '/static/students/department/stuff/peretyatko.jpg')}" class="custom-image-70"/>
@@ -344,7 +340,7 @@
                                     <p class="pb-3">Профіль <a target="_blank" href="https://scholar.google.com.ua/citations?user=bjtK8CIAAAAJ&hl=ru">Google Scholar</a></p>
                                 </div>
                             </div>
-                            <hr class="my-4 custom-divider"/>
+                            <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
                                     <img src="${assetPath(src: '/static/students/department/stuff/brazinskaya.jpg')}" class="custom-image-70"/>
@@ -365,12 +361,9 @@
                                     <p class="pb-3">Наукові інтереси: дистанційна освіта, СДО Moodle.</p>
                                     <p class="pb-3">Публікації: 15 наукових публікацій, 46 методичних вказівок. </p>
                                     <p class="pb-3">Профіль <a target="_blank" href="https://scholar.google.com.ua/citations?user=4NUkQhoAAAAJ&hl=ru">Google Scholar</a></p>
-                                    <p class="pb-3"></p>
-                                    <p class="pb-3"></p>
-                                    <p class="pb-3"></p>
                                 </div>
                             </div>
-                            <hr class="my-4 custom-divider"/>
+                            <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
                                     <img src="${assetPath(src: '/static/students/department/stuff/dubovik.jpg')}" class="custom-image-70"/>
@@ -400,7 +393,7 @@
                                     <p class="pb-3">Профіль <a target="_blank" href="https://scholar.google.com.ua/citations?user=bpkAfyQAAAAJ&hl=uk">Google Scholar</a></p>
                                 </div>
                             </div>
-                            <hr class="my-4 custom-divider"/>
+                            <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
                                     <img src="${assetPath(src: '/static/students/department/stuff/dovgopola.jpg')}" class="custom-image-70"/>
@@ -426,7 +419,7 @@
                                     <p class="pb-3">Профіль <a target="_blank" href="https://scholar.google.com.ua/citations?user=sMxxxy0AAAAJ&hl=ru">Google Scholar</a></p>
                                 </div>
                             </div>
-                            <hr class="my-4 custom-divider"/>
+                            <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
                                     <img src="${assetPath(src: '/static/students/department/stuff/penya.jpg')}" class="custom-image-70"/>

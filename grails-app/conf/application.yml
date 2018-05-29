@@ -112,6 +112,8 @@ grails:
                       access: ['permitAll']
                     - pattern: '/**/students/**'
                       access: ['permitAll']
+                    - pattern: '/**/enrollee/**'
+                      access: ['permitAll']
                     - pattern: '/**/logout/**'
                       access: ['permitAll']
 

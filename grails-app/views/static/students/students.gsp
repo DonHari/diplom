@@ -9,22 +9,19 @@
         <div class="row">
             <div class="col-2 pt-3">
                 <div class="list-group">
-                    <a href="#schedule" onclick="loadSchedulePage()" class="list-group-item list-group-item-action custom-sidebar" id="studentsSchedule"><g:message code="students.schedule" default="Schedule"/></a>
-                    <a href="#faculty" onclick="loadFacultyPage()" class="list-group-item list-group-item-action custom-sidebar" id="studentsFaculty"><g:message code="students.faculty" default="About faculty"/></a>
-                    <a href="#department" onclick="loadDepartmentPage()" class="list-group-item list-group-item-action custom-sidebar" id="studentsDepartment"><g:message code="students.department" default="About department"/></a>
-                    <a href="#studcity" onclick="loadStudcityPage()" class="list-group-item list-group-item-action custom-sidebar" id="studentsStudcity"><g:message code="students.studcity" default="Student's city"/></a>
-                    <a href="#program" onclick="loadProgramPage()" class="list-group-item list-group-item-action custom-sidebar" id="studentsProgram">Освітня програма</a>
-                    <a href="#radioSection" onclick="loadRadioSectionPage()" class="list-group-item list-group-item-action custom-sidebar" id="studentsRadioSection">Радіогурток</a>
+                    <a href="#schedule" onclick="loadSchedulePage('#studentContent')" class="list-group-item list-group-item-action custom-sidebar" id="studentsSchedule"><g:message code="students.schedule" default="Schedule"/></a>
+                    <a href="#radioSection" onclick="loadRadioSectionPage('#studentContent')" class="list-group-item list-group-item-action custom-sidebar" id="studentsRadioSection">Радіогурток</a>
+                    <a href="#contacts" onclick="loadContactsPage('#studentContent')" class="list-group-item list-group-item-action custom-sidebar" id="studentsContacts">Корисні контакти</a>
                 </div>
             </div>
-            <div class="col-8 content pt-3 pb-3" id="content">
+            <div class="col-8 content pt-3 pb-3" id="studentContent">
                 %{--content here--}%
             </div>
             <div class="offset-2"></div>
         </div>
         <script>
-            window.onload = function (ev) {
-                loadDepartmentPage();
+            window.onload = function () {
+                loadSchedulePage('#studentContent');
             }
         </script>
     </body>

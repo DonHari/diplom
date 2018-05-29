@@ -12,7 +12,7 @@
                 <p class="pb-3"><strong>Випускова кафедра:</strong> <a href="#department" onclick="loadDepartmentPage()">Спеціалізованих комп’ютерних систем</a><br/></p>
                 <p>Підготовка фахівців здійснюється за ступенем <strong>бакалавра</strong> та <strong>магістра</strong><br/></p>
             </address>
-            <hr class = "custom-padding" width="100%">
+            <hr class="custom-padding custom-divider" width="100%">
         </div>
     </div>
     <div class="row px-3">
