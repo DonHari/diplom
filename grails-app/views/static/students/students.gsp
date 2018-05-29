@@ -13,6 +13,7 @@
                     <a href="#faculty" onclick="loadFacultyPage()" class="list-group-item list-group-item-action custom-sidebar" id="studentsFaculty"><g:message code="students.faculty" default="About faculty"/></a>
                     <a href="#department" onclick="loadDepartmentPage()" class="list-group-item list-group-item-action custom-sidebar" id="studentsDepartment"><g:message code="students.department" default="About department"/></a>
                     <a href="#studcity" onclick="loadStudcityPage()" class="list-group-item list-group-item-action custom-sidebar" id="studentsStudcity"><g:message code="students.studcity" default="Student's city"/></a>
+                    <a href="#program" onclick="loadProgramPage()" class="list-group-item list-group-item-action custom-sidebar" id="studentsProgram">Освітня програма</a>
                 </div>
             </div>
             <div class="col-8 content pt-3 pb-3" id="content">

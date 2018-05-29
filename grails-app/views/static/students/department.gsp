@@ -48,7 +48,7 @@
                                 <p class="pb-3">Кафедра готує фахівців за ступенем <strong>бакалавра</strong> та  <strong>магістра</strong> за наступними галузями знань:</p>
                                 <p class="pb-3"><strong>Галузь знань:</strong> 12 Інформаційні технології</p>
                                 <p class="pb-3"><strong>Спеціальність:</strong> 123 Комп’ютерна інженерія</p>
-                                <p class="pb-3"><strong>Освітня програма:</strong> <a href="#" class="text-success">Комп’ютерна інженерія (СКС)</a></p>
+                                <p class="pb-3"><strong>Освітня програма:</strong> <a href="#program" class="text-success" onclick="loadProgramPage()">Комп’ютерна інженерія (СКС)</a></p>
                             </adress>
                         </div>
                     </div>

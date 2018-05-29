@@ -40,10 +40,9 @@ class ScheduleController {
 
         String fileName = uploadScheduleFileService.uploadFile(scheduleCommand.uploadedFile)
 
-        Schedule savedSchedule = scheduleService.save(scheduleCommand.getYear(), scheduleCommand.getTetrameter(), fileName)
+        scheduleService.save(scheduleCommand.getYear(), scheduleCommand.getTetrameter(), fileName)
 
         chain(action: 'create', model: [justSaved: true])
-//        respond(savedSchedule, status: CREATED, view: "/schedule/create", model: [justSaved: true])
     }
 
     @Secured(['ROLE_USER', 'ROLE_ADMIN', "IS_AUTHENTICATED_REMEMBERED"])

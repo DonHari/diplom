@@ -14,6 +14,7 @@ class UrlMappings {
         "/students/studcity"(view: '/static/students/studcity')
         "/students/faculty"(view: '/static/students/faculty')
         "/students/department"(view: '/static/students/department')
+        "/students/program"(view: '/static/students/program')
         "404"(view: '/notFound')
         "500"(controller: "error", action: "handleValidationException", exception: ValidationException)
         "500"(controller: "error", action: "index")

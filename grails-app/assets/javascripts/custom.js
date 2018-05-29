@@ -18,10 +18,22 @@ var faqAnswerValid = false;
 function layoutLoaded() {
 }
 
+function loadProgramPage() {
+    $("#studentsSchedule").removeClass('active');
+    $("#studentsFaculty").removeClass('active');
+    $("#studentsDepartment").removeClass('active');
+    $("#studentsStudcity").removeClass('active');
+    $("#studentsProgram").addClass('active');
+    $("#content").load(
+        "/students/program"
+    );
+}
+
 function loadStudcityPage() {
     $("#studentsSchedule").removeClass('active');
     $("#studentsFaculty").removeClass('active');
     $("#studentsDepartment").removeClass('active');
+    $("#studentsProgram").removeClass('active');
     $("#studentsStudcity").addClass('active');
     $("#content").load(
         "/students/studcity"
@@ -32,6 +44,7 @@ function loadSchedulePage() {
     $("#studentsStudcity").removeClass('active');
     $("#studentsFaculty").removeClass('active');
     $("#studentsDepartment").removeClass('active');
+    $("#studentsProgram").removeClass('active');
     $("#studentsSchedule").addClass('active');
     $("#content").load(
         "/schedule/schedule"
@@ -42,6 +55,7 @@ function loadFacultyPage() {
     $("#studentsDepartment").removeClass('active');
     $("#studentsSchedule").removeClass('active');
     $("#studentsStudcity").removeClass('active');
+    $("#studentsProgram").removeClass('active');
     $("#studentsFaculty").addClass('active');
     $("#content").load(
         "/students/faculty"
@@ -52,6 +66,7 @@ function loadDepartmentPage() {
     $("#studentsFaculty").removeClass('active');
     $("#studentsSchedule").removeClass('active');
     $("#studentsStudcity").removeClass('active');
+    $("#studentsProgram").removeClass('active');
     $("#studentsDepartment").addClass('active');
     $("#content").load(
         "/students/department"
@@ -367,7 +382,7 @@ $(document).ready(function () {
             if ($(this).val().length >= 4) {
                 enablePasswordChangeButton();
                 $(this).removeClass('is-invalid');
-                if($(this).val() !== $('#newPasswordEditConfirm').val() && $('#newPasswordEditConfirm').val().length != 0){
+                if ($(this).val() !== $('#newPasswordEditConfirm').val() && $('#newPasswordEditConfirm').val().length != 0) {
                     $('#newPasswordEditConfirm').addClass('is-invalid');
                 } else {
                     $('#newPasswordEditConfirm').removeClass('is-invalid');

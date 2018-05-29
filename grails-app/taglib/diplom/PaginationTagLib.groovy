@@ -21,8 +21,8 @@ class PaginationTagLib {
             addLeftAquo(sb, offset, max, currentPage, firstPage)
 
             if (max > 0 && lastPage > firstPage) {
-                int beginstep = currentPage - 1/*(Math.round(max / 2.0d) as int) + (max % 2)*/
-                int endstep = currentPage + 1/*(Math.round(max / 2.0d) as int) - 1*/
+                int beginstep = currentPage - 1
+                int endstep = currentPage + 1
 
                 if (beginstep < firstPage) {
                     beginstep = firstPage
