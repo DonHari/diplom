@@ -1,5 +1,6 @@
 package diplom
 
+import diplom.faq.FaqType
 import grails.transaction.Transactional
 
 @Transactional
@@ -20,10 +21,9 @@ class FaqServiceImplService implements FaqService {
     }
 
     @Override
-    List<Faq> list(final Integer page, final Integer max) {
-        Integer localPage = page ?: 0
-        Integer localMax = PageUtil.getMaxValue(max)
-        Faq.list([max: localMax, offset: localPage * localMax])
+    List<Faq> list(String faqTypeStr) {
+        FaqType faqType = faqTypeStr as FaqType
+        Faq.findAllByFaqType(faqType)
     }
 
     @Override

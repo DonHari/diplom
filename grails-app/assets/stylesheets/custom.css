@@ -1,5 +1,17 @@
+@font-face {
+    font-family: Alegreya;
+    src: url("AlegreyaSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: Comfortaa;
+    src: url("Comfortaa-Regular.ttf");
+}
+
 body {
     position: relative;
+    font-family: Alegreya, sans-serif;
+    font-size: 1.1rem;
 }
 
 .content-auth {
@@ -287,4 +299,8 @@ textarea:focus {
     background-color: #2C3E50 !important;
     color: white !important;
     pointer-events: none;
+}
+
+.custom-font-size-1p2 {
+    font-size: 1.2rem;
 }

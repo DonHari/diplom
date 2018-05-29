@@ -2,7 +2,7 @@ package diplom
 
 
 interface FaqService {
-    List<Faq> list(final Integer page, final Integer max)
+    List<Faq> list(final String faqType)
 
     Faq save(final Faq faq)
 

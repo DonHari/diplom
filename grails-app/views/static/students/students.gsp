@@ -12,6 +12,7 @@
                     <a href="#schedule" onclick="loadSchedulePage('#studentContent')" class="list-group-item list-group-item-action custom-sidebar" id="studentsSchedule"><g:message code="students.schedule" default="Schedule"/></a>
                     <a href="#radioSection" onclick="loadRadioSectionPage('#studentContent')" class="list-group-item list-group-item-action custom-sidebar" id="studentsRadioSection">Радіогурток</a>
                     <a href="#contacts" onclick="loadContactsPage('#studentContent')" class="list-group-item list-group-item-action custom-sidebar" id="studentsContacts">Корисні контакти</a>
+                    <a href="#faq" onclick="loadStudentsFaqPage()" class="list-group-item list-group-item-action custom-sidebar" id="studentsFAQ">Часті запитання</a>
                 </div>
             </div>
             <div class="col-8 content pt-3 pb-3" id="studentContent">

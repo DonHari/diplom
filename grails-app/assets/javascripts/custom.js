@@ -18,9 +18,21 @@ var faqAnswerValid = false;
 function layoutLoaded() {
 }
 
+function loadStudentsFaqPage(){
+    console.log('loadStudentsFaqPage');
+    $("#studentsSchedule").removeClass('active');
+    $("#studentsRadioSection").removeClass('active');
+    $("#studentsContacts").removeClass('active');
+    $("#studentsFAQ").addClass('active');
+    $('#studentContent').load(
+        "/faq/index?faqType=STUDENTS"
+    );
+}
+
 function loadContactsPage(id) {
     $("#studentsSchedule").removeClass('active');
     $("#studentsRadioSection").removeClass('active');
+    $("#studentsFAQ").removeClass('active');
     $("#studentsContacts").addClass('active');
     $(id).load(
         "/students/contacts"
@@ -34,6 +46,7 @@ function loadRadioSectionPage(id) {
     $("#studentsStudcity").removeClass('active');
     $("#studentsProgram").removeClass('active');
     $("#studentsContacts").removeClass('active');
+    $("#studentsFAQ").removeClass('active');
     $("#studentsRadioSection").addClass('active');
     $(id).load(
         "/students/radioSection"
@@ -71,6 +84,7 @@ function loadSchedulePage(id) {
     $("#studentsProgram").removeClass('active');
     $("#studentsRadioSection").removeClass('active');
     $("#studentsContacts").removeClass('active');
+    $("#studentsFAQ").removeClass('active');
     $("#studentsSchedule").addClass('active');
     $(id).load(
         "/schedule/schedule"
@@ -213,7 +227,7 @@ $(document).ready(function () {
     $('#scheduleYear').on({
         change: function () {
             var currentValue = this.value;
-            if (currentValue < 2018 || currentValue > 2030) {
+            if (currentValue < 2018 || currentValue > $(this).attr('max')) {
                 $(this).removeClass('is-valid').addClass('is-invalid');
                 scheduleYearValid = false;
             } else {
@@ -227,7 +241,7 @@ $(document).ready(function () {
         },
         focus: function () {
             var currentValue = this.value;
-            if (currentValue >= 2018 && currentValue <= 2030) {
+            if (currentValue >= 2018 && currentValue <= $(this).attr('max')) {
                 $(this).addClass('is-valid');
             }
         }

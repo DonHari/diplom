@@ -1,5 +1,6 @@
 package diplom
 
+import diplom.faq.FaqType
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 
@@ -12,8 +13,8 @@ class FaqController {
     FaqService faqService
 
     @Secured('permitAll')
-    def index(Integer page, Integer max) {
-        List<Faq> faqList = faqService.list(page, max)
+    def index(String faqType) {
+        List<Faq> faqList = faqService.list(faqType)
         Long faqCount = faqService.count()
         respond(faqList, model: [faqCount: faqCount])
     }

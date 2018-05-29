@@ -22,7 +22,7 @@ class ScheduleServiceImplService implements ScheduleService {
     @Override
     Schedule save(Integer year, Integer tetrameter, String fileName) {
         Schedule schedule = Schedule.findByYearAndTetrameter(year, tetrameter)
-        if(schedule){
+        if (schedule) {
             schedule.fileName = fileName
             schedule.save()
         } else {
@@ -57,18 +57,21 @@ class ScheduleServiceImplService implements ScheduleService {
             }
             order('year', 'asc')
         } as List<Integer>
+        if (result.size() == 0) {
+            result.add(Calendar.getInstance().get(Calendar.YEAR))
+        }
         result
     }
 
     @Override
-    Schedule get(Integer tetrameter, Integer year){
+    Schedule get(Integer tetrameter, Integer year) {
         Schedule.findByTetrameterAndYear(tetrameter, year)
     }
 
     @Override
     Boolean checkIfScheduleExists(Integer tetrameter, Integer year) {
         Schedule schedule = Schedule.findByTetrameterAndYear(tetrameter, year)
-        if(schedule){
+        if (schedule) {
             return true
         }
     }

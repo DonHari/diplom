@@ -1,9 +1,12 @@
 package diplom
 
+import diplom.faq.FaqType
+
 class Faq {
 
     String question
     String answer
+    FaqType faqType
     Date dateCreated
     Date lastUpdated
 

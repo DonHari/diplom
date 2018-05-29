@@ -31,7 +31,7 @@
                         <div class="col-5">
                             <div class="form-group has-danger has-success">
                                 <label class="control-label" for="scheduleYear"><g:message code="schedule.add.year"/></label>
-                                <input class="form-control" type="number" id="scheduleYear" maxlength="50" value="${year ?: 2018}" name="year" onblur="" min="2018" max="2030"/>
+                                <input class="form-control" type="number" id="scheduleYear" maxlength="50" value="${year ?: 2018}" name="year" onblur="" min="2018" max="${currentYear()}"/>
                                 <div class="invalid-feedback"><g:message code="error.wrongYear"/></div>
                             </div>
                         </div>

@@ -1,0 +1,27 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet id="1" author="Stanislav Dorozhko">
+        <sql>
+            INSERT INTO faq(
+                id,
+                version,
+                author_id,
+                question,
+                answer,
+                faq_type,
+                date_created,
+                last_updated
+            )
+            SELECT
+                nextval('faq_id_seq'),
+                0,
+                1,
+                'Як мені зробити щось?',
+                'Для того, щоб щось зробити, вам достатньо кудись звернутись.',
+                'STUDENTS',
+                NOW(),
+                NOW()
+            FROM generate_series(1, 25)
+        </sql>
+    </changeSet>
+</databaseChangeLog>

@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta name="layout" content="main" />
-        <title>FAQ</title>
+        <title>Додати FAQ</title>
     </head>
     <body>
         <div class="row">
@@ -26,6 +26,13 @@
                         <input class="form-control" type="text" id="faqQuestion" maxlength="100" value="${faq.question}" name="question"/>
                         <div class="invalid-feedback"><g:message code="error.notEmpty"/></div>
                         <small id="faqQuestionLeft" class="form-text text-muted"><g:message code="add.left"/>: 100</small>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="faqType">Для кого буде це питання?</label>
+                        <select class="form-control" id="faqType" name="faqType">
+                            <option value="STUDENTS">Для студенту</option>
+                            <option value="ENTRANTS">Для абітурієнту</option>
+                        </select>
                     </div>
                     <div class="form-group has-danger has-success">
                         <label class="control-label" for="faqAnswer"><g:message code="faq.add.answer"/></label>
