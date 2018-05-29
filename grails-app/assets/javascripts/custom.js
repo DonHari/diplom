@@ -454,6 +454,36 @@ $(document).ready(function () {
         }
     });
 
+    $('#scheduleForm').submit(function () {
+        if (!(scheduleFileValid && scheduleYearValid)) {
+            return false;
+        }
+        var url = window.location.protocol + '//' + window.location.host + '/schedule/check';
+        var status;
+        $.ajax({
+            url: url,
+            type: 'GET',
+            data: {
+                tetrameter: $('#tetrameterSelect').val(),
+                year: $('#scheduleYear').val(),
+                fileName: $('#scheduleFileName').text()
+            },
+            async: false
+        }).done(function (result) {
+            if (result["result"]["status"] && result["result"]["fileStatus"]) {
+                status = confirm('Розклад на обрані тетраместр і рік існує. Також існує файл, котрий ви бажаєте додати. Якщо ви згодні, файл і розклад будуть перезаписані, але із-за цього можуть виникнути проблеми. Ви бажаєте продовжити?');
+            } else if (result["result"]["status"] && !result["result"]["fileStatus"]) {
+                status = confirm('Розклад на обрані тетраместр і рік існують. Ви бажаєте їх перезаписати?')
+            } else if (!result["result"]["status"] && result["result"]["fileStatus"]) {
+                status = confirm("Файл з таким же ім'ям вже існує. Якщо його перезаписати, можуть виникнути проблеми з цілісностью інформації в базі даних. Бажано, щоб ви перейменували файл і повторили додання розкладу. Ви бажаєте продовжити?");
+            } else {
+                status = true;
+            }
+
+        });
+        return status;
+    });
+
     $('#newsDateCreated').text(new Date(+$('#newsDateCreated').text()));
 });
 
@@ -551,25 +581,6 @@ function addAssignedPhoto() {
 
 function showImagePopup(source) {
     $('#' + source).modal('toggle');
-}
-
-function checkIfScheduleExists() {
-    if (!(scheduleFileValid && scheduleYearValid)) {
-        return false;
-    }
-    var url = window.location.protocol + '//' + window.location.host + '/schedule/check?tetrameter=';
-    var tetrameter = document.getElementById("tetrameterSelect");
-    url += tetrameter.options[tetrameter.selectedIndex].value;
-    url += '$year=';
-    url += $('#year').val();
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, false);
-    xhr.send();
-    if (JSON.parse(xhr.responseText)["result"]["status"] === true && $('#scheduleFileName').text().length !== 0) {
-        return confirm('Расписание на этот тетраместр и учебный год существует. Вы хотите его перезаписать?');
-    } else {
-        return true;
-    }
 }
 
 function validateNewsAssignedPhotos() {

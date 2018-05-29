@@ -64,4 +64,12 @@ class ScheduleServiceImplService implements ScheduleService {
     Schedule get(Integer tetrameter, Integer year){
         Schedule.findByTetrameterAndYear(tetrameter, year)
     }
+
+    @Override
+    Boolean checkIfScheduleExists(Integer tetrameter, Integer year) {
+        Schedule schedule = Schedule.findByTetrameterAndYear(tetrameter, year)
+        if(schedule){
+            return true
+        }
+    }
 }

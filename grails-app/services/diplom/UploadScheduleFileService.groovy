@@ -16,4 +16,6 @@ interface UploadScheduleFileService {
      * @return
      */
     File loadFile(String fileName)
+
+    Boolean checkIfFileExists(String fileName)
 }

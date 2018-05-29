@@ -14,7 +14,7 @@
                         <g:message code="schedule.saved.message" default="Ви успішно додали новий розклад!"/>
                     </div>
                 </g:if>
-                <form action="${createLink(action: 'save')}" method="post" enctype="multipart/form-data" onsubmit="return checkIfScheduleExists()" id="scheduleForm">
+                <form action="${createLink(action: 'save')}" method="post" enctype="multipart/form-data" id="scheduleForm">
                     <div class="row">
                         <div class="col-5">
                             <div class="form-group">

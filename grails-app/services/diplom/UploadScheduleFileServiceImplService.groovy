@@ -33,7 +33,6 @@ class UploadScheduleFileServiceImplService implements UploadScheduleFileService 
         File file = new File(filePath)
         if (!file.exists()) {
             log.error("File doesn't exist")
-            //todo throw exception
         }
     }
 
@@ -73,5 +72,14 @@ class UploadScheduleFileServiceImplService implements UploadScheduleFileService 
         String schedulePath = getSchedulePath()
         checkIfFileExists(schedulePath, fileName)
         loadFile(schedulePath, fileName)
+    }
+
+    @Override
+    Boolean checkIfFileExists(String fileName) {
+        String filePath = getSchedulePath() + System.getProperty('file.separator') + fileName
+        File file = new File(filePath)
+        if (file.exists()) {
+            return true
+        }
     }
 }

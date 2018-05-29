@@ -81,9 +81,11 @@ class ScheduleController {
     }
 
     @Secured(['ROLE_USER', 'ROLE_ADMIN', "IS_AUTHENTICATED_REMEMBERED"])
-    def check(Integer tetrameter, Integer year) {
+    def check(Integer tetrameter, Integer year, String fileName) {
+        boolean scheduleExists = scheduleService.checkIfScheduleExists(tetrameter, year)
+        boolean scheduleFileExists = uploadScheduleFileService.checkIfFileExists(fileName)
         render(contentType: 'application/json') {
-            result(status: true)
+            result(status: scheduleExists, fileStatus: scheduleFileExists)
         }
     }
 

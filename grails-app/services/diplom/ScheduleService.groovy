@@ -14,4 +14,6 @@ interface ScheduleService {
     List<Integer> listAvailableYears()
 
     Schedule get(Integer tetrameter, Integer year)
+
+    Boolean checkIfScheduleExists(Integer tetrameter, Integer year)
 }
