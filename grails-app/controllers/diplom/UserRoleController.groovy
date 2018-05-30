@@ -99,11 +99,10 @@ class UserRoleController {
         UserRole userRole = new UserRole(user: user, role: role)
         response.characterEncoding = 'utf-8'
         respond(userRole, formats: ['html'])
-//        render(model: [userRole: userRole], contentType: "text/html")
     }
 
     @Secured('permitAll')
     def register() {
-
+        //todo
     }
 }

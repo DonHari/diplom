@@ -10,7 +10,7 @@ class MailController {
     @Secured('ROLE_ADMIN')
     def inviteUser() {
         Role role = roleService.findByAuthority(params.authority)
-        customMailService.sendUserInviteEmail(params.userEmail, role)
+        customMailService.sendUserInviteEmail(params.userEmail, role, request)
         chain(controller: 'userRole', action: 'index', model: [justInvited: true])
     }
 }

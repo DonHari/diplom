@@ -105,7 +105,7 @@
     <div class="col">
         <p>Доброго дня! Вас запрошують зареєструватись у системі сайту кафедри Спеціалізованих комп'ютерних систем УДХТУ.</p>
         <p>Для продовження Вам достатньо перейти на сторінку і заповнити форму, щоб Ви мали можливість користуватись сайтом!</p>
-        <form action="http://${request.serverName}:${request.serverPort}${createLink(controller: 'userRole', action: 'invite')}" method="post">
+        <form action="${link}" method="post">
             <input type="hidden" value="${userEmail}" name="email"/>
             <input type="hidden" value="${userRole}" name="authority"/>
             <button type="submit" class="btn btn-primary">Перейти на сторінку для реєстрації</button>
