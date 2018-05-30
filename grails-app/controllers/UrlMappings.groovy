@@ -17,6 +17,7 @@ class UrlMappings {
         "/students/program"(view: '/static/students/program')
         "/students/radioSection"(view: '/static/students/radioSection')
         "/students/contacts"(view: '/static/students/contacts')
+        "/inviteUser"(view: '/email/inviteEmail')
         "/enrollee"(view: '/static/enrollee/enrollee')
         "404"(view: '/notFound')
         "500"(controller: "error", action: "handleValidationException", exception: ValidationException)

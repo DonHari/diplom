@@ -54,4 +54,9 @@ class RoleServiceImplService implements RoleService {
     Integer count() {
         Role.count
     }
+
+    @Override
+    Role findByAuthority(String authority) {
+        Role.findByAuthority(authority)
+    }
 }

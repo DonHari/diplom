@@ -43,6 +43,9 @@ beans = {
         roleService = ref('roleService')
         userService = ref('userService')
     }
+    customMailService(MailServiceImplService) {
+        ref('customMailService')
+    }
     localeResolver(FixedLocaleResolver, new Locale('uk', 'UA'))
 
     //disables password encoder

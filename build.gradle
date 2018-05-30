@@ -95,6 +95,9 @@ dependencies {
     compile 'org.grails.plugins:grails-cookie:2.0.3'
 
     compile files('libs/postgresql-42.2.2.jar')
+
+    //for mail
+    compile "org.grails.plugins:mail:2.0.0.RC6"
 }
 
 task wrapper(type: Wrapper) {

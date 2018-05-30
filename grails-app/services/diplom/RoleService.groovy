@@ -14,4 +14,6 @@ interface RoleService {
     void delete(Role role)
 
     Integer count()
+
+    Role findByAuthority(String authority)
 }

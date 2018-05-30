@@ -11,7 +11,7 @@ class UserRoleController {
 
     @Secured(['ROLE_USER', 'ROLE_ADMIN', "IS_AUTHENTICATED_REMEMBERED"])
     def index() {
-        respond(UserRole.getAll())
+        respond(UserRole.getAll(), model: [justInvited: chainModel?.justInvited, roleList: roleService.getAll()])
     }
 
     @Secured(['ROLE_USER', 'ROLE_ADMIN', "IS_AUTHENTICATED_REMEMBERED"])
@@ -90,5 +90,20 @@ class UserRoleController {
         } else {
             chain(action: 'showMe', model: [errorOccurred: true, activeTab: 'updatePassword', errorMessage: 'Неправильно введенний пароль!'])
         }
+    }
+
+    @Secured('ROLE_ADMIN')
+    def invite() {
+        User user = new User(email: params.email)
+        Role role = roleService.findByAuthority(params.authority)
+        UserRole userRole = new UserRole(user: user, role: role)
+        response.characterEncoding = 'utf-8'
+        respond(userRole, formats: ['html'])
+//        render(model: [userRole: userRole], contentType: "text/html")
+    }
+
+    @Secured('permitAll')
+    def register() {
+
     }
 }
