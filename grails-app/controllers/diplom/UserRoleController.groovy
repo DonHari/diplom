@@ -103,6 +103,18 @@ class UserRoleController {
 
     @Secured('permitAll')
     def register() {
-        //todo
+        User user = new User()
+        Role role = roleService.findByAuthority(params.authority)
+        user.with {
+            user.name = params.name
+            user.secondName = params.secondName
+            user.surname = params.surname
+            user.username = params.username
+            user.password = params.password
+            user.email = params.email
+        }
+        userService.save(user)
+        userRoleService.save(user, role)
+        chain(controller: 'news', action: 'index', model: [justRegistered: true], params: [offset: 0, max: 10])
     }
 }

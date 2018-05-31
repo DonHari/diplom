@@ -8,6 +8,14 @@
         <div class="row">
             <div class="offset-2"></div>
             <div class="col-8 content">
+                <g:if test="${justRegistered}">
+                    <div class="alert alert-dismissible alert-success mt-3 max-width-1000px mx-auto">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <p class="">Ви успішно зареєструвались!</p>
+                        <p class="">Ви вже можете користуватись своїм обліковим записом, але бажано для початку роботи переглянути <a href="/instructions">інструкції користування</a>.</p>
+                        <p class="">Гарного дня!</p>
+                    </div>
+                </g:if>
                 <g:each in="${newsList}" var="news" status="i">
                     <div class="row news-item">
                         <div class="col-5">

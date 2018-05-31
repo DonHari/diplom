@@ -7,7 +7,7 @@
     <body>
         <form>
             <fieldset>
-                <legend>Выберите нужные опции</legend>
+                <legend>Вкажіть потрібні опції</legend>
                 <div class="row">
                     <div class="col-5">
                         <div class="form-group">
@@ -23,7 +23,7 @@
                     <div class="offset-2"></div>
                     <div class="col-5">
                         <div class="form-group">
-                            <label for="yearSelect">Учебный год</label>
+                            <label for="yearSelect">Учбовий рік</label>
                             <select class="form-control" id="yearSelect" onchange="loadSchedule()">
                                 <g:each in="${availableYears}" var="year">
                                     <g:if test="${currentYear == year}">
@@ -39,7 +39,7 @@
                 </div>
             </fieldset>
         </form>
-        <div class="row">
+        <div class="row px-3">
             <div class="col-12" id="scheduleFileLink">
 
             </div>

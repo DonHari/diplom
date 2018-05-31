@@ -83,7 +83,7 @@
                                         </select>
                                     </div>
                                 </g:else>
-                                <button type="submit" class="btn btn-primary" id="userConfirmButton" disabled=""><g:message code="add.confirm"/></button>
+                                <button type="submit" class="btn btn-primary" id="userConfirmButton" disabled="">Зберігти</button>
                                 <button type="button" class="btn btn-primary" id="userEnableEditButton">Включити редагування</button>
                             </form>
                         </div>
@@ -197,7 +197,7 @@
                                             </select>
                                         </div>
                                     </g:else>
-                                    <button type="submit" class="btn btn-primary" id="userConfirmButton" disabled=""><g:message code="add.confirm"/></button>
+                                    <button type="submit" class="btn btn-primary" id="userConfirmButton" disabled="">Зберігти</button>
                                     <button type="button" class="btn btn-primary" id="userEnableEditButton">Включити редагування</button>
                                 </form>
                             </div>
@@ -310,7 +310,7 @@
                                             </select>
                                         </div>
                                     </g:else>
-                                    <button type="submit" class="btn btn-primary" id="userConfirmButton" disabled=""><g:message code="add.confirm"/></button>
+                                    <button type="submit" class="btn btn-primary" id="userConfirmButton" disabled="">Зберігти</button>
                                     <button type="button" class="btn btn-primary" id="userEnableEditButton">Включити редагування</button>
                                 </form>
                             </div>

@@ -1,9 +1,8 @@
 <!doctype html>
 <html>
     <head>
-        <title><g:message code="header.student" default="For students"/></title>
+        <title>Для студентів</title>
         <meta name="layout" content="main">
-        <g:if env="development"><asset:stylesheet src="errors.css"/></g:if>
     </head>
     <body>
         <div class="row">

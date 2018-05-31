@@ -28,9 +28,9 @@
             <column name="account_locked">false</column>
             <column name="enabled">true</column>
             <column name="password_expired">false</column>
-            <column name="name">Василь</column>
-            <column name="second_name">Васильович</column>
-            <column name="surname">Васильєв</column>
+            <column name="name">Станіслав</column>
+            <column name="second_name">Олександрович</column>
+            <column name="surname">Дорожко</column>
             <column name="email">vasya@gmail.com</column>
             <column name="username">admin</column>
             <column name="password">test123</column>

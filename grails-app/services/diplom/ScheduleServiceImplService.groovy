@@ -26,7 +26,7 @@ class ScheduleServiceImplService implements ScheduleService {
             schedule.fileName = fileName
             schedule.save()
         } else {
-            new Schedule(year: year, tetrameter: tetrameter, fileName: fileName)
+            schedule = new Schedule(year: year, tetrameter: tetrameter, fileName: fileName)
         }
         schedule.save()
     }

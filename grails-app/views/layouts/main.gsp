@@ -57,6 +57,7 @@
                                 <div class="btn-group" role="group">
                                     <button id="adminDrop" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                     <div class="dropdown-menu custom-dropdown-right bg-primary" aria-labelledby="adminDrop" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0; left: 0; transform: translate3d(0px, 36px, 0px);">
+                                        <a class="dropdown-item custom-dropdown-links" href="/instructions">Інструкції</a>
                                         <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'news', action: 'create')}"><g:message code="header.user.add.news"/></a>
                                         <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'schedule', action: 'create')}"><g:message code="header.user.add.schedule"/></a>
                                         <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'faq', action: 'create')}"><g:message code="header.user.add.faq"/></a>
@@ -73,6 +74,7 @@
                                 <div class="btn-group" role="group">
                                     <button id="userDrop" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                     <div class="dropdown-menu custom-dropdown-right bg-primary" aria-labelledby="userDrop" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0; left: 0px; transform: translate3d(0px, 36px, 0px);">
+                                        <a class="dropdown-item custom-dropdown-links" href="/instructions">Інструкції</a>
                                         <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'news', action: 'create')}"><g:message code="header.user.add.news"/></a>
                                         <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'schedule', action: 'create')}"><g:message code="header.user.add.schedule"/></a>
                                         <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'faq', action: 'create')}"><g:message code="header.user.add.faq"/></a>

@@ -304,3 +304,26 @@ textarea:focus {
 .custom-font-size-1p2 {
     font-size: 1.2rem;
 }
+
+.max-width-1000px {
+    max-width: 1000px;
+}
+
+.custom-warning-message {
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #eee;
+    border-left-width: .25rem;
+    border-radius: .25rem;
+    border-left-color: #f0ad4e;
+}
+
+.custom-margin-1p25rem-bot {
+    margin-bottom: 1.25rem;
+}
+
+.custom-icon-32 {
+    max-width: 32px;
+    max-height: 32px;
+}

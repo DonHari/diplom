@@ -10,7 +10,7 @@ class UserRoleServiceImplService implements UserRoleService {
 
     @Override
     UserRole save(User user, Role role) {
-        UserRole.create(user, role, true)
+        new UserRole(user: user, role: role).save(flush: true)
     }
 
     @Override

@@ -18,7 +18,7 @@ class NewsController {
     def index(Integer offset, Integer max) {
         List<News> newsList = newsService.list(offset, max)
         Long newsCount = newsService.count()
-        respond(newsList, model: [newsCount: newsCount, maxPerPage: PageUtil.getMaxValue(max)])
+        respond(newsList, model: [newsCount: newsCount, maxPerPage: PageUtil.getMaxValue(max), justRegistered: chainModel?.justRegistered])
     }
 
     @Secured('permitAll')

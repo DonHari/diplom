@@ -116,6 +116,8 @@ grails:
                       access: ['permitAll']
                     - pattern: '/**/logout/**'
                       access: ['permitAll']
+                    - pattern: '/**/instructions/**'
+                      access: ['permitAll']
 
             logout:
                 postOnly: false

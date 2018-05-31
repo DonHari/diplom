@@ -18,8 +18,7 @@ var faqAnswerValid = false;
 function layoutLoaded() {
 }
 
-function loadStudentsFaqPage(){
-    console.log('loadStudentsFaqPage');
+function loadStudentsFaqPage() {
     $("#studentsSchedule").removeClass('active');
     $("#studentsRadioSection").removeClass('active');
     $("#studentsContacts").removeClass('active');
@@ -631,4 +630,59 @@ function enableFaqSendButton() {
     } else if (checkFaqFields() && $('#faqSendButton').hasClass('disabled')) {
         $('#faqSendButton').removeClass('disabled');
     }
+}
+
+function loadNewsInstructionPage() {
+    $('#instructionsSchedule').removeClass('active');
+    $('#instructionsMy').removeClass('active');
+    $('#instructionsFaq').removeClass('active');
+    $('#instructionsUsers').removeClass('active');
+    $('#instructionsNews').addClass('active');
+    $('#instructionContent').load(
+        "/instructions/news"
+    );
+}
+
+function loadScheduleInstructionPage() {
+    $('#instructionsFaq').removeClass('active');
+    $('#instructionsMy').removeClass('active');
+    $('#instructionsUsers').removeClass('active');
+    $('#instructionsNews').removeClass('active');
+    $('#instructionsSchedule').addClass('active');
+    $('#instructionContent').load(
+        "/instructions/schedule"
+    );
+}
+
+function loadFaqInstructionPage() {
+    $('#instructionsUsers').removeClass('active');
+    $('#instructionsMy').removeClass('active');
+    $('#instructionsNews').removeClass('active');
+    $('#instructionsSchedule').removeClass('active');
+    $('#instructionsFaq').addClass('active');
+    $('#instructionContent').load(
+        "/instructions/faq"
+    );
+}
+
+function loadUsersInstructionPage() {
+    $('#instructionsNews').removeClass('active');
+    $('#instructionsSchedule').removeClass('active');
+    $('#instructionsFaq').removeClass('active');
+    $('#instructionsMy').removeClass('active');
+    $('#instructionsUsers').addClass('active');
+    $('#instructionContent').load(
+        "/instructions/users"
+    );
+}
+
+function loadMyInstructionPage() {
+    $('#instructionsNews').removeClass('active');
+    $('#instructionsSchedule').removeClass('active');
+    $('#instructionsFaq').removeClass('active');
+    $('#instructionsUsers').removeClass('active');
+    $('#instructionsMy').addClass('active');
+    $('#instructionContent').load(
+        "/instructions/my"
+    );
 }
