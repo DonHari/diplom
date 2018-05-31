@@ -12,12 +12,12 @@
         <div class="col">
             <h3 class="text-center pb-4">Створення FAQ</h3>
             <div class="row pb-3">
-                <div class="col-auto">
+                <div class="col-8">
                     <p class="pb-3">Для створення питання виберіть відповідний пункт у меню, яке з'явиться після авторизації.</p>
                     <p class="">Оберіть пункт меню "Додати FAQ", та відкриється наступна сторінка</p>
                 </div>
                 <div class="col">
-                    <img src="${assetPath(src: '/static/instructions/faq/1.png')}" class="custom-image-30 shadow"/>
+                    <img src="${assetPath(src: '/static/instructions/faq/1.png')}" class="custom-image-50 shadow"/>
                 </div>
             </div>
             <img src="${assetPath(src: '/static/instructions/faq/2.png')}" class="custom-image-70 shadow rounded custom-margin-1p25rem-bot"/>

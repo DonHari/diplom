@@ -13,7 +13,7 @@
                     <p class="">За-змовчанням буде відкрита вкладка для редагування основної інформації.</p>
                 </div>
                 <div class="col">
-                    <img src="${assetPath(src: '/static/instructions/my/1.png')}" class="custom-image-30 shadow"/>
+                    <img src="${assetPath(src: '/static/instructions/my/1.png')}" class="custom-image-50 shadow"/>
                 </div>
             </div>
             <img src="${assetPath(src: '/static/instructions/my/2.png')}" class="custom-image-70 shadow rounded custom-margin-1p25rem-bot"/>
@@ -31,7 +31,7 @@
                     <p class="">Після цього перейдіть на вкладку "Редагування імені користувача".</p>
                 </div>
                 <div class="col">
-                    <img src="${assetPath(src: '/static/instructions/my/1.png')}" class="custom-image-30 shadow"/>
+                    <img src="${assetPath(src: '/static/instructions/my/1.png')}" class="custom-image-50 shadow"/>
                 </div>
             </div>
             <img src="${assetPath(src: '/static/instructions/my/3.png')}" class="custom-image-70 shadow rounded custom-margin-1p25rem-bot"/>
@@ -54,7 +54,7 @@
                     <p class="">Після цього перейдіть на вкладку "Редагування паролю".</p>
                 </div>
                 <div class="col">
-                    <img src="${assetPath(src: '/static/instructions/my/1.png')}" class="custom-image-30 shadow"/>
+                    <img src="${assetPath(src: '/static/instructions/my/1.png')}" class="custom-image-50 shadow"/>
                 </div>
             </div>
             <img src="${assetPath(src: '/static/instructions/my/4.png')}" class="custom-image-70 shadow rounded custom-margin-1p25rem-bot"/>

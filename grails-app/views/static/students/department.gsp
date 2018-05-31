@@ -52,7 +52,58 @@
                             </adress>
                         </div>
                     </div>
-                    <img src="${assetPath(src:'/static/students/department/one.png')}" class="custom-image-70 mb-3"/>
+                    <div class="row pb-3">
+                        <div class="col-auto mx-auto">
+                            <div id="player"></div>
+                        </div>
+                    </div>
+
+                    <script>
+                        // 2. This code loads the IFrame Player API code asynchronously.
+                        var tag = document.createElement('script');
+
+                        tag.src = "https://www.youtube.com/iframe_api";
+                        var firstScriptTag = document.getElementsByTagName('script')[0];
+                        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+                        // 3. This function creates an <iframe> (and YouTube player)
+                        //    after the API code downloads.
+                        var player;
+                        function onYouTubeIframeAPIReady() {
+                            player = new YT.Player('player', {
+                                height: '390',
+                                width: '640',
+                                videoId: 'zWKNAWYXLWU',
+                                events: {
+                                    // 'onReady': onPlayerReady,
+                                    'onStateChange': onPlayerStateChange
+                                }
+                            });
+                        }
+
+                        // 4. The API will call this function when the video player is ready.
+                        function onPlayerReady(event) {
+                            event.target.playVideo();
+                        }
+
+                        // 5. The API calls this function when the player's state changes.
+                        //    The function indicates that when playing a video (state=1),
+                        //    the player should play for six seconds and then stop.
+                        var done = false;
+                        function onPlayerStateChange(event) {
+                            if (event.data == YT.PlayerState.PLAYING && !done) {
+                                setTimeout(stopVideo, 6000);
+                                done = true;
+                            }
+                        }
+                        function stopVideo() {
+                            player.stopVideo();
+                        }
+                    </script>
+                    %{--<iframe width="420" height="315"
+                            src="https://www.youtube.com/watch?v=zWKNAWYXLWU">
+                    </iframe>--}%
+                    %{--<img src="${assetPath(src:'/static/students/department/one.png')}" class="custom-image-70 mb-3"/>--}%
                     <div class="row px-3">
                         <div class="col-12">
                             <p class="pb-3">У 1996 році в Українському державному хіміко-технологічному університеті була сформована перша група студентів для отримання спеціальності “Спеціалізовані комп’ютерні системи”.</p>
