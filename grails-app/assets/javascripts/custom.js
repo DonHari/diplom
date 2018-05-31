@@ -15,6 +15,9 @@ var clientHeight;
 var faqQuestionValid = false;
 var faqAnswerValid = false;
 
+var registerUsernameValid = false;
+var registerPasswordValid = false;
+
 function layoutLoaded() {
 }
 
@@ -25,6 +28,18 @@ function loadStudentsFaqPage() {
     $("#studentsFAQ").addClass('active');
     $('#studentContent').load(
         "/faq/index?faqType=STUDENTS"
+    );
+}
+
+function loadEnrolleeFaqPage() {
+    $("#studentsDepartment").removeClass('active');
+    $("#studentsFaculty").removeClass('active');
+    $("#studentsStudcity").removeClass('active');
+    $("#studentsProgram").removeClass('active');
+    $("#studentsRadioSection").removeClass('active');
+    $("#studentsFaq").addClass('active');
+    $('#enrolleeContent').load(
+        "/faq/index?faqType=ENTRANTS"
     );
 }
 
@@ -466,6 +481,51 @@ $(document).ready(function () {
             //todo validate password
         }
     });
+    $('#userRegisterUsername').on({
+        blur: function () {
+            var url = window.location.protocol + '//' + window.location.host + '/user/checkUsername';
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: {username: $(this).val()}
+            }).done(function (result) {
+                if (!result["result"]["available"]) {
+                    $('#userRegisterUsername').addClass('is-invalid');
+                    registerUsernameValid = false;
+                } else {
+                    $('#userRegisterUsername').removeClass('is-invalid');
+                    registerUsernameValid = true;
+                }
+                enableRegisterButton();
+            })
+        }
+    });
+    $('#userRegisterPassword').on({
+        change: function () {
+            var confirmPassword = $('#userRegisterPasswordConfirm').val();
+            if (confirmPassword !== $(this).val()) {
+                $(this).addClass('is-invalid');
+                registerPasswordValid = false;
+            } else {
+                $(this).removeClass('is-invalid');
+                registerPasswordValid = true;
+            }
+            enableRegisterButton();
+        }
+    });
+    $('#userRegisterPasswordConfirm').on({
+        change: function () {
+            var password = $('#userRegisterPasswordConfirm').val();
+            if (password !== $(this).val()) {
+                $('#userRegisterPassword').addClass('is-invalid');
+                registerPasswordValid = false;
+            } else {
+                $('#userRegisterPassword').removeClass('is-invalid');
+                registerPasswordValid = true;
+            }
+            enableRegisterButton();
+        }
+    });
 
     $('#scheduleForm').submit(function () {
         if (!(scheduleFileValid && scheduleYearValid)) {
@@ -499,6 +559,11 @@ $(document).ready(function () {
 
     $('#newsDateCreated').text(new Date(+$('#newsDateCreated').text()));
 });
+
+function enableRegisterButton() {
+    console.log(registerUsernameValid + ' && ' +  registerPasswordValid + ' = ' + (registerUsernameValid && registerPasswordValid));
+    $('registrationBtn').prop('disabled', registerUsernameValid && registerPasswordValid);
+}
 
 function enablePasswordChangeButton() {
     var newPasswordValid = $('#newPasswordEdit').val().length >= 4;

@@ -80,6 +80,6 @@ class UserServiceImplService implements UserService {
     @Override
     Boolean checkIfUsernameAvailable(String username) {
         User user = User.findByUsername(username)
-        return user == null
+        return !(user as boolean)
     }
 }

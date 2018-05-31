@@ -42,19 +42,21 @@
                             <div class="p-2">Електронна пошта: </div>
                             <div class="p-2">${userRole.user.email}</div>
                         </div>
-                        <div class="form-group">
-                            <label class="form-label" for="userUsername">Введіть ім'я користувача (логін)</label>
-                            <input type="text" class="form-control" id="userUsername" name="username" value="${userRole.user.username}" required/>
+                        <div class="form-group has-danger">
+                            <label class="form-label" for="userRegisterUsername">Введіть ім'я користувача (логін)</label>
+                            <input type="text" class="form-control" id="userRegisterUsername" name="username" value="${userRole.user.username}" required/>
+                            <div class="invalid-feedback" id="userRegisterUsernameFeedback">Це ім'я користувача вже зайнято.</div>
+                        </div>
+                        <div class="form-group has-danger">
+                            <label class="form-label" for="userRegisterPassword">Введіть пароль</label>
+                            <input type="password" class="form-control" id="userRegisterPassword" name="password" required/>
+                            <div class="invalid-feedback" id="userRegisterPasswordFeedback">Паролі не співпадають.</div>
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="userPassword">Введіть пароль</label>
-                            <input type="password" class="form-control" id="userPassword" name="password" required/>
+                            <label class="form-label" for="userRegisterPasswordConfirm">Введіть пароль</label>
+                            <input type="password" class="form-control" id="userRegisterPasswordConfirm" required/>
                         </div>
-                        <div class="form-group">
-                            <label class="form-label" for="userPasswordConfirm">Введіть пароль</label>
-                            <input type="password" class="form-control" id="userPasswordConfirm" required/>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Зареєструватись</button>
+                        <button type="submit" class="btn btn-primary" disabled id="registrationBtn">Зареєструватись</button>
                     </form>
                 </div>
             </div>

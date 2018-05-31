@@ -57,4 +57,11 @@ class UserController {
         userService.updatePassword(username, newPassword)
         redirect(controller: 'news', action: 'index')
     }
+
+    @Secured('permitAll')
+    def checkUsername(String username) {
+        render(contentType: 'application/json') {
+            result(available: userService.checkIfUsernameAvailable(username))
+        }
+    }
 }
