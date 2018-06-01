@@ -92,7 +92,7 @@ class UserRoleController {
         }
     }
 
-    @Secured('ROLE_ADMIN')
+    @Secured('permitAll')
     def invite() {
         User user = new User(email: params.email)
         Role role = roleService.findByAuthority(params.authority)

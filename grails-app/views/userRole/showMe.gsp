@@ -40,7 +40,7 @@
                                 <div class="row">
                                     <div class="col-4">
                                         <div class="form-group">
-                                            <label for="userSurname" class="form-label">Фамілія</label>
+                                            <label for="userSurname" class="form-label">Прізвище</label>
                                             <input type="text" class="form-control" id="userSurname" value="${userRole.user.surname}" name="surname" disabled=""/>
                                         </div>
                                     </div>
@@ -154,7 +154,7 @@
                                     <div class="row">
                                         <div class="col-4">
                                             <div class="form-group">
-                                                <label for="userSurname" class="form-label">Фамілія</label>
+                                                <label for="userSurname" class="form-label">Прізвище</label>
                                                 <input type="text" class="form-control" id="userSurname" value="${userRole.user.surname}" name="surname" disabled=""/>
                                             </div>
                                         </div>
@@ -267,7 +267,7 @@
                                     <div class="row">
                                         <div class="col-4">
                                             <div class="form-group">
-                                                <label for="userSurname" class="form-label">Фамілія</label>
+                                                <label for="userSurname" class="form-label">Прізвище</label>
                                                 <input type="text" class="form-control" id="userSurname" value="${userRole.user.surname}" name="surname" disabled=""/>
                                             </div>
                                         </div>
