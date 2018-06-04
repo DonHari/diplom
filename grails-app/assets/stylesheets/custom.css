@@ -276,6 +276,7 @@ textarea:focus {
 .custom-page-link {
     background-color: #2C3E50 !important;
     color: white !important;
+    box-shadow: none !important;
 }
 
 .custom-page-link:hover {
@@ -326,4 +327,17 @@ textarea:focus {
 .custom-icon-32 {
     max-width: 32px;
     max-height: 32px;
+}
+
+.custom-faq-question {
+    font-size: 1.3rem;
+    color: #3009a5;
+}
+
+.custom-faq-question:hover {
+    color: #4000ff;
+}
+
+.custom-faq-answer {
+    font-size: 1.3rem;
 }

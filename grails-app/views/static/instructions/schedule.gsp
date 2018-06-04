@@ -17,7 +17,7 @@
                 </div>
             </div>
             <img src="${assetPath(src: '/static/instructions/schedule/2.png')}" class="custom-image-70 shadow rounded custom-margin-1p25rem-bot"/>
-            <p>Вам необхідно заповнити все поля, щоб з'явилась можливість натиснути кнопку "Створити".</p>
+            <p>Вам необхідно заповнити всі поля, щоб з'явилась можливість натиснути кнопку "Створити".</p>
             <div class="custom-warning-message">
                 <h5 class="custom-font-weight-600">Зауваження щодо файлу</h5>
                 <ul>

@@ -14,6 +14,9 @@
                         ${errorMessage}
                     </div>
                 </g:if>
+                <g:else>
+                    <div id="loginError"></div>
+                </g:else>
                 <form action="${postUrl ?: '/login/authenticate'}" method="POST" id="loginForm">
                     <div class="form-group">
                         <label class="control-label" for="username"><g:message code="auth.username"/></label>

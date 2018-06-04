@@ -600,7 +600,7 @@ function checkCredentials() {
             exists = true;
         } else {
             exists = false;
-            $('#loginContent').prepend('<div class="alert alert-dismissible alert-danger">\n' +
+            $('#loginError').html('<div class="alert alert-dismissible alert-danger">\n' +
                 '                        <button type="button" class="close" data-dismiss="alert">&times;</button>\n' +
                 '                        Логін та/або пароль неправильні' +
                 '                    </div>');

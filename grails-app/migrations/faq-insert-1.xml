@@ -1,27 +1,67 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
     <changeSet id="1" author="Stanislav Dorozhko">
-        <sql>
-            INSERT INTO faq(
-                id,
-                version,
-                author_id,
-                question,
-                answer,
-                faq_type,
-                date_created,
-                last_updated
-            )
-            SELECT
-                nextval('faq_id_seq'),
-                0,
-                1,
-                'Як мені зробити щось?',
-                'Для того, щоб щось зробити, вам достатньо кудись звернутись.',
-                'STUDENTS',
-                NOW(),
-                NOW()
-            FROM generate_series(1, 25)
-        </sql>
+        <!--студенту-->
+        <insert tableName="faq">
+            <column name="id" valueComputed="nextval('faq_id_seq')"/>
+            <column name="version">0</column>
+            <column name="author_id">1</column>
+            <column name="question">Чи є можливість захищати лабораторні роботи на своєму ПК?</column>
+            <column name="answer">Так! Ви можете взяти ноутбук та показани викладачу роботу на ньому.</column>
+            <column name="faq_type">STUDENTS</column>
+            <column name="date_created" valueComputed="NOW()"/>
+            <column name="last_updated" valueComputed="NOW()"/>
+        </insert>
+        <insert tableName="faq">
+            <column name="id" valueComputed="nextval('faq_id_seq')"/>
+            <column name="version">0</column>
+            <column name="author_id">1</column>
+            <column name="question">Коли з'явиться розклад на наступний тетраместр?</column>
+            <column name="answer">Приблизно за тиждень-два до початку тетраместру з'являється новий розклад.</column>
+            <column name="faq_type">STUDENTS</column>
+            <column name="date_created" valueComputed="NOW()"/>
+            <column name="last_updated" valueComputed="NOW()"/>
+        </insert>
+        <insert tableName="faq">
+            <column name="id" valueComputed="nextval('faq_id_seq')"/>
+            <column name="version">0</column>
+            <column name="author_id">1</column>
+            <column name="question">Чи є можливість перейти на заочну форму навчання, якщо я навчаюсь на денній?</column>
+            <column name="answer">Така можливість є, але тільки з початку нового учбового року.</column>
+            <column name="faq_type">STUDENTS</column>
+            <column name="date_created" valueComputed="NOW()"/>
+            <column name="last_updated" valueComputed="NOW()"/>
+        </insert>
+        <!--абітурієнту-->
+        <insert tableName="faq">
+            <column name="id" valueComputed="nextval('faq_id_seq')"/>
+            <column name="version">0</column>
+            <column name="author_id">1</column>
+            <column name="question">Я можу прийти на лекцію для того, щоб побачити якість навчання в університеті?</column>
+            <column name="answer">Нажаль, ні. Але ви можете прийти нам в День відкритих двірей! Слідкуйте за новинами.</column>
+            <column name="faq_type">ENTRANTS</column>
+            <column name="date_created" valueComputed="NOW()"/>
+            <column name="last_updated" valueComputed="NOW()"/>
+        </insert>
+        <insert tableName="faq">
+            <column name="id" valueComputed="nextval('faq_id_seq')"/>
+            <column name="version">0</column>
+            <column name="author_id">1</column>
+            <column name="question">Що мені робити, якщо я не пройшов на бюджет?</column>
+            <column name="answer">Ви можете навчатись на контракті. Вам запропонують цю можливість при оголошенні результатів вступних екзаменів.</column>
+            <column name="faq_type">ENTRANTS</column>
+            <column name="date_created" valueComputed="NOW()"/>
+            <column name="last_updated" valueComputed="NOW()"/>
+        </insert>
+        <insert tableName="faq">
+            <column name="id" valueComputed="nextval('faq_id_seq')"/>
+            <column name="version">0</column>
+            <column name="author_id">1</column>
+            <column name="question">На картку якого банку приходить стипендія?</column>
+            <column name="answer">На картку "Приватбанк".</column>
+            <column name="faq_type">ENTRANTS</column>
+            <column name="date_created" valueComputed="NOW()"/>
+            <column name="last_updated" valueComputed="NOW()"/>
+        </insert>
     </changeSet>
 </databaseChangeLog>
