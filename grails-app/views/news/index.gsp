@@ -32,21 +32,39 @@
                             <div class="row h-10">
                                 <div class="col-12 col-md-12"><g:replaceNextLine source="${news.description}"/></div>
                             </div>
-                            <div class="row align-items-end h-50" >
+                            <div class="row justify-content-between align-items-end h-50" >
                                 <g:if test="${news.dateCreated < news.lastUpdated}">
-                                    <div class="col-6 text-left text-muted custom-news-date" data-toggle="tooltip" data-placement="bottom" data-html="true" title="${tooltipDates(format:'dd-MM-yyyy HH:mm', updateDate: news.lastUpdated, createDate: news.dateCreated)}">
+                                    <div class="col text-left text-muted custom-news-date" data-toggle="tooltip" data-placement="bottom" data-html="true" title="${tooltipDates(format:'dd-MM-yyyy HH:mm', updateDate: news.lastUpdated, createDate: news.dateCreated)}">
                                         <g:dateFormat format="dd-MM-yyyy HH:mm" date="${news.dateCreated}"/>
                                         <span class="badge badge-info custom-badge">Оновлено</span>
+                                        <sec:ifLoggedIn>
+                                            <g:if test="${news.author.id == sec.loggedInUserInfo(field: 'id')?.asType(Long)}">
+                                                <span class="badge badge-info">Можна редагувати</span>
+                                            </g:if>
+                                            <g:else>
+                                                <sec:ifAllGranted roles="ROLE_ADMIN">
+                                                    <span class="badge badge-info">Можна редагувати</span>
+                                                </sec:ifAllGranted>
+                                            </g:else>
+                                        </sec:ifLoggedIn>
                                     </div>
-                                    <div class="offset-2"></div>
                                 </g:if>
                                 <g:else>
-                                    <div class="col-4 text-left text-muted" data-toggle="tooltip" data-placement="bottom" data-html="true" title="${tooltipDates(format:'dd-MM-yyyy HH:mm', updateDate: news.lastUpdated, createDate: news.dateCreated)}">
+                                    <div class="col text-left text-muted" data-toggle="tooltip" data-placement="bottom" data-html="true" title="${tooltipDates(format:'dd-MM-yyyy HH:mm', updateDate: news.lastUpdated, createDate: news.dateCreated)}">
                                         <g:dateFormat format="dd-MM-yyyy HH:mm" date="${news.dateCreated}"/>
+                                        <sec:ifLoggedIn>
+                                            <g:if test="${news.author.id == sec.loggedInUserInfo(field: 'id')?.asType(Long)}">
+                                                <span class="badge badge-info">Можна редагувати</span>
+                                            </g:if>
+                                            <g:else>
+                                                <sec:ifAllGranted roles="ROLE_ADMIN">
+                                                    <span class="badge badge-info">Можна редагувати</span>
+                                                </sec:ifAllGranted>
+                                            </g:else>
+                                        </sec:ifLoggedIn>
                                     </div>
-                                    <div class="offset-4"></div>
                                 </g:else>
-                                <div class="col-4 text-right text-muted" data-toggle="tooltip" data-placement="right" data-html="true" title="${news.author.fullName}">${news.author.abbreviatedName}</div>
+                                <div class="col text-right text-muted" data-toggle="tooltip" data-placement="right" data-html="true" title="${news.author.fullName}">${news.author.abbreviatedName}</div>
                             </div>
                         </div>
                     </div>
