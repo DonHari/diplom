@@ -134,6 +134,9 @@
             <column name="file" type="BYTEA">
                 <constraints nullable="false"/>
             </column>
+            <column name="file_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
         </createTable>
     </changeSet>
     <changeSet author="sdoro (generated)" id="1527595071690-12">

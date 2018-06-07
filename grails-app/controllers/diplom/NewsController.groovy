@@ -1,6 +1,7 @@
 package diplom
 
 import diplom.commands.NewsCommand
+import diplom.commands.NewsUpdateCommand
 import diplom.validator.Validate
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
@@ -86,8 +87,8 @@ class NewsController {
 
     @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])
     @Transactional
-    def update(News news) {
-        News updatedNews = newsService.update(news)
+    def update(NewsUpdateCommand newsUpdateCommand) {
+        News updatedNews = newsService.update(newsUpdateCommand)
 
         respond(updatedNews, status: OK, view: "/news/show")
     }

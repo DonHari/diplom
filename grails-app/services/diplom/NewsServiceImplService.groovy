@@ -1,6 +1,7 @@
 package diplom
 
 import diplom.commands.NewsCommand
+import diplom.commands.NewsUpdateCommand
 import grails.transaction.Transactional
 
 @Transactional
@@ -31,18 +32,43 @@ class NewsServiceImplService implements NewsService {
 
     @Override
     News save(NewsCommand command) {
-        Photo photo = imageService.save(command.photo.bytes)
-        List<Photo> assignedPhotos = imageService.saveAll(command.assignedPhotos.collect { it.bytes } as List<Byte[]>)
+        Photo photo = imageService.save(command.photo.bytes, command.photo.originalFilename)
+        List<Photo> assignedPhotos = imageService.saveAll(command.assignedPhotos.collectEntries { [it.originalFilename, it.bytes] })
         News news = new News(name: command.name, description: command.description, content: command.content, photo: photo, assignedPhotos: assignedPhotos)
         news.author = securityService.getAuthorizedUser()
         news.save()
     }
 
     @Override
-    News update(News news) {
-        checkIfExists(news.id)
+    News update(NewsUpdateCommand newsUpdateCommand) {
+        checkIfExists(newsUpdateCommand.newsId)
+        News news = News.get(newsUpdateCommand.newsId)
         checkIfAuthor(news)
-        news.save()
+        List<String> newPhotoNames = newsUpdateCommand.collectPhotoNames()
+        newPhotoNames.removeAll { it == null }
+        List<Byte[]> newPhotoContent = newsUpdateCommand.collectPhotoContent()
+        newPhotoContent.removeAll { it == null }
+        news.with {
+            news.name = newsUpdateCommand.name
+            news.description = newsUpdateCommand.description
+            news.content = newsUpdateCommand.content
+            if (newsUpdateCommand.photoName != news.photo.fileName) {
+                news.photo.delete()
+                news.photo = imageService.save(newsUpdateCommand.photo.bytes, newsUpdateCommand.photoName)
+            }
+            for (int i = 0; i < newPhotoNames.size(); i++) {
+                if(newPhotoNames[i] != news.assignedPhotos[i]) {
+                    if (news.assignedPhotos[i]) {
+                        Photo old = news.assignedPhotos[i]
+                        news.assignedPhotos.remove(old)
+                        old.delete()
+                    }
+                    news.assignedPhotos.add(imageService.save(newPhotoContent[i] as byte[], newPhotoNames[i]))
+                }
+            }
+            news
+        }
+        news.save(flush: true)
     }
 
     @Override

@@ -3,7 +3,7 @@ package diplom
 class Photo {
 
     byte[] file
-
+    String fileName
 //    static belongsTo = [news: News]
 
     static constraints = {

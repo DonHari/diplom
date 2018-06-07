@@ -7,17 +7,18 @@ import org.grails.plugins.web.taglib.ApplicationTagLib
 @Transactional
 class ImageServiceImplService implements ImageService {
 
-    List<Photo> saveAll(List<Byte[]> byteList) {
+    List<Photo> saveAll(Map<String, Byte[]> byteList) {
         List<Photo> result = new LinkedList<>()
-        for (Byte[] bytes : byteList) {
-            result.add(new Photo(file: bytes).save())
+        Set<String> keys = byteList.keySet()
+        for (String key : keys) {
+            result.add(new Photo(file: byteList.get(key), fileName: key).save())
         }
         result
     }
 
     @Override
-    Photo save(byte[] bytes) {
-        new Photo(file: bytes).save()
+    Photo save(byte[] bytes, String fileName) {
+        new Photo(file: bytes, fileName: fileName).save()
     }
 
     @Override

@@ -2,9 +2,9 @@ package diplom
 
 interface ImageService {
 
-    List<Photo> saveAll(List<Byte[]> byteList)
+    List<Photo> saveAll(Map<String, Byte[]> byteList)
 
-    Photo save(byte[] bytes)
+    Photo save(byte[] bytes, String fileName)
 
     byte[] getImage(Long id)
 

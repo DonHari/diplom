@@ -224,9 +224,11 @@ $(document).ready(function () {
             var fileName = fileInput(this.id);
             if (validatePhotoExtension(fileName)) {
                 $('#' + this.id + 'Name').text(fileName);
+                $('#newsPhotoHidden').text(fileName);
                 newsMainPhotoValid = true;
             } else {
                 $(this).val('');
+                $('#newsPhotoHidden').text('');
                 newsMainPhotoValid = false;
             }
             enableNewsSendButton();
@@ -235,9 +237,11 @@ $(document).ready(function () {
             var fileName = fileInput(this.id);
             if (validatePhotoExtension(fileName)) {
                 $('#' + this.id + 'Name').text(fileName);
+                $('#newsPhotoHidden').text(fileName);
                 newsMainPhotoValid = true;
             } else {
                 $(this).val('');
+                $('#newsPhotoHidden').text('');
                 newsMainPhotoValid = false;
             }
             enableNewsSendButton();
@@ -544,6 +548,7 @@ $(document).ready(function () {
             // 3. This function creates an <iframe> (and YouTube player)
             //    after the API code downloads.
             var player;
+
             function onYouTubeIframeAPIReady() {
                 player = new YT.Player('player', {
                     height: '390',
@@ -565,12 +570,14 @@ $(document).ready(function () {
             //    The function indicates that when playing a video (state=1),
             //    the player should play for six seconds and then stop.
             var done = false;
+
             function onPlayerStateChange(event) {
                 if (event.data == YT.PlayerState.PLAYING && !done) {
                     setTimeout(stopVideo, 6000);
                     done = true;
                 }
             }
+
             function stopVideo() {
                 player.stopVideo();
             }
@@ -605,12 +612,32 @@ $(document).ready(function () {
         });
         return status;
     });
-
+    $("#assignedPhoto0").on({
+        input: function () {
+            console.log('input');
+            var fileName = fileInput(this.id);
+            console.log(fileName);
+            if (validatePhotoExtension(fileName)) {
+                $("#assignedPhoto0Name").text(fileName);
+            } else {
+                $(this).val("");
+            }
+        }, change: function () {
+            console.log('change');
+            var fileName = fileInput(this.id);
+            console.log(fileName);
+            if (validatePhotoExtension(fileName)) {
+                $("#assignedPhoto0Name").text(fileName);
+            } else {
+                $(this).val("");
+            }
+        }
+    });
     $('#newsDateCreated').text(new Date(+$('#newsDateCreated').text()));
 });
 
 function enableRegisterButton() {
-    console.log(registerUsernameValid + ' && ' +  registerPasswordValid + ' = ' + (registerUsernameValid && registerPasswordValid));
+    console.log(registerUsernameValid + ' && ' + registerPasswordValid + ' = ' + (registerUsernameValid && registerPasswordValid));
     $('registrationBtn').prop('disabled', registerUsernameValid && registerPasswordValid);
 }
 
@@ -667,6 +694,7 @@ function fileInput(source) {
         if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
             filename = filename.substring(1);
         }
+        $('#' + source + 'Hidden').val(filename);
         return filename;
     }
     return null;
@@ -706,16 +734,41 @@ function addAssignedPhoto() {
     }
 }
 
+function addEditAssignedPhoto() {
+    var currentCount = $('#assignedPhotosCount').val();
+    if (currentCount === 12) {
+        return;
+    }
+    currentCount++;
+    var newId = 'assignedPhoto' + currentCount;
+    newsAssignedPhotoIds.push(newId);
+    $('#assignedPhotosCount').val(currentCount);
+    $('#assignedPhotos').append('<div class="form-group mb-3"><div class="input-group"><div class="custom-file"><input type="file" class="custom-file-input" id="' + newId + '" accept=".jpg,.jpeg,.png" value="${photo}" name="' + newId + '" oninput="validateNewsAssignedPhotos()" onchange="validateNewsAssignedPhotos()"><label class="custom-file-label" for="' + newId + '" id="assignedPhoto' + currentCount + 'Name">Оберіть файл</label><input type="hidden" value="${assignedPhoto.fileName}" name="assignedPhoto' + currentCount + 'Name" id="assignedPhoto' + currentCount + 'Hidden"/></div></div></div>');
+    $('#assignedPhotos').append('<script>$(document).ready(function () {$("#' + newId + '").on({input: function () {var fileName = fileInput(this.id);if (validatePhotoExtension(fileName)) {$("#" + this.id + "Name").text(fileName);} else {$(this).val("");}validateNewsAssignedPhotos();enableNewsSendButton();},change: function () {var fileName = fileInput(this.id);if (validatePhotoExtension(fileName)) {$("#" + this.id + "Name").text(fileName);} else {$(this).val("");}validateNewsAssignedPhotos();enableNewsSendButton();}});});</script>');
+    newsAssignedPhotoIds.forEach(function (value) {
+        if ($('#' + value).val() === '') {
+            flag = false;
+        }
+    });
+    if (flag) {
+        $('#newsSendButton').removeClass('disabled');
+    } else {
+        $('#newsSendButton').addClass('disabled');
+    }
+    enableNewsSendButton();
+    if (currentCount === 12) {
+        $('#addAssignedPhotoBtn').addClass('disabled').prop('onclick', null).off('click');
+    }
+}
+
 function showImagePopup(source) {
     $('#' + source).modal('toggle');
 }
 
 function validateNewsAssignedPhotos() {
     var flag = true;
-    console.clear();
     newsAssignedPhotoIds.forEach(function (value) {
         if ($('#' + value).val() === '') {
-            console.log(value + ' false');
             flag = false;
         }
     });

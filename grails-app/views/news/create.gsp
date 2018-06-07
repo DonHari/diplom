@@ -19,7 +19,7 @@
                         <label class="control-label" for="newsPhoto"><g:message code="news.add.mainphoto"/></label>
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input cursor-pointer" id="newsPhoto" %{--oninput="fileInput('newsPhoto')"--}% accept=".jpg,.jpeg,.png" value="${photo}" name="photo" onblur="validatePhotoExtension('#newsPhoto')">
+                                <input type="file" class="custom-file-input cursor-pointer" id="newsPhoto" accept=".jpg,.jpeg,.png" value="${photo}" name="photo" onblur="validatePhotoExtension('#newsPhoto')">
                                 <label class="custom-file-label" for="newsPhoto" id="newsPhotoName"><g:message code="add.file.placeholder"/></label>
                             </div>
                         </div>

@@ -116,9 +116,8 @@ nav div ul:last-child {
 }
 
 .news-divider {
-    margin-left: -15px;
     width: auto;
-    margin-right: -15px;
+    margin: 0 -15px;
 }
 
 .custom-modal-dialog {
@@ -355,4 +354,17 @@ span.badge {
     align-self: center;
     margin-left: 3px;
     font-weight: 400 !important;
+}
+
+.custom-edit-badge-link {
+    color: white;
+}
+
+.custom-edit-badge-link:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.custom-max-width-66-percent {
+    max-width: 66.6666666667%;
 }
