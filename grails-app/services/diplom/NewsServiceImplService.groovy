@@ -53,14 +53,14 @@ class NewsServiceImplService implements NewsService {
             news.description = newsUpdateCommand.description
             news.content = newsUpdateCommand.content
             if (newsUpdateCommand.photoName != news.photo.fileName) {
-                news.photo.delete()
+//                news.photo.delete()
                 news.photo = imageService.save(newsUpdateCommand.photo.bytes, newsUpdateCommand.photoName)
             }
             for (int i = 0; i < newPhotoNames.size(); i++) {
                 if(newPhotoNames[i] != news.assignedPhotos[i]) {
                     if (news.assignedPhotos[i]) {
                         Photo old = news.assignedPhotos[i]
-                        news.assignedPhotos.remove(old)
+//                        news.assignedPhotos.remove(old)
                         old.delete()
                     }
                     news.assignedPhotos.add(imageService.save(newPhotoContent[i] as byte[], newPhotoNames[i]))
