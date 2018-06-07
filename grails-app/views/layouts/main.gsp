@@ -9,7 +9,7 @@
         <g:layoutHead/>
     </head>
     <body onload="layoutLoaded()">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <nav class="navbar navbar-expand navbar-dark bg-primary">
             <a class="navbar-brand" href="/">
                 <img class="custom-logo" src="${assetPath(src:'/site_logo.png')}">
             </a>
@@ -17,8 +17,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav mr-auto">
+            <div class="collapse navbar-collapse container-fluid mx-0" id="navbarColor01">
+                <ul class="navbar-nav pull-left">
                     <li class="nav-item" id="newsHeader">
                         <a class="nav-link" href="/" ><g:message code="header.news"/></a>
                     </li>
@@ -29,7 +29,11 @@
                         <a class="nav-link" href="/students"><g:message code="header.student"/></a>
                     </li>
                 </ul>
-                <ul class="navbar-nav ml-auto">
+                <div class="text-white text-uppercase text-center custom-site-title">
+                    <p>кафедра спеціалізованих комп'ютерних систем</p>
+                    <p>Українського державного хіміко-технологічного університету</p>
+                </div>
+                <ul class="navbar-nav pull-right">
                     <sec:ifNotLoggedIn>
                         <li class="nav-item ml-5" id="authorize">
                             <a class="nav-link" href="#login" data-toggle="modal" data-target="#loginForm"><g:message code="header.auth.signin"/></a>
@@ -120,15 +124,15 @@
                 </div>
                 <div class="offset-2"></div>
                 <div class="col-5">
-                    <div class="row">
-                        <div class="offset-6"></div>
-                        <div class="col-6 pl-5">
+                    <div class="row justify-content-end">
+                        %{--<div class="offset-6"></div>--}%
+                        <div class="col-4 pl-5 ml-auto">
                             <a class="custom-footer-link" href="http://udhtu.edu.ua/"><g:message code="footer.goto.mainsite"/></a>
                         </div>
                     </div>
-                    <div class="row pt-3">
-                        <div class="offset-6"></div>
-                        <div class="col-6 pl-5">
+                    <div class="row pt-3 justify-content-end">
+                        %{--<div class="offset-6"></div>--}%
+                        <div class="col-4 pl-5">
                             ©2008-<g:currentYear/> Кафедра СКС
                         </div>
                     </div>

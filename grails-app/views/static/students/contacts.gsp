@@ -29,7 +29,6 @@
                 <p class="pb-2"><strong>графік роботи:</strong> понеділок – п’ятниця, 8.30-17.15</p>
                 <p class="pb-2"><strong></strong></p>
             </address>
-            <hr class="custom-padding custom-divider"/>
         </div>
     </div>
 </body>

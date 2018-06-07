@@ -14,7 +14,7 @@
                 <a href="#studcity" onclick="loadStudcityPage('#enrolleeContent')" class="list-group-item list-group-item-action custom-sidebar" id="studentsStudcity"><g:message code="students.studcity" default="Student's city"/></a>
                 <a href="#program" onclick="loadProgramPage('#enrolleeContent')" class="list-group-item list-group-item-action custom-sidebar" id="studentsProgram">Освітня програма</a>
                 <a href="#radioSection" onclick="loadRadioSectionPage('#enrolleeContent')" class="list-group-item list-group-item-action custom-sidebar" id="studentsRadioSection">Радіогурток</a>
-                <a href="#faq" onclick="loadEnrolleeFaqPage()" class="list-group-item list-group-item-action custom-sidebar" id="studentsFaq">Часті запитання</a>
+                <a href="#faq" onclick="loadEnrolleeFaqPage()" class="list-group-item list-group-item-action custom-sidebar" id="enrolleeFaq">Часті запитання</a>
             </div>
         </div>
         <div class="col-8 content pt-3 pb-3" id="enrolleeContent">

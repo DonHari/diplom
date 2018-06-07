@@ -37,7 +37,7 @@ function loadEnrolleeFaqPage() {
     $("#studentsStudcity").removeClass('active');
     $("#studentsProgram").removeClass('active');
     $("#studentsRadioSection").removeClass('active');
-    $("#studentsFaq").addClass('active');
+    $("#enrolleeFaq").addClass('active');
     $('#enrolleeContent').load(
         "/faq/index?faqType=ENTRANTS"
     );
@@ -61,20 +61,22 @@ function loadRadioSectionPage(id) {
     $("#studentsProgram").removeClass('active');
     $("#studentsContacts").removeClass('active');
     $("#studentsFAQ").removeClass('active');
+    $("#enrolleeFaq").removeClass('active');
     $("#studentsRadioSection").addClass('active');
     $(id).load(
         "/students/radioSection"
     );
 }
 
-function loadProgramPage(id) {
+function loadProgramPage() {
     $("#studentsSchedule").removeClass('active');
     $("#studentsFaculty").removeClass('active');
     $("#studentsDepartment").removeClass('active');
     $("#studentsStudcity").removeClass('active');
     $("#studentsRadioSection").removeClass('active');
+    $("#enrolleeFaq").removeClass('active');
     $("#studentsProgram").addClass('active');
-    $(id).load(
+    $("#enrolleeContent").load(
         "/students/program"
     );
 }
@@ -85,6 +87,7 @@ function loadStudcityPage(id) {
     $("#studentsDepartment").removeClass('active');
     $("#studentsProgram").removeClass('active');
     $("#studentsRadioSection").removeClass('active');
+    $("#enrolleeFaq").removeClass('active');
     $("#studentsStudcity").addClass('active');
     $(id).load(
         "/students/studcity"
@@ -111,6 +114,7 @@ function loadFacultyPage(id) {
     $("#studentsStudcity").removeClass('active');
     $("#studentsProgram").removeClass('active');
     $("#studentsRadioSection").removeClass('active');
+    $("#enrolleeFaq").removeClass('active');
     $("#studentsFaculty").addClass('active');
     $(id).load(
         "/students/faculty"
@@ -123,8 +127,9 @@ function loadDepartmentPage(id) {
     $("#studentsStudcity").removeClass('active');
     $("#studentsProgram").removeClass('active');
     $("#studentsRadioSection").removeClass('active');
+    $("#enrolleeFaq").removeClass('active');
     $("#studentsDepartment").addClass('active');
-    $(id).load(
+    $("#enrolleeContent").load(
         "/students/department"
     )
 }
@@ -526,7 +531,51 @@ $(document).ready(function () {
             enableRegisterButton();
         }
     });
+    $('#player').on({
+        load: function () {
+            console.log('load player');
+            // 2. This code loads the IFrame Player API code asynchronously.
+            var tag = document.createElement('script');
 
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            // 3. This function creates an <iframe> (and YouTube player)
+            //    after the API code downloads.
+            var player;
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('player', {
+                    height: '390',
+                    width: '640',
+                    videoId: 'zWKNAWYXLWU',
+                    events: {
+                        // 'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+            }
+
+            // 4. The API will call this function when the video player is ready.
+            function onPlayerReady(event) {
+                event.target.playVideo();
+            }
+
+            // 5. The API calls this function when the player's state changes.
+            //    The function indicates that when playing a video (state=1),
+            //    the player should play for six seconds and then stop.
+            var done = false;
+            function onPlayerStateChange(event) {
+                if (event.data == YT.PlayerState.PLAYING && !done) {
+                    setTimeout(stopVideo, 6000);
+                    done = true;
+                }
+            }
+            function stopVideo() {
+                player.stopVideo();
+            }
+        }
+    });
     $('#scheduleForm').submit(function () {
         if (!(scheduleFileValid && scheduleYearValid)) {
             return false;

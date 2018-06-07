@@ -73,7 +73,7 @@ nav div ul:last-child {
 }
 
 .custom-footer-link:hover {
-    color: antiquewhite !important;
+    color: #ffd99c !important;
     text-decoration: none;
 }
 
@@ -105,6 +105,10 @@ nav div ul:last-child {
 
 .h-30 {
     height: 30% !important;
+}
+
+.h-50 {
+    height: 50% !important;
 }
 
 .h-60 {
@@ -340,4 +344,11 @@ textarea:focus {
 
 .custom-faq-answer {
     font-size: 1.3rem;
+}
+
+.custom-site-title {
+    position: absolute;
+    top: 20px;
+    left: 25%;
+    right: 25%;
 }

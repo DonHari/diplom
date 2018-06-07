@@ -13,19 +13,19 @@
             </div>
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link active show" data-toggle="tab" href="#departmentMainInfo">Загальна інформація</a>
+                    <a class="nav-link active show px-2" data-toggle="tab" href="#departmentMainInfo">Загальна інформація</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#departmentState">Штат кафедри</a>
+                    <a class="nav-link px-2" data-toggle="tab" href="#departmentState">Штат кафедри</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#departmentHistory">Історія кафедри</a>
+                    <a class="nav-link px-2" data-toggle="tab" href="#departmentHistory">Історія кафедри</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#departmentScience">Наукова діяльність кафедри</a>
+                    <a class="nav-link px-2" data-toggle="tab" href="#departmentScience">Наукова діяльність кафедри</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#departmentEducation">Навчальна діяльність кафедри</a>
+                    <a class="nav-link px-2" data-toggle="tab" href="#departmentEducation">Навчальна діяльність кафедри</a>
                 </li>
             </ul>
             <div id="myTabContent" class="tab-content">
@@ -44,12 +44,12 @@
                     </div>
                     <div class="row p-3">
                         <div class="col-12">
-                            <adress>
+                            <address>
                                 <p class="pb-3">Кафедра готує фахівців за ступенем <strong>бакалавра</strong> та  <strong>магістра</strong> за наступними галузями знань:</p>
                                 <p class="pb-3"><strong>Галузь знань:</strong> 12 Інформаційні технології</p>
                                 <p class="pb-3"><strong>Спеціальність:</strong> 123 Комп’ютерна інженерія</p>
                                 <p class="pb-3"><strong>Освітня програма:</strong> <a href="#program" class="text-success" onclick="loadProgramPage()">Комп’ютерна інженерія (СКС)</a></p>
-                            </adress>
+                            </address>
                         </div>
                     </div>
                     <div class="row pb-3">
@@ -59,51 +59,47 @@
                     </div>
 
                     <script>
-                        // 2. This code loads the IFrame Player API code asynchronously.
-                        var tag = document.createElement('script');
-
-                        tag.src = "https://www.youtube.com/iframe_api";
-                        var firstScriptTag = document.getElementsByTagName('script')[0];
-                        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-                        // 3. This function creates an <iframe> (and YouTube player)
-                        //    after the API code downloads.
                         var player;
-                        function onYouTubeIframeAPIReady() {
-                            player = new YT.Player('player', {
-                                height: '390',
-                                width: '640',
-                                videoId: 'zWKNAWYXLWU',
-                                events: {
-                                    // 'onReady': onPlayerReady,
-                                    'onStateChange': onPlayerStateChange
-                                }
-                            });
-                        }
-
-                        // 4. The API will call this function when the video player is ready.
-                        function onPlayerReady(event) {
-                            event.target.playVideo();
-                        }
-
-                        // 5. The API calls this function when the player's state changes.
-                        //    The function indicates that when playing a video (state=1),
-                        //    the player should play for six seconds and then stop.
-                        var done = false;
-                        function onPlayerStateChange(event) {
-                            if (event.data == YT.PlayerState.PLAYING && !done) {
-                                setTimeout(stopVideo, 6000);
-                                done = true;
+                        $(document).ready(function () {
+                            var cb = () => {
+                                player = new YT.Player('player', {
+                                    height: '390',
+                                    width: '640',
+                                    videoId: 'zWKNAWYXLWU',
+                                    events: {
+                                        'onReady': onPlayerReady,
+                                        'onStateChange': onPlayerStateChange
+                                    }
+                                });
                             }
-                        }
-                        function stopVideo() {
-                            player.stopVideo();
-                        }
+                            function onPlayerReady(event) {
+                                console.log('onPlayerReady');
+                                // event.target.playVideo();
+                            }
+                            var done = false;
+
+                            function onPlayerStateChange(event) {
+                                if (event.data == YT.PlayerState.PLAYING && !done) {
+                                    setTimeout(stopVideo, 6000);
+                                    done = true;
+                                }
+                            }
+
+                            function stopVideo() {
+                                player.stopVideo();
+                            }
+
+                            if (!window.YT) {
+                                $.getScript("https://www.youtube.com/iframe_api");
+                                // update the global function to call cb
+                                window.onYouTubeIframeAPIReady = cb;
+                                // call cb()
+                            } else {
+                                window.onYouTubeIframeAPIReady = () => { }; // set it to dummy function
+                                cb();
+                            }
+                        });
                     </script>
-                    %{--<iframe width="420" height="315"
-                            src="https://www.youtube.com/watch?v=zWKNAWYXLWU">
-                    </iframe>--}%
-                    %{--<img src="${assetPath(src:'/static/students/department/one.png')}" class="custom-image-70 mb-3"/>--}%
                     <div class="row px-3">
                         <div class="col-12">
                             <p class="pb-3">У 1996 році в Українському державному хіміко-технологічному університеті була сформована перша група студентів для отримання спеціальності “Спеціалізовані комп’ютерні системи”.</p>
