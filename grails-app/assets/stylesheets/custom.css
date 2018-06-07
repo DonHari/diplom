@@ -139,6 +139,7 @@ nav div ul:last-child {
 .news-main-photo-show {
     max-height: 500px;
     width: 100%;
+    /*border-radius: 2rem;*/
 }
 
 .custom-badge {

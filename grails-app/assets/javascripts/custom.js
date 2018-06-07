@@ -633,7 +633,10 @@ $(document).ready(function () {
             }
         }
     });
+
     $('#newsDateCreated').text(new Date(+$('#newsDateCreated').text()));
+
+    $('img.custom-assigned-photo-height').css({"max-height": $('img.custom-assigned-photo-height').first().width() / 16 * 9, "width": "100%"});
 });
 
 function enableRegisterButton() {

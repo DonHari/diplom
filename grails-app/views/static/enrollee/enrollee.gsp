@@ -17,7 +17,7 @@
                 <a href="#faq" onclick="loadEnrolleeFaqPage()" class="list-group-item list-group-item-action custom-sidebar" id="enrolleeFaq">Часті запитання</a>
             </div>
         </div>
-        <div class="col-8 content pt-3 pb-3" id="enrolleeContent">
+        <div class="col-8 content pt-3 pb-3 text-justify" id="enrolleeContent">
             %{--content here--}%
         </div>
         <div class="offset-2"></div>

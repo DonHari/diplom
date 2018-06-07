@@ -12,7 +12,7 @@
                 <h5 class="text-center text-muted pb-3"><g:replaceNextLine source="${news.description}"/></h5>
                 <div class="row">
                     <div class="col-12">
-                        <img class="img-fluid cursor-pointer news-main-photo-show" src="${createLink(controller: "image", action: "get", params: [id: news.photo.id])}" onclick="showImagePopup('mainPhoto')"/>
+                        <img class="img-fluid cursor-pointer news-main-photo-show shadow-lg rounded mb-3" src="${createLink(controller: "image", action: "get", params: [id: news.photo.id])}" onclick="showImagePopup('mainPhoto')"/>
                         <div id="mainPhoto" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog custom-modal-dialog">
                                 <div class="modal-content">
@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="row pt-4 pb-4">
-                    <div class="col-12" id="newsContent">
+                    <div class="col-12 text-justify" id="newsContent">
                         <g:replaceNextLine source="${news.content}"/>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                         <div class="row pb-4 align-items-center">
                     </g:if>
                     <div class="col">
-                        <img class="img-thumbnail cursor-pointer" src="${createLink(controller: "image", action: "get", params: [id: assignedPhoto.id])}" onclick="showImagePopup('assignedPhoto${i}')"/>
+                        <img class="img-thumbnail custom-assigned-photo-height" src="${createLink(controller: "image", action: "get", params: [id: assignedPhoto.id])}" onclick="showImagePopup('assignedPhoto${i}')" id="assignedImage${i}"/>
                         <div id="assignedPhoto${i}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog custom-modal-dialog">
                                 <div class="modal-content">

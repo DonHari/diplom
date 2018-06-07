@@ -49,24 +49,20 @@ class NewsServiceImplService implements NewsService {
         List<Byte[]> newPhotoContent = newsUpdateCommand.collectPhotoContent()
         newPhotoContent.removeAll { it == null }
         news.with {
-            news.name = newsUpdateCommand.name
-            news.description = newsUpdateCommand.description
-            news.content = newsUpdateCommand.content
-            if (newsUpdateCommand.photoName != news.photo.fileName) {
-//                news.photo.delete()
-                news.photo = imageService.save(newsUpdateCommand.photo.bytes, newsUpdateCommand.photoName)
+            it.name = newsUpdateCommand.name
+            it.description = newsUpdateCommand.description
+            it.content = newsUpdateCommand.content
+            if (newsUpdateCommand.photoName != it.photo.fileName) {
+                it.photo = imageService.save(newsUpdateCommand.photo.bytes, newsUpdateCommand.photoName)
             }
-            for (int i = 0; i < newPhotoNames.size(); i++) {
-                if(newPhotoNames[i] != news.assignedPhotos[i]) {
-                    if (news.assignedPhotos[i]) {
-                        Photo old = news.assignedPhotos[i]
-//                        news.assignedPhotos.remove(old)
-                        old.delete()
+            if (!news.assignedPhotos.fileName.containsAll(newPhotoNames) || !newPhotoNames.containsAll(news.assignedPhotos.fileName)) {
+                for (int i = 0; i < newPhotoNames.size(); i++) {
+                    if (it.assignedPhotos[i] && !newPhotoNames.contains(it.assignedPhotos[i])) {
+                        it.assignedPhotos.add(imageService.save(newPhotoContent[i] as byte[], newPhotoNames[i]))
                     }
-                    news.assignedPhotos.add(imageService.save(newPhotoContent[i] as byte[], newPhotoNames[i]))
                 }
             }
-            news
+            it
         }
         news.save(flush: true)
     }

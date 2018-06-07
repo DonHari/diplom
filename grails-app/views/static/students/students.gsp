@@ -14,7 +14,7 @@
                     <a href="#faq" onclick="loadStudentsFaqPage()" class="list-group-item list-group-item-action custom-sidebar" id="studentsFAQ">Часті запитання</a>
                 </div>
             </div>
-            <div class="col-8 content pt-3 pb-3" id="studentContent">
+            <div class="col-8 content pt-3 pb-3 text-justify" id="studentContent">
                 %{--content here--}%
             </div>
             <div class="offset-2"></div>
