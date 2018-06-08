@@ -37,6 +37,82 @@
             </div>
         </div>
     </div>
+    <hr class="custom-divider custom-padding"/><div class="row px-3">
+        <div class="col">
+            <h3 class="text-center pb-4">Стиль в новинах</h3>
+            <p class="pb-3">Ви можете форматувати зміст новин. Для цього можна використовувати символи, які вказані в таблиці нижче</p>
+            <div class="row">
+                <div class="col-6">
+                    <table class="table table-responsive-lg table-striped text-center">
+                        <thead class="bg-primary text-white">
+                            <tr>
+                                <th scope="col" class="custom-th">Як встановити</th>
+                                <th scope="col" class="custom-th">Приклад</th>
+                                <th scope="col" class="custom-th">Результат</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>**</td>
+                                <td>**текст**</td>
+                                <td><strong>текст</strong></td>
+                            </tr>
+                            <tr>
+                                <td>&&</td>
+                                <td>&&текст&&</td>
+                                <td><mark>текст</mark></td>
+                            </tr>
+                            <tr>
+                                <td>!!</td>
+                                <td>текст!!текст!!</td>
+                                <td>текст<small>текст</small></td>
+                            </tr>
+                            <tr>
+                                <td>::</td>
+                                <td>::текст::</td>
+                                <td>текст<sub>текст</sub></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-6">
+                    <table class="table table-responsive-lg table-striped text-center">
+                        <thead class="bg-primary text-white">
+                        <tr>
+                            <th scope="col" class="custom-th">Як встановити</th>
+                            <th scope="col" class="custom-th">Приклад</th>
+                            <th scope="col" class="custom-th">Результат</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>__</td>
+                                <td>__текст__</td>
+                                <td><i>текст</i></td>
+                            </tr>
+                            <tr>
+                                <td>--</td>
+                                <td>--текст--</td>
+                                <td><del>текст</del></td>
+                            </tr>
+                            <tr>
+                                <td>==</td>
+                                <td>==текст==</td>
+                                <td><ins>текст</ins></td>
+                            </tr>
+                            <tr>
+                                <td>^^</td>
+                                <td>^^текст^^</td>
+                                <td>текст<sup>текст</sup></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <p class="">Також є можливість додати посилання. Для цього введіть наступне: [посилання](текст)</p>
+            <p>Наприклад: [http://udhtu.edu.ua/](Сайт УДХТУ)</p>
+        </div>
+    </div>
     <hr class="custom-divider custom-padding"/>
     <div class="row px-3">
         <div class="col">

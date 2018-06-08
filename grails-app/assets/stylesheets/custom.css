@@ -378,3 +378,7 @@ span.badge {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
 }
+
+.custom-td {
+    font-weight: normal;
+}

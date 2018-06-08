@@ -65,7 +65,7 @@
                                 </div>
                             </div>
                             <div class="row h-10">
-                                <div class="col-12 col-md-12 text-justify"><g:replaceNextLine source="${news.description}"/></div>
+                                <div class="col-12 col-md-12 text-justify"><g:replaceNextLineForDescription source="${news.description}"/></div>
                             </div>
                             <div class="row justify-content-between align-items-end h-50" >
                                         <div class="col-auto text-left text-muted pr-1" data-toggle="tooltip" data-placement="bottom" data-html="true" title="${tooltipDates(format:'dd-MM-yyyy HH:mm', updateDate: news.lastUpdated, createDate: news.dateCreated)}">
