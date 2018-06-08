@@ -29,6 +29,7 @@ class ImageServiceImplService implements ImageService {
     //todo doesn't work
     @Override
     byte[] getResourceImage(String path, String name) {
+
         ApplicationTagLib g = Holders.getGrailsApplication().mainContext.getBean('asset.pipeline.grails.AssetMethodTagLib') as ApplicationTagLib
         String pathToImage = g.resource(contextPath: "", dir: path, file: name, absolute: true)
         new File(pathToImage).bytes
