@@ -1,14 +1,17 @@
 <!doctype html>
 <html>
 <head>
-    <title>Page Not Found</title>
-    <meta name="layout" content="main">
-    <g:if env="development"><asset:stylesheet src="errors.css"/></g:if>
+    <title>Помилка</title>
 </head>
 <body>
-<ul class="errors">
-    customError.gsp
-    <li>${errorMessage}</li>
-</ul>
+<div class="row">
+    <div class="offset-3"></div>
+    <div class="col-6 p-3">
+        <h4 class="text-danger">
+            Код помилки 500. Зверніться до розробника.
+        </h4>
+    </div>
+    <div class="offset-3"></div>
+</div>
 </body>
 </html>

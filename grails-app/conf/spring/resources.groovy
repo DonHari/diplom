@@ -28,9 +28,6 @@ beans = {
         springSecurityService = ref('springSecurityService')
         userRoleService = ref('userRoleService')
     }
-    userRoleService(UserRoleServiceImplService) {
-        ref('userRoleService')
-    }
     uploadScheduleFileService(UploadScheduleFileServiceImplService) {
         ref('uploadScheduleFileService')
         scheduleService = ref('scheduleService')

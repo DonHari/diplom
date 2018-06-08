@@ -15,13 +15,6 @@ interface UserRoleService {
      */
     void deleteAll(User user)
 
-    /**
-     * Deletes all records for given role
-     * @param role
-     * @return
-     */
-    void deleteAll(Role role)
-
     UserRole findByUser(User user)
 
     UserRole get(Long userId, Long roleId)

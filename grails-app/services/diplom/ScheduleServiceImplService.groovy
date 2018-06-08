@@ -32,18 +32,6 @@ class ScheduleServiceImplService implements ScheduleService {
     }
 
     @Override
-    Schedule update(Schedule schedule) {
-        checkIfExists(schedule.id)
-        schedule.save()
-    }
-
-    @Override
-    void delete(Schedule schedule) {
-        checkIfExists(schedule.id)
-        schedule.delete()
-    }
-
-    @Override
     Integer count() {
         Schedule.count
     }

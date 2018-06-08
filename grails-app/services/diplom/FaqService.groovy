@@ -10,8 +10,6 @@ interface FaqService {
 
     Faq update(final FaqCommand faqCommand)
 
-    void delete(final Faq faq)
-
     Long count()
 
     List<Faq> listForCurrentUser()

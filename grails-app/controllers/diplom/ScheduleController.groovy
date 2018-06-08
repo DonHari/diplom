@@ -47,27 +47,6 @@ class ScheduleController {
         chain(action: 'create', model: [justSaved: true])
     }
 
-    @Secured(['ROLE_USER', 'ROLE_ADMIN', "IS_AUTHENTICATED_REMEMBERED"])
-    def edit(Schedule schedule) {
-        respond(schedule)
-    }
-
-    @Secured(['ROLE_USER', 'ROLE_ADMIN', "IS_AUTHENTICATED_REMEMBERED"])
-    @Transactional
-    def update(Schedule schedule) {
-        Schedule updatedSchedule = scheduleService.update(schedule)
-
-        respond(updatedSchedule, status: OK, view: "/schedule/show")
-    }
-
-    @Secured(['ROLE_USER', 'ROLE_ADMIN', "IS_AUTHENTICATED_REMEMBERED"])
-    @Transactional
-    def delete(Schedule schedule) {
-        scheduleService.delete(schedule)
-
-        redirect(controller: "schedule", action: "index", method: "GET", status: NO_CONTENT)
-    }
-
     @Secured('permitAll')
     def schedule() {
         List<Integer> availableYears = scheduleService.listAvailableYears()

@@ -68,13 +68,6 @@ class NewsServiceImplService implements NewsService {
     }
 
     @Override
-    void delete(News news) {
-        checkIfExists(news.id)
-        checkIfAuthor(news)
-        news.delete()
-    }
-
-    @Override
     Integer count() {
         News.count
     }

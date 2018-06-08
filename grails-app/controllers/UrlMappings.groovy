@@ -25,7 +25,7 @@ class UrlMappings {
         "/instructions/faq"(view: '/static/instructions/faq')
         "/instructions/users"(view: '/static/instructions/users')
         "/instructions/my"(view: '/static/instructions/my')
-        "404"(view: '/notFound')
+        "404"(view: '/customError')
         "500"(controller: "error", action: "handleValidationException", exception: ValidationException)
         "500"(controller: "error", action: "index")
     }

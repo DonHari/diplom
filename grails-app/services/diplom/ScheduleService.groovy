@@ -5,10 +5,6 @@ interface ScheduleService {
 
     Schedule save(Integer year, Integer tetrameter, String fileName)
 
-    Schedule update(Schedule schedule)
-
-    void delete(Schedule schedule)
-
     Integer count()
 
     List<Integer> listAvailableYears()

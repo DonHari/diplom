@@ -35,23 +35,11 @@ class FaqController {
     }
 
     @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])
-    def edit(Faq faq) {
-        respond(faq)
-    }
-
-    @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])
     @Transactional
     def update(FaqCommand faqCommand) {
         faqService.update(faqCommand)
 
         chain(action: 'managing', model: [justUpdated: true])
-    }
-
-    @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])
-    def delete(Faq faq) {
-        faqService.delete(faq)
-
-        redirect(controller: "faq", action: "index", method: "GET", status: NO_CONTENT)
     }
 
     @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])

@@ -16,13 +16,6 @@ class UserServiceImplService implements UserService {
     }
 
     @Override
-    List<User> list(Integer page, Integer max) {
-        Integer localPage = page ?: 0
-        Integer localMax = PageUtil.getMaxValue(max)
-        User.list([max: localMax, offset: localPage * localMax])
-    }
-
-    @Override
     User save(User user) {
         user.save()
         //todo save userRoles too
@@ -32,18 +25,6 @@ class UserServiceImplService implements UserService {
     User update(User user) {
         checkIfExists(user.id)
         user.save()
-    }
-
-    @Override
-    void delete(User user) {
-        checkIfExists(user.id)
-        userRoleService.deleteAll(user)
-        user.delete()
-    }
-
-    @Override
-    Integer count() {
-        User.count
     }
 
     @Override

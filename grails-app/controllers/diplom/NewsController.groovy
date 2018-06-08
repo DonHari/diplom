@@ -10,7 +10,6 @@ import org.springframework.web.multipart.MultipartFile
 import static org.springframework.http.HttpStatus.NO_CONTENT
 import static org.springframework.http.HttpStatus.OK
 
-@Transactional(readOnly = true)
 class NewsController {
 
     NewsService newsService
@@ -29,11 +28,10 @@ class NewsController {
 
     @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])
     def create() {
-        respond(new News(name: 'test'))
+        respond(new News())
     }
 
     @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])
-    @Transactional
     def save(NewsCommand newsCommand) {
         List<MultipartFile> assignedPhotos = new LinkedList<>()
         if (params.assignedPhoto1) {
@@ -86,18 +84,9 @@ class NewsController {
     }
 
     @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])
-    @Transactional
     def update(NewsUpdateCommand newsUpdateCommand) {
         News updatedNews = newsService.update(newsUpdateCommand)
 
         chain(action: 'show', params: [id: updatedNews.id])
-    }
-
-    @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])
-    @Transactional
-    def delete(News news) {
-        newsService.delete(news)
-
-        redirect(controller: "news", action: "index", method: "GET", status: NO_CONTENT)
     }
 }

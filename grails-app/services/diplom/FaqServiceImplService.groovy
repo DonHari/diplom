@@ -46,13 +46,6 @@ class FaqServiceImplService implements FaqService {
     }
 
     @Override
-    void delete(Faq faq) {
-        checkThatFaqExists(faq.id)
-        checkIfAuthor(faq)
-        faq.delete()
-    }
-
-    @Override
     Long count() {
         Faq.count
     }

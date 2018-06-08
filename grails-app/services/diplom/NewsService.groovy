@@ -10,7 +10,5 @@ interface NewsService {
 
     News update(NewsUpdateCommand newsUpdateCommand)
 
-    void delete(News news)
-
     Integer count()
 }
