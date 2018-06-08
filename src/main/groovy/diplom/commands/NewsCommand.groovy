@@ -31,20 +31,6 @@ class NewsCommand implements Validateable {
         }
         assignedPhotos validator: { val, obj ->
             true
-            //todo it
-//            if (val == null) {
-//                return false
-//            }
-//
-//            if (val.empty) {
-//                return false
-//            }
-//
-//            for (MultipartFile file : val) {
-//                availableExtensions.any({ extension ->
-//                    val.originalFilename?.toLowerCase()?.endsWith(extension)
-//                })
-//            }
 
         }
     }

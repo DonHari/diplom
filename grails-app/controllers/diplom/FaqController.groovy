@@ -1,13 +1,11 @@
 package diplom
 
-import diplom.faq.FaqType
+import diplom.commands.FaqCommand
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 
 import static org.springframework.http.HttpStatus.NO_CONTENT
-import static org.springframework.http.HttpStatus.OK
 
-@Transactional(readOnly = true)
 class FaqController {
 
     FaqService faqService
@@ -30,7 +28,6 @@ class FaqController {
     }
 
     @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])
-    @Transactional
     def save(Faq faq) {
         faqService.save(faq)
 
@@ -44,17 +41,25 @@ class FaqController {
 
     @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])
     @Transactional
-    def update(Faq faq) {
-        Faq updatedFaq = faqService.update(faq)
+    def update(FaqCommand faqCommand) {
+        faqService.update(faqCommand)
 
-        respond(updatedFaq, status: OK, view: "/faq/show")
+        chain(action: 'managing', model: [justUpdated: true])
     }
 
     @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])
-    @Transactional
     def delete(Faq faq) {
         faqService.delete(faq)
 
         redirect(controller: "faq", action: "index", method: "GET", status: NO_CONTENT)
     }
+
+    @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])
+    @Transactional
+    def managing() {
+        List<Faq> faqList = faqService.listForCurrentUser()
+
+        respond(faqList, model: [justUpdated: chainModel?.justUpdated])
+    }
+
 }

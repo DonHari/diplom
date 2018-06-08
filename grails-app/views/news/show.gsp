@@ -57,10 +57,5 @@
             </div>
             <div class="offset-3"></div>
         </div>
-        <script>
-            $(document).ready(function(){
-                $('[data-toggle="tooltip"]').tooltip();
-            });
-        </script>
     </body>
 </html>

@@ -369,3 +369,12 @@ span.badge {
 .custom-max-width-66-percent {
     max-width: 66.6666666667%;
 }
+
+.custom-th {
+    font-weight: normal;
+}
+
+.custom-table-caption {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}

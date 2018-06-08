@@ -1,5 +1,6 @@
 package diplom
 
+import diplom.commands.FaqCommand
 import diplom.faq.FaqType
 import grails.transaction.Transactional
 
@@ -33,10 +34,15 @@ class FaqServiceImplService implements FaqService {
     }
 
     @Override
-    Faq update(Faq faq) {
-        checkThatFaqExists(faq.id)
-        checkIfAuthor(faq)
-        faq.save()
+    Faq update(FaqCommand faqCommand) {
+        Faq faq = Faq.get(faqCommand.faqId)
+        faq.with {
+            it.question = faqCommand.question
+            it.answer = faqCommand.answer
+            it.faqType = faqCommand.faqType
+            it
+        }
+        faq.save(flush: true)
     }
 
     @Override
@@ -49,5 +55,14 @@ class FaqServiceImplService implements FaqService {
     @Override
     Long count() {
         Faq.count
+    }
+
+    @Override
+    List<Faq> listForCurrentUser() {
+        if (securityService.authorizedUserAndRole.role.authority == "ROLE_ADMIN") {
+            return Faq.findAll([sort: 'faqType', order: 'asc'])
+        }
+        Faq.findAllByAuthor(securityService.authorizedUser, [sort: 'faqType', order: 'asc'])
+
     }
 }

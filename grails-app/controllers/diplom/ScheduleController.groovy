@@ -38,7 +38,9 @@ class ScheduleController {
     def save(ScheduleCommand scheduleCommand) {
         Validate.hasNoErrors(scheduleCommand)
 
-        String fileName = uploadScheduleFileService.uploadFile(scheduleCommand.uploadedFile)
+        String fileName = scheduleCommand.year + '_' + scheduleCommand.tetrameter + scheduleCommand.uploadedFile.originalFilename.substring(scheduleCommand.uploadedFile.originalFilename.lastIndexOf('.'))
+
+        uploadScheduleFileService.uploadFile(scheduleCommand.uploadedFile, fileName)
 
         scheduleService.save(scheduleCommand.getYear(), scheduleCommand.getTetrameter(), fileName)
 

@@ -8,7 +8,7 @@ interface UploadScheduleFileService {
      * @param excelFileCommand
      * @return
      */
-    String uploadFile(MultipartFile excelFileCommand)
+    String uploadFile(MultipartFile excelFileCommand, String name)
 
     /**
      * Loads file from server

@@ -9,15 +9,14 @@
     <div class="offset-3"></div>
 
     <div class="col-6 content pt-3 pb-3">
-        <div class="row pb-3">
-            <div class="col">
-                <g:if test="${justInvited}">
-                    <div class="alert alert-dismissible alert-success">
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        Ви успішно додали користувача. Через декілька хвилин він отримає лист та зможе зареєструватись!
-                    </div>
-                </g:if>
-
+        <div class="row pb-3 align-items-center justify-content-between">
+            <g:if test="${justInvited}">
+                <div class="alert alert-dismissible alert-success">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    Ви успішно додали користувача. Через декілька хвилин він отримає лист та зможе зареєструватись!
+                </div>
+            </g:if>
+            <div class="col-auto">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#inviteUserModal">
                     Додати користувача
                 </button>
@@ -54,30 +53,36 @@
                     </div>
                 </div>
             </div>
+            <div class="col-auto text-muted">
+                Всього рядків: ${userRoleList.size()}
+            </div>
         </div>
-        <table class="table table-hover">
-            <thead>
-            <tr>
-                <th scope="col">Прізвище</th>
-                <th scope="col">Ім'я</th>
-                <th scope="col">По-батькові</th>
-                <th scope="col">Роль</th>
-            </tr>
+        <table class="table table-hover text-center table-responsive-lg">
+            %{--<caption>Всього рядків: ${userRoleList.size()}</caption>--}%
+            <thead class="bg-primary text-white">
+                <tr>
+                    <th scope="col" class="custom-th">№</th>
+                    <th scope="col" class="custom-th">Прізвище</th>
+                    <th scope="col" class="custom-th">Ім'я</th>
+                    <th scope="col" class="custom-th">По-батькові</th>
+                    <th scope="col" class="custom-th">Роль</th>
+                </tr>
             </thead>
             <tbody>
-            <g:each in="${userRoleList}" var="userRole" status="i">
+                <g:each in="${userRoleList}" var="userRole" status="i">
                     <g:if test="${sec.loggedInUserInfo(field: 'id') as Long == userRole.user.id}">
                         <tr class="table-secondary cursor-pointer clickable-row" data-href="${createLink(controller: 'userRole', action: 'showMe')}">
                     </g:if>
                     <g:else>
                         <tr class="table cursor-pointer clickable-row" data-href="${createLink(controller: 'userRole', action: 'show', params:[userId: userRole.user.id, roleId: userRole.role.id])}">
                     </g:else>
-                    <td>${userRole.user.surname}</td>
-                    <td>${userRole.user.name}</td>
-                    <td>${userRole.user.secondName}</td>
-                    <td><g:resolveRoleAuthority authority="${userRole.role.authority}"/></td>
-                </tr>
-            </g:each>
+                        <th scope="row">${i + 1}</th>
+                        <td>${userRole.user.surname}</td>
+                        <td>${userRole.user.name}</td>
+                        <td>${userRole.user.secondName}</td>
+                        <td><g:resolveRoleAuthority authority="${userRole.role.authority}"/></td>
+                    </tr>
+                </g:each>
             </tbody>
         </table>
     </div>

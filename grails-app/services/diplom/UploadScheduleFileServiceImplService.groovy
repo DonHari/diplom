@@ -23,8 +23,7 @@ class UploadScheduleFileServiceImplService implements UploadScheduleFileService 
         String filePath = path + System.getProperty('file.separator') + fileName
         File file = new File(filePath)
         if (file.exists()) {
-            log.error("File already exists")
-            //todo throw exception
+            file.delete()
         }
     }
 
@@ -40,8 +39,8 @@ class UploadScheduleFileServiceImplService implements UploadScheduleFileService 
         multipartFile.originalFilename.substring(multipartFile.originalFilename.lastIndexOf('\\') + 1)
     }
 
-    private saveFile = { String path, MultipartFile multipartFile ->
-        String filePath = path + System.getProperty('file.separator') + getRealFileName(multipartFile)
+    private saveFile = { String path, MultipartFile multipartFile, String fileName ->
+        String filePath = path + System.getProperty('file.separator') + fileName
         File file = new File(filePath)
         if (file.createNewFile()) {
             FileOutputStream fos = new FileOutputStream(file)
@@ -59,11 +58,11 @@ class UploadScheduleFileServiceImplService implements UploadScheduleFileService 
     }
 
     @Override
-    String uploadFile(MultipartFile multipartFile) {
+    String uploadFile(MultipartFile multipartFile, String name) {
         String schedulePath = getSchedulePath()
         createDir(schedulePath)
-        checkIfFileNotExists(schedulePath, multipartFile.originalFilename)
-        saveFile(schedulePath, multipartFile)
+        checkIfFileNotExists(schedulePath, name)
+        saveFile(schedulePath, multipartFile, name)
         getRealFileName(multipartFile)
     }
 

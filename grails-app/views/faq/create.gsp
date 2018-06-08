@@ -30,8 +30,8 @@
                     <div class="form-group">
                         <label class="form-label" for="faqType">Для кого буде це питання?</label>
                         <select class="form-control" id="faqType" name="faqType">
-                            <option value="STUDENTS">Для студенту</option>
-                            <option value="ENTRANTS">Для абітурієнту</option>
+                            <option value="STUDENTS"><g:resolveFaqType type="STUDENTS"/></option>
+                            <option value="ENTRANTS"><g:resolveFaqType type="ENTRANTS"/></option>
                         </select>
                     </div>
                     <div class="form-group has-danger has-success">

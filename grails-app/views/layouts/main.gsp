@@ -66,6 +66,7 @@
                                         <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'schedule', action: 'create')}"><g:message code="header.user.add.schedule"/></a>
                                         <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'faq', action: 'create')}"><g:message code="header.user.add.faq"/></a>
                                         <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'userRole', action: 'index')}"><g:message code="header.user.managing"/></a>
+                                        <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'faq', action: 'managing')}">Редагування FAQ</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item custom-dropdown-links" href="/logout"><g:message code="auth.logout"/></a>
                                     </div>
@@ -82,6 +83,7 @@
                                         <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'news', action: 'create')}"><g:message code="header.user.add.news"/></a>
                                         <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'schedule', action: 'create')}"><g:message code="header.user.add.schedule"/></a>
                                         <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'faq', action: 'create')}"><g:message code="header.user.add.faq"/></a>
+                                        <a class="dropdown-item custom-dropdown-links" href="${createLink(controller: 'faq', action: 'managing')}">Редагування FAQ</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item custom-dropdown-links" href="/logout"><g:message code="auth.logout"/></a>
                                     </div>

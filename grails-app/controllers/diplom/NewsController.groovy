@@ -90,7 +90,7 @@ class NewsController {
     def update(NewsUpdateCommand newsUpdateCommand) {
         News updatedNews = newsService.update(newsUpdateCommand)
 
-        respond(updatedNews, status: OK, view: "/news/show")
+        chain(action: 'show', params: [id: updatedNews.id])
     }
 
     @Secured(["ROLE_USER", "ROLE_ADMIN", "IS_AUTHENTICATED_REMEMBERED"])

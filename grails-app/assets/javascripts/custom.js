@@ -398,7 +398,6 @@ $(document).ready(function () {
         }
     });
     $(".clickable-row").click(function () {
-        console.log($(this).data("href"));
         window.location = $(this).data("href");
     });
     $('#userEnableEditButton').on({
@@ -633,6 +632,16 @@ $(document).ready(function () {
             }
         }
     });
+    $('#faqQuestionEdit').on({
+        input: function () {
+            maxInput(100, '#' + this.id, '#' + this.id + 'Left')
+        },
+    });
+    $('#faqAnswerEdit').on({
+        input: function () {
+            maxInput(100, '#' + this.id, '#' + this.id + 'Left')
+        },
+    });
 
     $('#newsDateCreated').text(new Date(+$('#newsDateCreated').text()));
 
@@ -747,7 +756,7 @@ function addEditAssignedPhoto() {
     newsAssignedPhotoIds.push(newId);
     $('#assignedPhotosCount').val(currentCount);
     $('#assignedPhotos').append('<div class="form-group mb-3"><div class="input-group"><div class="custom-file"><input type="file" class="custom-file-input" id="' + newId + '" accept=".jpg,.jpeg,.png" value="${photo}" name="' + newId + '" oninput="validateNewsAssignedPhotos()" onchange="validateNewsAssignedPhotos()"><label class="custom-file-label" for="' + newId + '" id="assignedPhoto' + currentCount + 'Name">Оберіть файл</label><input type="hidden" value="${assignedPhoto.fileName}" name="assignedPhoto' + currentCount + 'Name" id="assignedPhoto' + currentCount + 'Hidden"/></div></div></div>');
-    $('#assignedPhotos').append('<script>$(document).ready(function () {$("#' + newId + '").on({input: function () {var fileName = fileInput(this.id);if (validatePhotoExtension(fileName)) {$("#" + this.id + "Name").text(fileName);} else {$(this).val("");}validateNewsAssignedPhotos();enableNewsSendButton();},change: function () {var fileName = fileInput(this.id);if (validatePhotoExtension(fileName)) {$("#" + this.id + "Name").text(fileName);} else {$(this).val("");}validateNewsAssignedPhotos();enableNewsSendButton();}});});</script>');
+    $('#assignedPhotos').append('<script>document.onreadystatechange = function () {if (document.readyState === "completed") { $("#' + newId + '").on({input: function () {var fileName = fileInput(this.id);if (validatePhotoExtension(fileName)) {$("#" + this.id + "Name").text(fileName);} else {$(this).val("");}validateNewsAssignedPhotos();enableNewsSendButton();},change: function () {var fileName = fileInput(this.id);if (validatePhotoExtension(fileName)) {$("#" + this.id + "Name").text(fileName);} else {$(this).val("");}validateNewsAssignedPhotos();enableNewsSendButton();}});}}</script>');
     newsAssignedPhotoIds.forEach(function (value) {
         if ($('#' + value).val() === '') {
             flag = false;

@@ -58,29 +58,31 @@
                                                     <label class="custom-file-label" for="assignedPhoto${i}" id="assignedPhoto${i}Name">${assignedPhoto.fileName}</label>
                                                     <input type="hidden" value="${assignedPhoto.fileName}" name="assignedPhoto${i}Name" id="assignedPhoto${i}Hidden"/>
                                                     <script>
-                                                        $(document).ready(function () {
-                                                            $("#assignedPhoto${i}").on({
-                                                                input: function () {
-                                                                    console.log('input');
-                                                                    var fileName = fileInput(this.id);
-                                                                    console.log(fileName);
-                                                                    if (validatePhotoExtension(fileName)) {
-                                                                        $("#assignedPhoto${i}Name").text(fileName);
-                                                                    } else {
-                                                                        $(this).val("");
+                                                        document.onreadystatechange = function () {
+                                                            if (document.readyState === "completed") {
+                                                                $("#assignedPhoto${i}").on({
+                                                                    input: function () {
+                                                                        console.log('input');
+                                                                        var fileName = fileInput(this.id);
+                                                                        console.log(fileName);
+                                                                        if (validatePhotoExtension(fileName)) {
+                                                                            $("#assignedPhoto${i}Name").text(fileName);
+                                                                        } else {
+                                                                            $(this).val("");
+                                                                        }
+                                                                    }, change: function () {
+                                                                        console.log('change');
+                                                                        var fileName = fileInput(this.id);
+                                                                        console.log(fileName);
+                                                                        if (validatePhotoExtension(fileName)) {
+                                                                            $("#assignedPhoto${i}Name").text(fileName);
+                                                                        } else {
+                                                                            $(this).val("");
+                                                                        }
                                                                     }
-                                                                }, change: function () {
-                                                                    console.log('change');
-                                                                    var fileName = fileInput(this.id);
-                                                                    console.log(fileName);
-                                                                    if (validatePhotoExtension(fileName)) {
-                                                                        $("#assignedPhoto${i}Name").text(fileName);
-                                                                    } else {
-                                                                        $(this).val("");
-                                                                    }
-                                                                }
-                                                            });
-                                                        });
+                                                                });
+                                                            }
+                                                        };
                                                     </script>
                                                 </div>
                                             </div>
