@@ -8,6 +8,7 @@ class ImageController {
 
     @Secured('permitAll')
     def get(Long id) {
+        log.info("Image controller: GET image with id " + id)
         byte[] bytes = imageService.getImage(id)
         response.outputStream << bytes
     }

@@ -64,10 +64,16 @@
         </div>
     </div>
     <hr class="custom-divider custom-padding"/>
-    <div class="row">
+    <div class="row px-3">
         <div class="col">
             <h3 class="text-center">Редагування новини</h3>
-            %{--todo--}%
+            <p class="pb-3">Якщо ви автор новини або адміністратор, то при перегляді списку новин Ви побачите справа від назви новини інформацію про можливість редагування.</p>
+            <img src="${assetPath(src: '/static/instructions/news/5.png')}" class="custom-image-80 shadow rounded custom-margin-1p25rem-bot"/>
+            <p class="pb-3">Вам достатньо натиснути на напис "Можно редагувати" та відкриється відповідна сторінка.</p>
+            <p class="pb-3">Сторінка редагування практично така ж, як і для додавання новини. Різниця в тому, що всі поля будуь все заповнені прі переході на неї.</p>
+            <img src="${assetPath(src: '/static/instructions/news/6.png')}" class="custom-image-80 shadow rounded custom-margin-1p25rem-bot"/>
+            <p class="pb-3">Після оновлення Ви повернетесь на головну сторінку та біля оновленної новини побачите інформацію про це.</p>
+            <img src="${assetPath(src: '/static/instructions/news/7.png')}" class="custom-image-80 shadow rounded custom-margin-1p25rem-bot"/>
         </div>
     </div>
 </body>
