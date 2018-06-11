@@ -99,7 +99,6 @@
         </div>
         <div class="footer custom-footer bg-primary" role="contentinfo">
             <div class="row">
-                %{--contacts--}%
                 <div class="col-5">
                     <div class="row">
                         <div class="col-4">

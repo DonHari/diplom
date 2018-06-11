@@ -1,12 +1,9 @@
 <!doctype html>
 <html>
     <head>
-        %{--<title><g:message code="auth.title"/></title>--}%
-        %{--<meta name="layout" content="main">--}%
     </head>
     <body>
         <div class="row">
-            %{--<div class="offset-4"></div>--}%
             <div class="col-12 content-auth" id="loginContent">
                 <g:if test="${errorMessage}">
                     <div class="alert alert-dismissible alert-danger">
@@ -33,7 +30,6 @@
                     <input class="btn btn-outline-primary mt-2" type="submit" id="authSubmit" value="${message(code:'auth.button.login')}"/>
                 </form>
             </div>
-            %{--<div class="offset-4"></div>--}%
         </div>
         <script>
             (function() {

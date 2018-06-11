@@ -18,7 +18,6 @@
             </div>
         </div>
         <div class="col-8 content pt-3 pb-3" id="instructionContent">
-            %{--content here--}%
         </div>
         <div class="offset-2"></div>
     </div>

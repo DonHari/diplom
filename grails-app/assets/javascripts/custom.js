@@ -536,7 +536,6 @@ $(document).ready(function () {
     });
     $('#player').on({
         load: function () {
-            console.log('load player');
             // 2. This code loads the IFrame Player API code asynchronously.
             var tag = document.createElement('script');
 
@@ -613,18 +612,14 @@ $(document).ready(function () {
     });
     $("#assignedPhoto0").on({
         input: function () {
-            console.log('input');
             var fileName = fileInput(this.id);
-            console.log(fileName);
             if (validatePhotoExtension(fileName)) {
                 $("#assignedPhoto0Name").text(fileName);
             } else {
                 $(this).val("");
             }
         }, change: function () {
-            console.log('change');
             var fileName = fileInput(this.id);
-            console.log(fileName);
             if (validatePhotoExtension(fileName)) {
                 $("#assignedPhoto0Name").text(fileName);
             } else {
@@ -649,7 +644,6 @@ $(document).ready(function () {
 });
 
 function enableRegisterButton() {
-    console.log('!(' + registerUsernameValid + ' && ' + registerPasswordValid + ') = ' + !(registerUsernameValid && registerPasswordValid));
     $('#registrationBtn').prop('disabled', !(registerUsernameValid && registerPasswordValid));
 }
 
@@ -659,10 +653,8 @@ function enablePasswordChangeButton() {
     var userPasswordForPasswordEditValid = $('#userPasswordForPasswordEdit').val().length >= 4;
     var newPasswordsAreSame = $('#newPasswordEdit').val() === $('#newPasswordEditConfirm').val();
     if (newPasswordValid && newPasswordConfirmValid && userPasswordForPasswordEditValid && newPasswordsAreSame) {
-        console.log('if');
         $('#passwordEditSubmit').prop('disabled', false);
     } else {
-        console.log('else');
         $('#passwordEditSubmit').prop('disabled', true);
     }
 }
@@ -699,7 +691,6 @@ function checkCredentials() {
 
 function fileInput(source) {
     var fullPath = document.getElementById(source).value;
-    console.log(fullPath);
     if (fullPath) {
         var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
         var filename = fullPath.substring(startIndex);

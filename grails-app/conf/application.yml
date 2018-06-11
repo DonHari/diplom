@@ -76,9 +76,6 @@ grails:
             updateOnStart: true
             updateOnStartFileName: changelog.xml
         springsecurity:
-#            apf:
-#                storeLastUsername: true
-#            active: false
             userLookup:
               userDomainClassName: diplom.User
               authorityJoinClassName: diplom.UserRole
@@ -118,7 +115,6 @@ grails:
                       access: ['permitAll']
                     - pattern: '/**/instructions/**'
                       access: ['permitAll']
-
             logout:
                 postOnly: false
     languages:
@@ -187,7 +183,7 @@ environments:
                 testWhileIdle: true
                 testOnReturn: false
                 jdbcInterceptors: ConnectionState
-                defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+                defaultTransactionIsolation: 2
     heroku:
         dataSource:
             username: jckxxsulowapow
@@ -211,4 +207,4 @@ environments:
                 testWhileIdle: true
                 testOnReturn: false
                 jdbcInterceptors: ConnectionState
-                defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
+                defaultTransactionIsolation: 2

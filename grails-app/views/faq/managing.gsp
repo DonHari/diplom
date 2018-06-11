@@ -24,7 +24,6 @@
                     </div>
                 </div>
                 <table class="table table-responsive-lg table-striped table-hover">
-                    %{--<caption>Всього рядків: ${faqList.size()}</caption>--}%
                     <thead class="bg-primary text-white">
                         <tr>
                             <th scope="col" class="custom-th">№</th>

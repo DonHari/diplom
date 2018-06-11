@@ -20,8 +20,6 @@
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#inviteUserModal">
                     Додати користувача
                 </button>
-
-                %{--invite modal--}%
                 <div class="modal fade" id="inviteUserModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -58,7 +56,6 @@
             </div>
         </div>
         <table class="table table-hover text-center table-responsive-lg">
-            %{--<caption>Всього рядків: ${userRoleList.size()}</caption>--}%
             <thead class="bg-primary text-white">
                 <tr>
                     <th scope="col" class="custom-th">№</th>
