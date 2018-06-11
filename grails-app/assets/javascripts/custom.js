@@ -649,8 +649,8 @@ $(document).ready(function () {
 });
 
 function enableRegisterButton() {
-    console.log(registerUsernameValid + ' && ' + registerPasswordValid + ' = ' + (registerUsernameValid && registerPasswordValid));
-    $('registrationBtn').prop('disabled', registerUsernameValid && registerPasswordValid);
+    console.log('!(' + registerUsernameValid + ' && ' + registerPasswordValid + ') = ' + !(registerUsernameValid && registerPasswordValid));
+    $('#registrationBtn').prop('disabled', !(registerUsernameValid && registerPasswordValid));
 }
 
 function enablePasswordChangeButton() {
