@@ -24,7 +24,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-5">
-                                    <img class="custom-faculty-image" src="${assetPath(src: '/static/students/faculty/dekan.jpg')}"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/faculty/dekan.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalFacultyDekan')" id="facultyDekan" idModal="modalFacultyDekan"/>
                                 </div>
                                 <div class="col-7 text-center">
                                     <address>
@@ -49,7 +49,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-5">
-                                    <img class="custom-faculty-image" src="${assetPath(src: '/static/students/faculty/dekan_zam_1.jpg')}"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/faculty/dekan_zam_1.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalFacultyDekanZam1')" id="facultyDekanZam1" idModal="modalFacultyDekanZam1"/>
                                 </div>
                                 <div class="col-7 text-center">
                                     <address>
@@ -74,7 +74,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-5">
-                                    <img class="custom-faculty-image" src="${assetPath(src: '/static/students/faculty/dekan_zam_2.jpg')}"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/faculty/dekan_zam_2.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalFacultyDekanZam2')" id="facultyDekanZam2" idModal="modalFacultyDekanZam2"/>
                                 </div>
                                 <div class="col-7 text-center">
                                     <address>
@@ -99,7 +99,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-5">
-                                    <img class="custom-faculty-image" src="${assetPath(src: '/static/students/faculty/dekan_disp_1.jpg')}"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/faculty/dekan_disp_1.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalFacultyDekanDisp1')" id="facultyDekanDisp1" idModal="modalFacultyDekanDisp1"/>
                                 </div>
                                 <div class="col-7 text-center">
                                     <address>
@@ -123,7 +123,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-5">
-                                    <img class="custom-faculty-image" src="${assetPath(src: '/static/students/faculty/dekan_disp_2.png')}"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/faculty/dekan_disp_2.png')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalFacultyDekanDisp2')" id="facultyDekanDisp2" idModal="modalFacultyDekanDisp2"/>
                                 </div>
                                 <div class="col-7 text-center">
                                     <address>

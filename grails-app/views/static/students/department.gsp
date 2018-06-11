@@ -32,7 +32,7 @@
                 <div class="tab-pane fade active show" id="departmentMainInfo">
                     <div class="row pt-3 pb-3">
                         <div class="col-4 text-center">
-                            <img src="${assetPath(src:'site_logo.png')}" class=""/>
+                            <img src="${assetPath(src:'site_logo.png')}" class="custom-image-70"/>
                         </div>
                         <div class="col-8">
                             <address>
@@ -116,10 +116,10 @@
                             <p class="pb-3">Кафедра СКС приділяє велику увагу науково-дослідній роботі, що є суттєвою складовою підготовки майбутніх фахівців. Залучення студентів до участі у плануванні, виконанні та використанні результатів науково-дослідних робіт, починаючи з перших років навчання, надає можливість поступово заохочувати усіх до самостійного аналізу та пошуку оптимальних рішень при проектуванні сучасних комп’ютерних систем.</p>
                             <div class="row mb-3">
                                 <div class="col">
-                                    <img src="${assetPath(src:'/static/students/department/two.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src:'/static/students/department/two.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('departmentTwoModal')" id="departmentTwo" idModal="departmentTwoModal"/>
                                 </div>
                                 <div class="col">
-                                    <img src="${assetPath(src:'/static/students/department/three.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src:'/static/students/department/three.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('departmentThreeModal')" id="departmentThree" idModal="departmentThreeModal"/>
                                 </div>
                             </div>
                             <p class="pb-3">Навчальний процес на кафедрі забезпечують 10 науково-педагогічних працівників, у тому числі: 3 професора, 4 доцента, 2 старших викладача, 1 асистент.</p>
@@ -134,16 +134,16 @@
                             <p class="pb-3">Для забезпечення високої професійної підготовки розвивається матеріальне забезпечення кафедри. Кафедра має два комп’ютерних класи для студентів та один для викладачів кафедри. Завдяки висококваліфікованому професорсько-викладацькому складу та допоміжному персоналу створено спеціалізовану лабораторію з мікропроцесорної техніки, яка обладнана учбово-лабораторними стендами “EV8031/AVR”, “LOGIC”, “OpAmp”, “Trigger”.</p>
                             <div class="row mb-3">
                                 <div class="col">
-                                    <img src="${assetPath(src:'/static/students/department/four.jpg')}" class="custom-image-50"/>
+                                    <g:clickableImage src="${assetPath(src:'/static/students/department/four.jpg')}" classes="cursor-pointer shadow-lg custom-image-50" onclick="showImagePopup('departmentFourModal')" id="departmentFour" idModal="departmentFourModal"/>
                                 </div>
                             </div>
                             <p class="pb-3">Лабораторія та комп’ютерні класи обладнані сучасною комп’ютерною технікою, вимірювальними приладами, навчальними дослідницькими стендами та іншим необхідним устаткуванням, що дозволяє студентам та співробітникам кафедри СКС ефективно займатися науково-практичною діяльністю. Комп’ютери в учбових класах кафедри та викладацьких об’єднані в локальну мережу та мають вихід до всесвітньої мережі Internet. Для кращого засвоєння матеріалу на лекціях та практичних заняттях успішно застосовуються наочні засоби навчання.</p>
                             <div class="row mb-3">
                                 <div class="col">
-                                    <img src="${assetPath(src:'/static/students/department/five.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src:'/static/students/department/five.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('departmentFiveModal')" id="departmentFive" idModal="departmentFiveModal"/>
                                 </div>
                                 <div class="col">
-                                    <img src="${assetPath(src:'/static/students/department/six.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src:'/static/students/department/six.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('departmentSixModal')" id="departmentSix" idModal="departmentSixModal"/>
                                 </div>
                             </div>
                             <p>Після одержання спеціальності працевлаштування можливе в таких сферах</p>
@@ -158,10 +158,10 @@
                             <p class="pb-3">Уперше випуск спеціалістів зі спеціальності “Спеціалізовані комп’ютерні системи” відбувся у 2003 р. Починаючи з 2003 і весь подальший період  керівництво і професорсько-викладацький склад здійснюють значну роботу по підвищенню якості спеціалістів і їхньому працевлаштуванню.</p>
                             <div class="row mb-3">
                                 <div class="col">
-                                    <img src="${assetPath(src:'/static/students/department/seven.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src:'/static/students/department/seven.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('departmentSevenModal')" id="departmentSeven" idModal="departmentSevenModal"/>
                                 </div>
                                 <div class="col">
-                                    <img src="${assetPath(src:'/static/students/department/eight.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src:'/static/students/department/eight.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('departmentEightModal')" id="departmentEight" idModal="departmentEightModal"/>
                                 </div>
                             </div>
                             <p class="pb-3">Дбайливе відношення і професійність викладання, що сприяють якісній підготовці студентів, реклама спеціальностей і спеціалізації забезпечили практично 100-відсоткове працевлаштування випускників кафедри, більшість з яких направляється по запитам підприємств, таких як Інститут технічної механіки НАНУ і ДКАУ, Головне Управління Державного казначейства України в Дніпропетровській області, Південний машинобудівний завод, ВАТ «Український мобільний зв’язок», КБ «Приватбанк», «Укрсіббанк». Багато студентів та випускників працевлаштувались в українських та міжнародних компаніях, що спеціалізуються на розробці програмного забезпечення.</p>
@@ -169,28 +169,28 @@
                             <p class="pb-3">Вони приймають участь у щорічному конкурсі талантів «Студентська весна»:</p>
                             <div class="row mb-3">
                                 <div class="col">
-                                    <img src="${assetPath(src:'/static/students/department/nine.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src:'/static/students/department/nine.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('departmentNineModal')" id="departmentNine" idModal="departmentNineModal"/>
                                 </div>
                                 <div class="col">
-                                    <img src="${assetPath(src:'/static/students/department/ten.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src:'/static/students/department/ten.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('departmentTenModal')" id="departmentTen" idModal="departmentTenModal"/>
                                 </div>
                             </div>
                             <p class="pb-3">Вміють і посміятися, і насмішити:</p>
                             <div class="row mb-3">
                                 <div class="col">
-                                    <img src="${assetPath(src:'/static/students/department/eleven.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src:'/static/students/department/eleven.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('departmentElevenModal')" id="departmentEleven" idModal="departmentElevenModal"/>
                                 </div>
                                 <div class="col">
-                                    <img src="${assetPath(src:'/static/students/department/twelve.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src:'/static/students/department/twelve.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('departmentTwelveModal')" id="departmentTwelve" idModal="departmentTwelveModal"/>
                                 </div>
                             </div>
                             <p class="pb-3">А ось наша красуня змагається у конкурсі краси «Місс УДХТУ»:</p>
                             <div class="row mb-3">
                                 <div class="col">
-                                    <img src="${assetPath(src:'/static/students/department/thirteen.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src:'/static/students/department/thirteen.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('departmentThirteenModal')" id="departmentThirteen" idModal="departmentThirteenModal"/>
                                 </div>
                                 <div class="col">
-                                    <img src="${assetPath(src:'/static/students/department/fourteen.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src:'/static/students/department/fourteen.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('departmentFourteenModal')" id="departmentFourteen" idModal="departmentFourteenModal"/>
                                 </div>
                             </div>
                         </div>
@@ -201,7 +201,7 @@
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-4">
-                                    <img src="${assetPath(src: '/static/students/department/stuff/kosolap.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/kosolap.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalStuffKosolap')" id="stuffKosolap" idModal="modalStuffKosolap"/>
                                 </div>
                                 <div class="col-8">
                                     <h4 class="pb-2">Косолап Анатолій Іванович</h4>
@@ -231,7 +231,7 @@
                             <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
-                                    <img src="${assetPath(src: '/static/students/department/stuff/alpatov.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/alpatov.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalStuffAlpatov')" id="stuffAlpatov" idModal="modalStuffAlpatov"/>
                                 </div>
                                 <div class="col-8">
                                     <h4 class="pb-2">Алпатов Анатолій Петрович</h4>
@@ -257,7 +257,7 @@
                             <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
-                                    <img src="${assetPath(src: '/static/students/department/stuff/horoshilov.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/horoshilov.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalStuffHoroshilov')" id="stuffHoroshilov" idModal="modalStuffHoroshilov"/>
                                 </div>
                                 <div class="col-8">
                                     <h4 class="pb-2">Хорошилов Сергій Вікторович</h4>
@@ -283,7 +283,7 @@
                             <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
-                                    <img src="${assetPath(src: '/static/students/department/stuff/kapitonov.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/kapitonov.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalStuffKapitonov')" id="stuffKapitonov" idModal="modalStuffKapitonov"/>
                                 </div>
                                 <div class="col-8">
                                     <h4 class="pb-2">Капітонов Олександр Георгійович</h4>
@@ -308,7 +308,7 @@
                             <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
-                                    <img src="${assetPath(src: '/static/students/department/stuff/bileckiy.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/bileckiy.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalStuffBileckiy')" id="stuffBileckiy" idModal="modalStuffBileckiy"/>
                                 </div>
                                 <div class="col-8">
                                     <h4 class="pb-2">Білецький Олександр Семенович</h4>
@@ -334,7 +334,7 @@
                             <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
-                                    <img src="${assetPath(src: '/static/students/department/stuff/sergeeva.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/sergeeva.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalStuffSergeeva')" id="stuffSergeeva" idModal="modalStuffSergeeva"/>
                                 </div>
                                 <div class="col-8">
                                     <h4 class="pb-2">Сергєєва Ольга В’ячеславівна</h4>
@@ -359,7 +359,7 @@
                             <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
-                                    <img src="${assetPath(src: '/static/students/department/stuff/peretyatko.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/peretyatko.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalStuffPeretyatko')" id="stuffPeretyatko" idModal="modalStuffPeretyatko"/>
                                 </div>
                                 <div class="col-8">
                                     <h4 class="pb-2">Перетятько Анастасія Сергіївна</h4>
@@ -390,7 +390,7 @@
                             <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
-                                    <img src="${assetPath(src: '/static/students/department/stuff/brazinskaya.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/brazinskaya.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalStuffBrazinskaya')" id="stuffBrazinskaya" idModal="modalStuffBrazinskaya"/>
                                 </div>
                                 <div class="col-8">
                                     <h4 class="pb-2">Бразинська Світлана Вікторівна</h4>
@@ -413,7 +413,7 @@
                             <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
-                                    <img src="${assetPath(src: '/static/students/department/stuff/dubovik.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/dubovik.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalStuffDubovik')" id="stuffDubovik" idModal="modalStuffDubovik"/>
                                 </div>
                                 <div class="col-8">
                                     <h4 class="pb-2">Дубовик Тетяна Миколаївна</h4>
@@ -443,7 +443,7 @@
                             <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
-                                    <img src="${assetPath(src: '/static/students/department/stuff/dovgopola.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/dovgopola.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalStuffDovgopola')" id="stuffDovgopola" idModal="modalStuffDovgopola"/>
                                 </div>
                                 <div class="col-8">
                                     <h4 class="pb-2">Довгопола Альона Олександрівна</h4>
@@ -469,7 +469,7 @@
                             <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
-                                    <img src="${assetPath(src: '/static/students/department/stuff/penya.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/penya.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalStuffPenya')" id="stuffPenya" idModal="modalStuffPenya"/>
                                 </div>
                                 <div class="col-8">
                                     <h4 class="pb-2">Пеня Тетяна Дмитрівна</h4>
@@ -496,24 +496,24 @@
                             <p class="pb-3">З листопада 2015 року кафедру очолює доктор фізико-математичних наук, професор Анатолій Іванович Косолап. Він та його учні ведуть активну наукову роботу в галузі математичного моделювання та оптимізації складних систем. Отримані наукові результати знайшли відображення в 4-х монографіях, в яких пропонуються нові методи оптимізації складних систем, а також значна увага приділяється розробці ефективного програмного забезпечення. А.І. Косолап був учасником більше 40 міжнародних наукових конференцій, як в Україні так і за її межами, де він доповідав нові наукові результати та обмінювався досвідом впровадження цих результатів в навчальний процес. Він є членом European Operational Research Societies. Значну увагу А.І. Косолап приділяє якості навчання та його відповідності кращим європейським та національним університетам.  Кожен випускник кафедри повинен оволодіти сучасними методами моделювання складних комп’ютерних систем, оптимізувати їх структуру та функціонування за допомогою сучасного програмного забезпечення.</p>
                             <div class="row mb-5">
                                 <div class="col">
-                                    <img src="${assetPath(src: '/static/students/department/history/1.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/history/1.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalHistory1')" id="history1" idModal="modalHistory1"/>
                                 </div>
                                 <div class="col">
-                                    <img src="${assetPath(src: '/static/students/department/history/2.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/history/2.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalHistory2')" id="history2" idModal="modalHistory2"/>
                                 </div>
                                 <div class="col">
-                                    <img src="${assetPath(src: '/static/students/department/history/3.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/history/3.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalHistory3')" id="history3" idModal="modalHistory3"/>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <img src="${assetPath(src: '/static/students/department/history/4.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/history/4.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalHistory4')" id="history4" idModal="modalHistory4"/>
                                 </div>
                                 <div class="col">
-                                    <img src="${assetPath(src: '/static/students/department/history/5.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/history/5.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalHistory5')" id="history5" idModal="modalHistory5"/>
                                 </div>
                                 <div class="col">
-                                    <img src="${assetPath(src: '/static/students/department/history/6.jpg')}" class="custom-image-70"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/history/6.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalHistory6')" id="history6" idModal="modalHistory6"/>
                                 </div>
                             </div>
                         </div>
@@ -597,7 +597,7 @@
                             <p class="pb-3">Співробітники кафедри приймають активну участь у роботі Регіонального наукового семінару Придніпровського наукового центра НАН України і МОН України “Сучасні проблеми управління й моделювання складних систем”, керівник: проф. д.т.н., Михалев А.І., НМетАУ; співкерівники проф., д.ф.-м.н. Когут П.І., ДНУ та д.т.н., с.н.с. Чумаков Л.Д., УДХТУ.</p>
                             <p class="pb-3">На базі кафедри з квітня 2003 р. щорічно проводився міжнародний молодіжний форум “Інформаційні технології у XXI сторіччі”. З 2003 року почала роботу постійно діюча міжнародна дистанційна науково-практична конференція “Інформаційні технології та кібернетика на службі охорони здоров’я 2003”.</p>
                             <p class="pb-3">У 2011 році кафедра прийняла активну участь в організації та проведенні наукової конференції “Інформаційні технології в управлінні складними системами”, яка була присвячена 100-річчю з дня народження М.К. Янгеля. Співробітниками кафедри і студентами було зроблено 16 доповідей. У жовтні 2011 року професор Алпатов А.П. зробив доповідь на 62-му Міжнародному космічному конгресі у Кейптауні, Південно-Африканська Республіка. У липні 2009 р. професор Косолап А.І. зробив доповідь на конференції “Сontinuous optimization” у Ремагені (Німеччина), а в 2010 р. та 2013 р. – на коференції “Глобальна оптимізація” у Тулузі (Франція). З 2015 р. на факультеті Комп’ютерних наук та інженерії почала роботу щорічна науко-технічна конференція “Комп’ютерне моделювання та оптимізація складних систем”, в якій кафедра СКС приймає активну участь.</p>
-                            <img src="${assetPath(src: '/static/students/department/science/5.jpg')}" class="custom-image-50"/>
+                            <g:clickableImage src="${assetPath(src: '/static/students/department/science/5.jpg')}" classes="cursor-pointer shadow-lg custom-image-50" onclick="showImagePopup('modalScience5')" id="science5" idModal="modalScience5"/>
                             <p>У 2002-2014 рр. підготовлені й надруковані монографії:</p>
                             <ul class="pb-3">
                                 <li class="ml-3">Переверзєв Е.С., Алпатов А.П., и др. <em>“Надежность технических систем“</em>. Монографія. Днепропетровск, Изд-во “Пороги”, 2002, 396 с.</li>
@@ -609,7 +609,7 @@
                                 <li class="ml-3">Косолап А.І., у складі авторського колективу. <em>“Дослідження та оптимізація економічних процесів“</em>, НТУ ХПІ, 2013, 484 с.</li>
                                 <li class="ml-3">Косолап А.И. <em>“Глобальная оптимизация. Метод точной квадратичной регуляризации“</em>, Днепропетровск, Изд-во ПГАСА, 2015, 164 с.</li>
                             </ul>
-                            <img src="${assetPath(src: '/static/students/department/science/6.jpg')}" class="custom-image-50"/>
+                            <g:clickableImage src="${assetPath(src: '/static/students/department/science/6.jpg')}" classes="cursor-pointer shadow-lg custom-image-50" onclick="showImagePopup('modalScience6')" id="science6" idModal="modalScience6"/>
                         </div>
                     </div>
                 </div>

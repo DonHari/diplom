@@ -4,7 +4,7 @@ class FaqTypeTagLib {
     static defaultEncodeAs = [taglib: 'html']
 
     /**
-     * type REQUIRED
+     * @attr type REQUIRED
      */
     def resolveFaqType = { attrs, body ->
         String type = attrs.type

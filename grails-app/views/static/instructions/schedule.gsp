@@ -13,10 +13,10 @@
                     <p class="">Оберіть пункт меню "Додати розклад", та відкриється наступна сторінка</p>
                 </div>
                 <div class="col">
-                    <img src="${assetPath(src: '/static/instructions/schedule/1.png')}" class="custom-image-50 shadow"/>
+                    <g:clickableImage src="${assetPath(src: '/static/instructions/schedule/1.png')}" classes="cursor-pointer shadow-lg custom-image-50" onclick="showImagePopup('modalInstructionSchedule1')" id="instructionSchedule1" idModal="modalInstructionSchedule1"/>
                 </div>
             </div>
-            <img src="${assetPath(src: '/static/instructions/schedule/2.png')}" class="custom-image-70 shadow rounded custom-margin-1p25rem-bot"/>
+            <g:clickableImage src="${assetPath(src: '/static/instructions/schedule/2.png')}" classes="cursor-pointer shadow-lg custom-image-70 rounded custom-margin-1p25rem-bot" onclick="showImagePopup('modalInstructionSchedule2')" id="instructionSchedule2" idModal="modalInstructionSchedule2"/>
             <p>Вам необхідно заповнити всі поля, щоб з'явилась можливість натиснути кнопку "Створити".</p>
             <div class="custom-warning-message">
                 <h5 class="custom-font-weight-600">Зауваження щодо файлу</h5>
@@ -41,7 +41,7 @@
     <div class="row px-3">
         <div class="col">
             <h3 class="text-center pb-4">Перегляд розкладу</h3>
-            <img src="${assetPath(src: '/static/instructions/schedule/3.png')}" class="custom-image-80 shadow rounded custom-margin-1p25rem-bot"/>
+            <g:clickableImage src="${assetPath(src: '/static/instructions/schedule/3.png')}" classes="cursor-pointer shadow-lg custom-image-70 rounded custom-margin-1p25rem-bot" onclick="showImagePopup('modalInstructionSchedule3')" id="instructionSchedule3" idModal="modalInstructionSchedule3"/>
             <ol>
                 <li class="ml-3">Випадаючий список для вибору тетраместру.</li>
                 <li class="ml-3">Випадаючий список для вибору учбового року.</li>

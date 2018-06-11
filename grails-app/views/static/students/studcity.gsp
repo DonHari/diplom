@@ -5,8 +5,8 @@
 </head>
 <body>
     <div class="row">
-        <div class="col-5">
-            <img class="img-fluid pl-3" src="${assetPath(src: '/static/students/studcity/studcity_director.jpg')}">
+        <div class="col-5 pl-5 pr-3">
+            <g:clickableImage src="${assetPath(src: '/static/students/studcity/studcity_director.jpg')}" classes="cursor-pointer shadow-lg custom-image-100" onclick="showImagePopup('modalStudcityDirector')" id="studcityDirector" idModal="modalStudcityDirector"/>
         </div>
         <div class="col-7">
             <div class="custom-description-studcity pt-2">
@@ -47,8 +47,8 @@
             <hr class = "custom-padding custom-divider" width="100%">
             <h3 class="text-center ">Гуртожиток 4</h3>
             <div class="row pt-4">
-                <div class="col-5">
-                    <img class="img-fluid pl-3" src="${assetPath(src: '/static/students/studcity/dormitory_4_director.jpg')}">
+                <div class="col-5 pl-5 pr-3">
+                    <g:clickableImage src="${assetPath(src: '/static/students/studcity/dormitory_4_director.jpg')}" classes="cursor-pointer shadow-lg custom-image-100" onclick="showImagePopup('modalDormitory4Director')" id="dormitory4Director" idModal="modalDormitory4Director"/>
                 </div>
                 <div class="col-7" style="display: flex;">
                     <div class="custom-description-studcity">

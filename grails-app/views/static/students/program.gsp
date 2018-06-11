@@ -25,10 +25,10 @@
             <p class="pb-3">У 2018 році на кафедрі розпочав роботу студентський науковий гурток «Комп’ютерна інженерія», в роботі якого приймають участь студенти факультету, які цікавляться радіотехнікою та бажають отримати практичні навички виготовлення друкованих плат, пайки і монтажу радіоелектронних пристроїв. Проектування і розробка електричних схем проводиться  за допомогою програм Міcro-Cap та Electronic Workbench. Для проектування печатних плат використовується програма Sprint Layout. Студенти приймають активну участь у наукових міжнародних конференціях та публікують статті та тези за результатами роботи.</p>
             <div class="row pb-3">
                 <div class="col">
-                    <img class="custom-image-80" src="${assetPath(src: '/static/students/program/1.jpg')}"/>
+                    <g:clickableImage src="${assetPath(src: '/static/students/program/1.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalProgram1')" id="program1" idModal="modalProgram1"/>
                 </div>
                 <div class="col">
-                    <img class="custom-image-80" src="${assetPath(src: '/static/students/program/2.jpg')}"/>
+                    <g:clickableImage src="${assetPath(src: '/static/students/program/2.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalProgram2')" id="program2" idModal="modalProgram2"/>
                 </div>
             </div>
             <p class="pb-3">Навчальний процес на кафедрі забезпечують 10 науково-педагогічних працівників, у тому числі: 3 професора, 4 доцента, 2 старших викладача, 1 асистент.</p>
@@ -41,14 +41,14 @@
                 <li class="ml-3">програмне забезпечення комп’ютерних мереж та вбудованих комп’ютерних систем</li>
             </ul>
             <p class="pb-3">Для забезпечення високої професійної підготовки розвивається матеріальне забезпечення кафедри. Кафедра має два комп’ютерних класи для студентів та один для викладачів кафедри. Завдяки висококваліфікованому професорсько-викладацькому складу та допоміжному персоналу створено спеціалізовану лабораторію з мікропроцесорної техніки, яка обладнана учбово-лабораторними стендами «EV8031/AVR», «LOGIC», «OpAmp», «Trigger». Для досліджень з робототехніки на кафедрі СКС використовується програмований робот Ubtech Alpha 1Pro.</p>
-            <img class="pb-3 custom-image-30" src="${assetPath(src: '/static/students/program/3.jpg')}"/>
+            <g:clickableImage src="${assetPath(src: '/static/students/program/3.jpg')}" classes="cursor-pointer custom-image-30" onclick="showImagePopup('modalProgram3')" id="program3" idModal="modalProgram3"/>
             <p class="pb-3">Лабораторія та комп’ютерні класи обладнані сучасною комп’ютерною технікою, вимірювальними приладами, навчальними дослідницькими стендами та іншим необхідним устаткуванням, що дозволяє студентам та співробітникам кафедри СКС ефективно займатися науково-практичною діяльністю. Комп’ютери в учбових класах кафедри та викладацьких об’єднані в локальну мережу та мають вихід до всесвітньої мережі Internet. Для кращого засвоєння матеріалу на лекціях та практичних заняттях успішно застосовуються наочні засоби навчання.</p>
             <div class="row pb-3">
                 <div class="col">
-                    <img class="custom-image-80" src="${assetPath(src: '/static/students/program/4.jpg')}"/>
+                    <g:clickableImage src="${assetPath(src: '/static/students/program/4.jpg')}" classes="cursor-pointer shadow-lg custom-image-80" onclick="showImagePopup('modalProgram4')" id="program4" idModal="modalProgram4"/>
                 </div>
                 <div class="col">
-                    <img class="custom-image-80" src="${assetPath(src: '/static/students/program/5.jpg')}"/>
+                    <g:clickableImage src="${assetPath(src: '/static/students/program/5.jpg')}" classes="cursor-pointer shadow-lg custom-image-80" onclick="showImagePopup('modalProgram5')" id="program5" idModal="modalProgram5"/>
                 </div>
             </div>
             <p>Після одержання спеціальності працевлаштування можливе в таких сферах:</p>
@@ -60,7 +60,7 @@
                 <li class="ml-3">робота з базами даних</li>
                 <li class="ml-3">робототехніка</li>
             </ul>
-            <img class="pb-3 custom-image-50" src="${assetPath(src: '/static/students/program/6.jpg')}"/>
+            <g:clickableImage src="${assetPath(src: '/static/students/program/6.jpg')}" classes="cursor-pointer shadow-lg custom-image-50" onclick="showImagePopup('modalProgram6')" id="program6" idModal="modalProgram6"/>
             <p class="pb-3">Дбайливе відношення і професійність викладання, що сприяють якісній підготовці студентів, забезпечили практично 100-відсоткове працевлаштування випускників кафедри, більшість з яких направляється по запитам підприємств, таких як Інститут технічної механіки НАНУ і ДКАУ, Головне Управління Державного казначейства України в Дніпропетровській області, Південний машинобудівний завод, ВАТ «Український мобільний зв’язок», КБ «Приватбанк», «Укрсіббанк». Багато студентів та випускників працевлаштувались в українських та міжнародних компаніях, що спеціалізуються на розробці програмного забезпечення (OWOX, Yalantis та ін.).</p>
         </div>
     </div>

@@ -127,14 +127,12 @@
                 <div class="offset-2"></div>
                 <div class="col-5">
                     <div class="row justify-content-end">
-                        %{--<div class="offset-6"></div>--}%
-                        <div class="col-4 pl-5 ml-auto">
+                        <div class="col-4 ml-auto">
                             <a class="custom-footer-link" href="http://udhtu.edu.ua/"><g:message code="footer.goto.mainsite"/></a>
                         </div>
                     </div>
                     <div class="row pt-3 justify-content-end">
-                        %{--<div class="offset-6"></div>--}%
-                        <div class="col-4 pl-5">
+                        <div class="col-4">
                             ©2008-<g:currentYear/> Кафедра СКС
                         </div>
                     </div>

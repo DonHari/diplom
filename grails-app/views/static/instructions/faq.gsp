@@ -17,10 +17,10 @@
                     <p class="">Оберіть пункт меню "Додати FAQ", та відкриється наступна сторінка</p>
                 </div>
                 <div class="col">
-                    <img src="${assetPath(src: '/static/instructions/faq/1.png')}" class="custom-image-50 shadow"/>
+                    <g:clickableImage src="${assetPath(src: '/static/instructions/faq/1.png')}" classes="cursor-pointer shadow-lg custom-image-50" onclick="showImagePopup('modalInstructionFaq1')" id="instructionFaq1" idModal="modalInstructionFaq1"/>
                 </div>
             </div>
-            <img src="${assetPath(src: '/static/instructions/faq/2.png')}" class="custom-image-70 shadow rounded custom-margin-1p25rem-bot"/>
+            <g:clickableImage src="${assetPath(src: '/static/instructions/faq/2.png')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalInstructionFaq2')" id="instructionFaq2" idModal="modalInstructionFaq2"/>
             <p>Вам необхідно заповнити всі поля, щоб з'явилась можливість натиснути кнопку "Створити".</p>
             <p>Після створення питання, значення всіх полів будут встановлені в значення за-змовчанням, а також з'явиться повідомлення про його створення.</p>
             <div class="custom-warning-message">

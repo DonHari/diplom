@@ -13,10 +13,10 @@
                     <p class="">За-змовчанням буде відкрита вкладка для редагування основної інформації.</p>
                 </div>
                 <div class="col">
-                    <img src="${assetPath(src: '/static/instructions/my/1.png')}" class="custom-image-50 shadow"/>
+                    <g:clickableImage src="${assetPath(src: '/static/instructions/my/1.png')}" classes="cursor-pointer shadow-lg custom-image-50" onclick="showImagePopup('modalInstructionMy1')" id="instructionMy1" idModal="modalInstructionMy1"/>
                 </div>
             </div>
-            <img src="${assetPath(src: '/static/instructions/my/2.png')}" class="custom-image-70 shadow rounded custom-margin-1p25rem-bot"/>
+            <g:clickableImage src="${assetPath(src: '/static/instructions/my/2.png')}" classes="cursor-pointer shadow-lg custom-image-70 shadow rounded custom-margin-1p25rem-bot" onclick="showImagePopup('modalInstructionMy2')" id="instructionMy2" idModal="modalInstructionMy2"/>
             <p>Вам достатньо натиснути на кнопку "Включити редагування", змінити інформацію та натиснути на кнопку "Зберігти".</p>
             <p>Після збереження інформації, Ви побачите повідомлення про це, та оновлену інформації у відповідних місцях</p>
         </div>
@@ -31,10 +31,10 @@
                     <p class="">Після цього перейдіть на вкладку "Редагування імені користувача".</p>
                 </div>
                 <div class="col">
-                    <img src="${assetPath(src: '/static/instructions/my/1.png')}" class="custom-image-50 shadow"/>
+                    <g:clickableImage src="${assetPath(src: '/static/instructions/my/1.png')}" classes="cursor-pointer shadow-lg custom-image-50" onclick="showImagePopup('modalInstructionMy1')" id="instructionMy1" idModal="modalInstructionMy1"/>
                 </div>
             </div>
-            <img src="${assetPath(src: '/static/instructions/my/3.png')}" class="custom-image-70 shadow rounded custom-margin-1p25rem-bot"/>
+            <g:clickableImage src="${assetPath(src: '/static/instructions/my/3.png')}" classes="cursor-pointer shadow-lg custom-image-70 shadow rounded custom-margin-1p25rem-bot" onclick="showImagePopup('modalInstructionMy3')" id="instructionMy3" idModal="modalInstructionMy3"/>
             <div class="custom-warning-message">
                 <h5 class="custom-font-weight-600">Зауваження щодо редагування імені користувача</h5>
                 <ul>
@@ -54,10 +54,10 @@
                     <p class="">Після цього перейдіть на вкладку "Редагування паролю".</p>
                 </div>
                 <div class="col">
-                    <img src="${assetPath(src: '/static/instructions/my/1.png')}" class="custom-image-50 shadow"/>
+                    <g:clickableImage src="${assetPath(src: '/static/instructions/my/1.png')}" classes="cursor-pointer shadow-lg custom-image-50" onclick="showImagePopup('modalInstructionMy1')" id="instructionMy1" idModal="modalInstructionMy1"/>
                 </div>
             </div>
-            <img src="${assetPath(src: '/static/instructions/my/4.png')}" class="custom-image-70 shadow rounded custom-margin-1p25rem-bot"/>
+            <g:clickableImage src="${assetPath(src: '/static/instructions/my/4.png')}" classes="cursor-pointer shadow-lg custom-image-70 shadow rounded custom-margin-1p25rem-bot" onclick="showImagePopup('modalInstructionMy4')" id="instructionMy4" idModal="modalInstructionMy4"/>
             <div class="custom-warning-message">
                 <h5 class="custom-font-weight-600">Зауваження щодо редагування паролю</h5>
                 <ul>
