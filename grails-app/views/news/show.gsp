@@ -56,7 +56,7 @@
                                         alert('broken image!');
                                     } else {
                                         $('#assigned${i}').prepend($("<div />").append($(img)).html());
-                                        $('#assigned${i}').find('>:first-child').attr('style', "max-height:" + ($('#assigned${i}').find('>:first-child').width() / 16 * 9) + 'px;width:100%');
+                                        $('#assigned${i}').find('>:first-child').attr('style', "max-height:" + ($('#assigned${i}').find('>:first-child').width() / 16 * 9) + 'px;width:100% !important');
                                     }
                                 });
                         });

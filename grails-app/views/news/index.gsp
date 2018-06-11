@@ -22,8 +22,8 @@
                             <img class="card-img news-main-photo" src="${createLink(controller: "image", action: "get", params: [id: news.photo.id])}" alt="${message(code:'image.cant.upload',default:"Can't upload an image.")}"/>
                         </div>
                         <div class="col-7 pl-4 pr-4">
-                            <div class="row justify-content-between h-30">
-                                <div class="col-auto custom-max-width-66-percent">
+                            <div class="row justify-content-between h-40">
+                                <div class="col-auto px-0 custom-max-width-75-percent">
                                     <h3>
                                         <a href="${createLink(controller: 'news', action: 'show', params:[id: news.id])}">
                                             ${news.name}
@@ -64,10 +64,10 @@
                                     </g:else>
                                 </div>
                             </div>
-                            <div class="row h-10">
+                            <div class="row h-40  pt-3">
                                 <div class="col-12 col-md-12 text-justify"><g:replaceNextLineForDescription source="${news.description}"/></div>
                             </div>
-                            <div class="row justify-content-between align-items-end h-50" >
+                            <div class="row justify-content-between align-items-end h-20" >
                                         <div class="col-auto text-left text-muted pr-1" data-toggle="tooltip" data-placement="bottom" data-html="true" title="${tooltipDates(format:'dd-MM-yyyy HH:mm', updateDate: news.lastUpdated, createDate: news.dateCreated)}">
                                             <g:dateFormat format="dd-MM-yyyy HH:mm" date="${news.dateCreated}"/>
                                         </div>

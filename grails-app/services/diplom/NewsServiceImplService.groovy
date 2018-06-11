@@ -11,18 +11,6 @@ class NewsServiceImplService implements NewsService {
 
     SecurityService securityService
 
-    private checkIfExists = { Long id ->
-        if (!News.exists(id)) {
-            throw new CantFindException("Can't find requested news!")
-        }
-    }
-
-    private checkIfAuthor = { News news ->
-        if (news.author.id != securityService.getAuthorizedUser().id) {
-            throw new CantUpdateException("You can't delete or update this news")
-        }
-    }
-
     @Override
     List<News> list(Integer offset, Integer max) {
         Integer localOffset = offset ?: 0
@@ -41,9 +29,7 @@ class NewsServiceImplService implements NewsService {
 
     @Override
     News update(NewsUpdateCommand newsUpdateCommand) {
-        checkIfExists(newsUpdateCommand.newsId)
         News news = News.get(newsUpdateCommand.newsId)
-        checkIfAuthor(news)
         List<String> newPhotoNames = newsUpdateCommand.collectPhotoNames()
         newPhotoNames.removeAll { it == null }
         List<Byte[]> newPhotoContent = newsUpdateCommand.collectPhotoContent()
