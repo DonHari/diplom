@@ -217,5 +217,4 @@
     </changeSet>
     <include file="role-insert-1.xml" relativeToChangelogFile="true"/>
     <include file="user-insert-1.xml" relativeToChangelogFile="true"/>
-    <include file="faq-insert-1.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>
