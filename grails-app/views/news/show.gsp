@@ -65,10 +65,10 @@
                         </div>
                     </g:if>
                 </g:each>
-                <div class="row">
-                    <div class="col-4 text-muted text-left"><g:dateFormat format="dd-MM-yyyy HH:mm" date="${news.dateCreated}"/></div>
-                    <div class="offset-4"></div>
-                    <div class="col-4 text-muted text-right">${news.author.getFullName()}</div>
+                <div class="row justify-content-between">
+                    <div class="col-auto text-muted text-left"><g:dateFormat format="dd-MM-yyyy HH:mm" date="${news.dateCreated}"/></div>
+                    %{--<div class="offset-4"></div>--}%
+                    <div class="col-auto text-muted text-right">${news.author.getFullName()}</div>
                 </div>
             </div>
             <div class="offset-3"></div>

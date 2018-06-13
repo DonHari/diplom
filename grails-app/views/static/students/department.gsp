@@ -201,7 +201,7 @@
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-4">
-                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/kosolap.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalStuffKosolap')" id="stuffKosolap" idModal="modalStuffKosolap"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/kosolap.jpg')}" classes="cursor-pointer shadow-lg custom-image-100" onclick="showImagePopup('modalStuffKosolap')" id="stuffKosolap" idModal="modalStuffKosolap"/>
                                 </div>
                                 <div class="col-8">
                                     <h4 class="pb-2">Косолап Анатолій Іванович</h4>
@@ -231,7 +231,7 @@
                             <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
-                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/alpatov.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalStuffAlpatov')" id="stuffAlpatov" idModal="modalStuffAlpatov"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/alpatov.jpg')}" classes="cursor-pointer shadow-lg custom-image-100" onclick="showImagePopup('modalStuffAlpatov')" id="stuffAlpatov" idModal="modalStuffAlpatov"/>
                                 </div>
                                 <div class="col-8">
                                     <h4 class="pb-2">Алпатов Анатолій Петрович</h4>
@@ -257,7 +257,7 @@
                             <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
-                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/horoshilov.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalStuffHoroshilov')" id="stuffHoroshilov" idModal="modalStuffHoroshilov"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/horoshilov.jpg')}" classes="cursor-pointer shadow-lg custom-image-100" onclick="showImagePopup('modalStuffHoroshilov')" id="stuffHoroshilov" idModal="modalStuffHoroshilov"/>
                                 </div>
                                 <div class="col-8">
                                     <h4 class="pb-2">Хорошилов Сергій Вікторович</h4>
@@ -283,7 +283,7 @@
                             <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
-                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/kapitonov.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalStuffKapitonov')" id="stuffKapitonov" idModal="modalStuffKapitonov"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/kapitonov.jpg')}" classes="cursor-pointer shadow-lg custom-image-100" onclick="showImagePopup('modalStuffKapitonov')" id="stuffKapitonov" idModal="modalStuffKapitonov"/>
                                 </div>
                                 <div class="col-8">
                                     <h4 class="pb-2">Капітонов Олександр Георгійович</h4>
@@ -308,7 +308,7 @@
                             <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
-                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/bileckiy.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalStuffBileckiy')" id="stuffBileckiy" idModal="modalStuffBileckiy"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/bileckiy.jpg')}" classes="cursor-pointer shadow-lg custom-image-100" onclick="showImagePopup('modalStuffBileckiy')" id="stuffBileckiy" idModal="modalStuffBileckiy"/>
                                 </div>
                                 <div class="col-8">
                                     <h4 class="pb-2">Білецький Олександр Семенович</h4>
@@ -334,7 +334,7 @@
                             <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
-                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/sergeeva.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalStuffSergeeva')" id="stuffSergeeva" idModal="modalStuffSergeeva"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/sergeeva.jpg')}" classes="cursor-pointer shadow-lg custom-image-100" onclick="showImagePopup('modalStuffSergeeva')" id="stuffSergeeva" idModal="modalStuffSergeeva"/>
                                 </div>
                                 <div class="col-8">
                                     <h4 class="pb-2">Сергєєва Ольга В’ячеславівна</h4>
@@ -359,7 +359,7 @@
                             <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
-                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/peretyatko.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalStuffPeretyatko')" id="stuffPeretyatko" idModal="modalStuffPeretyatko"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/peretyatko.jpg')}" classes="cursor-pointer shadow-lg custom-image-100" onclick="showImagePopup('modalStuffPeretyatko')" id="stuffPeretyatko" idModal="modalStuffPeretyatko"/>
                                 </div>
                                 <div class="col-8">
                                     <h4 class="pb-2">Перетятько Анастасія Сергіївна</h4>
@@ -390,7 +390,7 @@
                             <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
-                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/brazinskaya.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalStuffBrazinskaya')" id="stuffBrazinskaya" idModal="modalStuffBrazinskaya"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/brazinskaya.jpg')}" classes="cursor-pointer shadow-lg custom-image-100" onclick="showImagePopup('modalStuffBrazinskaya')" id="stuffBrazinskaya" idModal="modalStuffBrazinskaya"/>
                                 </div>
                                 <div class="col-8">
                                     <h4 class="pb-2">Бразинська Світлана Вікторівна</h4>
@@ -413,7 +413,7 @@
                             <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
-                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/dubovik.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalStuffDubovik')" id="stuffDubovik" idModal="modalStuffDubovik"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/dubovik.jpg')}" classes="cursor-pointer shadow-lg custom-image-100" onclick="showImagePopup('modalStuffDubovik')" id="stuffDubovik" idModal="modalStuffDubovik"/>
                                 </div>
                                 <div class="col-8">
                                     <h4 class="pb-2">Дубовик Тетяна Миколаївна</h4>
@@ -443,7 +443,7 @@
                             <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
-                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/dovgopola.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalStuffDovgopola')" id="stuffDovgopola" idModal="modalStuffDovgopola"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/dovgopola.jpg')}" classes="cursor-pointer shadow-lg custom-image-100" onclick="showImagePopup('modalStuffDovgopola')" id="stuffDovgopola" idModal="modalStuffDovgopola"/>
                                 </div>
                                 <div class="col-8">
                                     <h4 class="pb-2">Довгопола Альона Олександрівна</h4>
@@ -469,7 +469,7 @@
                             <hr class="mb-4 mt-1 custom-divider"/>
                             <div class="row">
                                 <div class="col-4">
-                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/penya.jpg')}" classes="cursor-pointer shadow-lg custom-image-70" onclick="showImagePopup('modalStuffPenya')" id="stuffPenya" idModal="modalStuffPenya"/>
+                                    <g:clickableImage src="${assetPath(src: '/static/students/department/stuff/penya.jpg')}" classes="cursor-pointer shadow-lg custom-image-100" onclick="showImagePopup('modalStuffPenya')" id="stuffPenya" idModal="modalStuffPenya"/>
                                 </div>
                                 <div class="col-8">
                                     <h4 class="pb-2">Пеня Тетяна Дмитрівна</h4>
