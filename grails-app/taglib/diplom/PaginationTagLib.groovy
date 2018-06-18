@@ -26,10 +26,10 @@ class PaginationTagLib {
 
                 if (beginstep < firstPage) {
                     beginstep = firstPage
-                    endstep = firstPage + 4
+                    endstep = firstPage + 2
                 }
                 if (endstep > lastPage) {
-                    beginstep = lastPage - 4
+                    beginstep = lastPage - 2
                     if (beginstep < firstPage) {
                         beginstep = firstPage
                     }
