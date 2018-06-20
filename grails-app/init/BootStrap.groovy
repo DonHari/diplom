@@ -13,6 +13,8 @@ class BootStrap {
             Photo third = createPhoto('/bootstrap-images/3.jpg')
             Photo fourth = createPhoto('/bootstrap-images/4.jpg')
             Photo fifth = createPhoto('/bootstrap-images/5.jpg')
+            Photo sixth = createPhoto('/bootstrap-images/6.jpg')
+            Photo seventh = createPhoto('/bootstrap-images/7.jpg')
             User author = User.get(1)
             for (int i = 0; i < 1000; i++) {
                 new News(
@@ -20,7 +22,7 @@ class BootStrap {
                         photo: first,
                         description: "Дізнайся що саме тебе чекає та коли він буде.",
                         content: "День відкритих дверей буде **45 червня**!\r\nМи чекаємо на Вас!",
-                        assignedPhotos: [first, second, third, fourth, fifth],
+                        assignedPhotos: [second, third, fourth, fifth, sixth, seventh],
                         author: author
                 ).save()
             }
